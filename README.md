@@ -9,3 +9,5 @@
 4. A través del **CMD** subimos la carpeta al repositorio de GitHub Pages utilizando los comandos de Git.
 
 5. Abrimos el apartado **Deployments** en el repositorio y accedemos a la **URL generada** para visualizar el sitio web publicado.
+
+Integrantes: Camargo Cantellan Didier Isaac, Rivera Armenta Diego Salatiel, Rojas Hernandez Valeria.
