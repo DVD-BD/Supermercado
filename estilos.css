@@ -53,8 +53,8 @@ header input{
 
 /* SLIDER (ahora más pequeño) */
 .slider{
-    width:100%;
-    height:300px; /* antes era más grande */
+    width:50%;
+    height:100px; /* antes era más grande */
     overflow:hidden;
     position:relative;
 }
