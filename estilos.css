@@ -154,3 +154,31 @@ color:white;
 text-align:center;
 padding:20px;
 }
+
+.productoIndividual{
+display:flex;
+gap:40px;
+padding:40px;
+}
+
+.productoIndividual img{
+width:300px;
+}
+
+.productoIndividual button{
+padding:10px 20px;
+background:#ffc220;
+border:none;
+cursor:pointer;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
+width:300px;
+}
+
+form input{
+padding:10px;
+}
