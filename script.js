@@ -1,60 +1,39 @@
 let productos=[
-
-// FRUTAS
-{nombre:"Manzanas",precio:40,categoria:"frutas",desc:"Manzanas frescas rojas y jugosas.",img:"https://source.unsplash.com/300x300/?apple"},
-{nombre:"Plátanos",precio:30,categoria:"frutas",desc:"Plátanos maduros ricos en potasio.",img:"https://source.unsplash.com/300x300/?banana"},
-{nombre:"Naranjas",precio:35,categoria:"frutas",desc:"Naranjas dulces ideales para jugo.",img:"https://source.unsplash.com/300x300/?orange"},
-{nombre:"Uvas",precio:60,categoria:"frutas",desc:"Uvas frescas perfectas para snack.",img:"https://source.unsplash.com/300x300/?grapes"},
-
-// VERDURAS
-{nombre:"Tomate",precio:25,categoria:"verduras",desc:"Tomates frescos para ensaladas.",img:"https://source.unsplash.com/300x300/?tomato"},
-{nombre:"Lechuga",precio:18,categoria:"verduras",desc:"Lechuga verde fresca.",img:"https://source.unsplash.com/300x300/?lettuce"},
-{nombre:"Zanahoria",precio:20,categoria:"verduras",desc:"Zanahorias crujientes y saludables.",img:"https://source.unsplash.com/300x300/?carrot"},
-{nombre:"Papa",precio:22,categoria:"verduras",desc:"Papas frescas para diferentes platillos.",img:"https://source.unsplash.com/300x300/?potato"},
-
-// CARNES
-{nombre:"Pollo",precio:120,categoria:"carnes",desc:"Pechuga de pollo fresca.",img:"https://source.unsplash.com/300x300/?chicken"},
-{nombre:"Carne de res",precio:180,categoria:"carnes",desc:"Carne de res de alta calidad.",img:"https://source.unsplash.com/300x300/?beef"},
-{nombre:"Chuleta",precio:140,categoria:"carnes",desc:"Chuletas frescas para asar.",img:"https://source.unsplash.com/300x300/?pork"},
-{nombre:"Salchichas",precio:55,categoria:"carnes",desc:"Salchichas listas para cocinar.",img:"https://source.unsplash.com/300x300/?sausage"},
-
-// LACTEOS
-{nombre:"Leche",precio:26,categoria:"lacteos",desc:"Leche fresca rica en calcio.",img:"https://source.unsplash.com/300x300/?milk"},
-{nombre:"Queso",precio:70,categoria:"lacteos",desc:"Queso cremoso ideal para comidas.",img:"https://source.unsplash.com/300x300/?cheese"},
-{nombre:"Yogurt",precio:22,categoria:"lacteos",desc:"Yogurt natural saludable.",img:"https://source.unsplash.com/300x300/?yogurt"},
-{nombre:"Mantequilla",precio:38,categoria:"lacteos",desc:"Mantequilla cremosa para cocinar.",img:"https://source.unsplash.com/300x300/?butter"},
-
-// PANADERIA
-{nombre:"Pan blanco",precio:35,categoria:"panaderia",desc:"Pan suave recién horneado.",img:"https://source.unsplash.com/300x300/?bread"},
-{nombre:"Croissant",precio:28,categoria:"panaderia",desc:"Croissant crujiente estilo francés.",img:"https://source.unsplash.com/300x300/?croissant"},
-{nombre:"Donas",precio:20,categoria:"panaderia",desc:"Donas dulces con azúcar.",img:"https://source.unsplash.com/300x300/?donut"},
-{nombre:"Pan dulce",precio:18,categoria:"panaderia",desc:"Pan dulce tradicional.",img:"https://source.unsplash.com/300x300/?sweet-bread"},
-
-// BEBIDAS
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",desc:"Refresco clásico refrescante.",img:"https://source.unsplash.com/300x300/?cola"},
-{nombre:"Agua",precio:15,categoria:"bebidas",desc:"Agua purificada.",img:"https://source.unsplash.com/300x300/?water"},
-{nombre:"Jugo de naranja",precio:32,categoria:"bebidas",desc:"Jugo natural rico en vitamina C.",img:"https://source.unsplash.com/300x300/?orange-juice"},
-{nombre:"Café",precio:80,categoria:"bebidas",desc:"Café molido de aroma intenso.",img:"https://source.unsplash.com/300x300/?coffee"},
-
-// SNACKS
-{nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate dulce.",img:"https://source.unsplash.com/300x300/?chocolate"},
-{nombre:"Galletas",precio:28,categoria:"snacks",desc:"Galletas crujientes.",img:"https://source.unsplash.com/300x300/?cookies"},
-{nombre:"Papas fritas",precio:25,categoria:"snacks",desc:"Botana crujiente.",img:"https://source.unsplash.com/300x300/?chips"},
-{nombre:"Palomitas",precio:22,categoria:"snacks",desc:"Palomitas ligeras.",img:"https://source.unsplash.com/300x300/?popcorn"},
-
-// LIMPIEZA
-{nombre:"Cloro",precio:25,categoria:"limpieza",desc:"Desinfectante para superficies.",img:"https://source.unsplash.com/300x300/?bleach"},
-{nombre:"Detergente",precio:45,categoria:"limpieza",desc:"Detergente para ropa.",img:"https://source.unsplash.com/300x300/?detergent"},
-{nombre:"Esponjas",precio:18,categoria:"limpieza",desc:"Esponjas para cocina.",img:"https://source.unsplash.com/300x300/?sponge"},
-{nombre:"Trapeador",precio:95,categoria:"limpieza",desc:"Trapeador para limpiar pisos.",img:"https://source.unsplash.com/300x300/?mop"},
-
-// HOGAR
-{nombre:"Papel higiénico",precio:60,categoria:"hogar",desc:"Papel higiénico suave.",img:"https://source.unsplash.com/300x300/?toilet-paper"},
-{nombre:"Servilletas",precio:22,categoria:"hogar",desc:"Servilletas absorbentes.",img:"https://source.unsplash.com/300x300/?napkins"},
-{nombre:"Velas",precio:35,categoria:"hogar",desc:"Velas aromáticas.",img:"https://source.unsplash.com/300x300/?candle"},
-{nombre:"Focos LED",precio:50,categoria:"hogar",desc:"Focos ahorradores.",img:"https://source.unsplash.com/300x300/?light-bulb"}
-
-]
+    // FRUTAS Y VERDURAS
+    {nombre:"Manzanas",precio:40,categoria:"frutasVerduras",desc:"Manzanas frescas rojas y jugosas.",img:"https://source.unsplash.com/300x300/?apple"},
+    {nombre:"Plátanos",precio:30,categoria:"frutasVerduras",desc:"Plátanos maduros ricos en potasio.",img:"https://source.unsplash.com/300x300/?banana"},
+    {nombre:"Naranjas",precio:35,categoria:"frutasVerduras",desc:"Naranjas dulces ideales para jugo.",img:"https://source.unsplash.com/300x300/?orange"},
+    {nombre:"Tomate",precio:25,categoria:"frutasVerduras",desc:"Tomates frescos para ensaladas.",img:"https://source.unsplash.com/300x300/?tomato"},
+    {nombre:"Lechuga",precio:18,categoria:"frutasVerduras",desc:"Lechuga verde fresca.",img:"https://source.unsplash.com/300x300/?lettuce"},
+    {nombre:"Zanahoria",precio:20,categoria:"frutasVerduras",desc:"Zanahorias crujientes y saludables.",img:"https://source.unsplash.com/300x300/?carrot"},
+    {nombre:"Papa",precio:22,categoria:"frutasVerduras",desc:"Papas frescas para diferentes platillos.",img:"https://source.unsplash.com/300x300/?potato"},
+    
+    // CARNES
+    {nombre:"Pollo",precio:120,categoria:"carnes",desc:"Pechuga de pollo fresca.",img:"https://source.unsplash.com/300x300/?chicken"},
+    {nombre:"Carne de res",precio:180,categoria:"carnes",desc:"Carne de res de alta calidad.",img:"https://source.unsplash.com/300x300/?beef"},
+    
+    // LACTEOS
+    {nombre:"Leche",precio:26,categoria:"lacteos",desc:"Leche fresca rica en calcio.",img:"https://source.unsplash.com/300x300/?milk"},
+    {nombre:"Queso",precio:70,categoria:"lacteos",desc:"Queso cremoso ideal para comidas.",img:"https://source.unsplash.com/300x300/?cheese"},
+    
+    // PANADERIA
+    {nombre:"Pan blanco",precio:35,categoria:"panaderia",desc:"Pan suave recién horneado.",img:"https://source.unsplash.com/300x300/?bread"},
+    {nombre:"Croissant",precio:28,categoria:"panaderia",desc:"Croissant crujiente estilo francés.",img:"https://source.unsplash.com/300x300/?croissant"},
+    
+    // BEBIDAS
+    {nombre:"Coca Cola",precio:20,categoria:"bebidas",desc:"Refresco clásico refrescante.",img:"https://source.unsplash.com/300x300/?cola"},
+    {nombre:"Agua",precio:15,categoria:"bebidas",desc:"Agua purificada.",img:"https://source.unsplash.com/300x300/?water"},
+    
+    // SNACKS
+    {nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate dulce.",img:"https://source.unsplash.com/300x300/?chocolate"},
+    {nombre:"Galletas",precio:28,categoria:"snacks",desc:"Galletas crujientes.",img:"https://source.unsplash.com/300x300/?cookies"},
+    
+    // LIMPIEZA
+    {nombre:"Cloro",precio:25,categoria:"limpieza",desc:"Desinfectante para superficies.",img:"https://source.unsplash.com/300x300/?bleach"},
+    
+    // HOGAR
+    {nombre:"Papel higiénico",precio:60,categoria:"hogar",desc:"Papel higiénico suave.",img:"https://source.unsplash.com/300x300/?toilet-paper"}
+];
 
 let productosMostrados=[...productos]
 let carrito=[]
@@ -93,22 +72,17 @@ function filtrar(cat){
 }
 
 function verProducto(i){
-    let p=productosMostrados[i]
-    productoActual=p
-    document.getElementById("vistaImg").src=p.img
-    document.getElementById("vistaNombre").innerText=p.nombre
-    document.getElementById("vistaDesc").innerText=p.desc
-    document.getElementById("vistaPrecio").innerText=p.precio
+    productoActual=productosMostrados[i]
+    document.getElementById("productoImg").src=productoActual.img
+    document.getElementById("productoNombre").innerText=productoActual.nombre
+    document.getElementById("productoDesc").innerText=productoActual.desc
+    document.getElementById("productoPrecio").innerText="$"+productoActual.precio
     document.getElementById("productoVista").style.display="block"
 }
 
-function cerrarVista(){document.getElementById("productoVista").style.display="none"}
+function cerrarProducto(){document.getElementById("productoVista").style.display="none"}
 
-function agregarDesdeVista(){
-    let index=productosMostrados.findIndex(p=>p.nombre===productoActual.nombre)
-    agregarCarrito(index)
-    cerrarVista()
-}
+function agregarDesdeVista(){agregarCarrito(productosMostrados.findIndex(p=>p.nombre===productoActual.nombre)); cerrarProducto()}
 
 function agregarCarrito(i){
     let prod=productosMostrados[i]
@@ -135,37 +109,21 @@ function actualizarCarrito(){
 }
 
 function sumar(i){ carrito[i].cantidad++; actualizarCarrito() }
-function restar(i){
-    carrito[i].cantidad--
-    if(carrito[i].cantidad<=0){ carrito.splice(i,1) }
-    actualizarCarrito()
-}
+function restar(i){ carrito[i].cantidad--; if(carrito[i].cantidad<=0){ carrito.splice(i,1) } actualizarCarrito() }
 
 function abrirCarrito(){ document.getElementById("carrito").classList.add("abierto") }
 function cerrarCarrito(){ document.getElementById("carrito").classList.remove("abierto") }
 
-function pagar(){
-    document.getElementById("checkout").style.display="block"
-    carrito=[]
-    actualizarCarrito()
-}
-function cerrarCheckout(){ document.getElementById("checkout").style.display="none" }
+function irCheckout(){ document.getElementById("checkout").style.display="block"; carrito=[]; actualizarCarrito() }
+function finalizarCompra(){ document.getElementById("checkout").style.display="none" }
 
+// SLIDER
 let slides=[
     "https://source.unsplash.com/1200x400/?supermarket",
     "https://source.unsplash.com/1200x400/?groceries",
     "https://source.unsplash.com/1200x400/?shopping"
 ]
-
 let slideIndex=0
-function nextSlide(){
-    slideIndex++
-    if(slideIndex>=slides.length) slideIndex=0
-    document.getElementById("slideImg").src=slides[slideIndex]
-}
-function prevSlide(){
-    slideIndex--
-    if(slideIndex<0) slideIndex=slides.length-1
-    document.getElementById("slideImg").src=slides[slideIndex]
-}
+function nextSlide(){ slideIndex++; if(slideIndex>=slides.length) slideIndex=0; document.getElementById("slideImg").src=slides[slideIndex] }
+function prevSlide(){ slideIndex--; if(slideIndex<0) slideIndex=slides.length-1; document.getElementById("slideImg").src=slides[slideIndex] }
 setInterval(nextSlide,4000)
