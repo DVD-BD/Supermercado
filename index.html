@@ -2,32 +2,21 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <title>Supermercado Online</title>
-
 <link rel="stylesheet" href="estilos.css">
-
 </head>
 
 <body>
 
 <header class="topbar">
 
-<div class="logo">
-SuperMercado
-</div>
+<h1>Supermercado</h1>
 
-<div class="search">
 <input type="text" id="buscador" placeholder="Buscar productos...">
-</div>
-
-<div class="icons">
 
 <div class="carritoBtn" onclick="toggleCarrito()">
 🛒 Carrito (<span id="contador">0</span>)
-</div>
-
 </div>
 
 </header>
@@ -35,28 +24,13 @@ SuperMercado
 
 <nav class="menu">
 
-<ul>
-
-<li onclick="mostrarCategoria('todos')">Todos</li>
-
-<li onclick="mostrarCategoria('comida')">Comida</li>
-
-<li onclick="mostrarCategoria('bebidas')">Bebidas</li>
-
-<li onclick="mostrarCategoria('limpieza')">Limpieza</li>
-
-<li onclick="mostrarCategoria('hogar')">Hogar</li>
-
-</ul>
+<button onclick="mostrarCategoria('todos')">Todos</button>
+<button onclick="mostrarCategoria('comida')">Comida</button>
+<button onclick="mostrarCategoria('bebidas')">Bebidas</button>
+<button onclick="mostrarCategoria('limpieza')">Limpieza</button>
+<button onclick="mostrarCategoria('hogar')">Hogar</button>
 
 </nav>
-
-
-<section class="banner">
-
-<img src="https://source.unsplash.com/1600x400/?supermarket">
-
-</section>
 
 
 <main>
@@ -69,26 +43,18 @@ SuperMercado
 
 <div id="panelCarrito" class="panelCarrito">
 
-<h2>Tu carrito</h2>
+<h2>Carrito</h2>
 
 <div id="listaCarrito"></div>
 
-<p><strong>Total: $<span id="total">0</span></strong></p>
+<p>Total: $<span id="total">0</span></p>
 
 <button onclick="comprar()">Finalizar compra</button>
 
 </div>
 
 
-<footer>
-
-<p>Supermercado Online © 2026</p>
-
-</footer>
-
-
 <script src="script.js"></script>
 
 </body>
-
 </html>
