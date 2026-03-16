@@ -15,8 +15,12 @@
 
 <input type="text" id="buscador" placeholder="Buscar productos...">
 
-<div class="carritoBtn" onclick="toggleCarrito()">
-🛒 Carrito (<span id="contador">0</span>)
+<div class="headerBtns">
+
+<button onclick="toggleCuenta()">👤 Cuenta</button>
+
+<button onclick="toggleCarrito()">🛒 (<span id="contador">0</span>)</button>
+
 </div>
 
 </header>
@@ -41,15 +45,45 @@
 
 
 
+<!-- CARRITO -->
+
 <div id="panelCarrito" class="panelCarrito">
 
+<div class="carritoHeader">
+
 <h2>Carrito</h2>
+
+<button onclick="toggleCarrito()">X</button>
+
+</div>
 
 <div id="listaCarrito"></div>
 
 <p>Total: $<span id="total">0</span></p>
 
-<button onclick="comprar()">Finalizar compra</button>
+<a href="checkout.html">
+<button class="checkoutBtn">Ir a pagar</button>
+</a>
+
+</div>
+
+
+
+<!-- CUENTA -->
+
+<div id="panelCuenta" class="panelCuenta">
+
+<h2>Mi cuenta</h2>
+
+<input type="text" placeholder="Nombre">
+
+<input type="email" placeholder="Correo">
+
+<input type="password" placeholder="Contraseña">
+
+<button>Iniciar sesión</button>
+
+<button onclick="toggleCuenta()">Cerrar</button>
 
 </div>
 
