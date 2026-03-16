@@ -283,6 +283,47 @@ function cerrarSesion(){
 localStorage.removeItem("usuario")
 
 document.getElementById("usuarioTexto").innerText = "Invitado"
+}
+
+let usuario = localStorage.getItem("usuario")
+
+if(usuario){
+
+document.getElementById("usuarioTexto").innerText = "Hola " + usuario
+
+}
+
+function abrirCuenta(){
+
+document.getElementById("panelCuenta").classList.add("abierto")
+
+}
+
+function cerrarCuenta(){
+
+document.getElementById("panelCuenta").classList.remove("abierto")
+
+}
+
+function iniciarSesion(){
+
+let nombre = prompt("Ingresa tu nombre")
+
+if(nombre){
+
+localStorage.setItem("usuario", nombre)
+
+document.getElementById("usuarioTexto").innerText = "Hola " + nombre
+
+}
+
+}
+
+function cerrarSesion(){
+
+localStorage.removeItem("usuario")
+
+document.getElementById("usuarioTexto").innerText = "No has iniciado sesión"
 
 }
 
