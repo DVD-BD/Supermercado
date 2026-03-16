@@ -51,19 +51,27 @@ header input{
     font-size:20px;
 }
 
+/* GENERAL - reset de márgenes para todo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* SLIDER */
 .slider{
-    width:100vw;      
-    max-width:100%;   
-    height:300px;     
-    overflow:hidden;
-    position:relative;
+    position: relative;
+    width: 100vw;       /* ancho total de la ventana */
+    height: 300px;      /* altura reducida */
+    overflow: hidden;
+    left: 0;
+    margin: 0;
 }
 
 .slider img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .sliderBtn{
