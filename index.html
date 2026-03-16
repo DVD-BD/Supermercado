@@ -16,16 +16,20 @@
 <input id="buscador" type="text" placeholder="Buscar productos...">
 
 <div>
-
 <button onclick="toggleCuenta()">👤</button>
-
-<button onclick="toggleCarrito()">
-🛒 <span id="contador">0</span>
-</button>
-
+<button onclick="toggleCarrito()">🛒 <span id="contador">0</span></button>
 </div>
 
 </header>
+
+
+<!-- SLIDER OFERTAS -->
+
+<div class="slider">
+
+<img id="slideImg" src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+
+</div>
 
 
 <nav class="menu">
@@ -33,6 +37,7 @@
 <button onclick="mostrarCategoria('todos')">Todos</button>
 <button onclick="mostrarCategoria('comida')">Comida</button>
 <button onclick="mostrarCategoria('bebidas')">Bebidas</button>
+<button onclick="mostrarCategoria('snacks')">Snacks</button>
 <button onclick="mostrarCategoria('limpieza')">Limpieza</button>
 <button onclick="mostrarCategoria('hogar')">Hogar</button>
 
@@ -51,7 +56,7 @@
 
 <div id="listaCarrito"></div>
 
-<p class="total">Total: $<span id="total">0</span></p>
+<p>Total: $<span id="total">0</span></p>
 
 <a href="checkout.html">
 <button class="checkoutBtn">Ir a pagar</button>
@@ -68,7 +73,6 @@
 <input placeholder="Contraseña">
 
 <button>Iniciar sesión</button>
-
 <button onclick="toggleCuenta()">Cerrar</button>
 
 </div>
