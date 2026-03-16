@@ -59,9 +59,8 @@ header input{
 /* SLIDER */
 .slider{
     position: relative;
-    width: calc(100% + 40px); /* ancho total pantalla */
-    margin-left: -20px;       /* ajusta para padding del body */
-    height: 300px;             /* altura reducida */
+    width: 100%;
+    height: 300px; /* altura reducida */
     overflow: hidden;
 }
 
