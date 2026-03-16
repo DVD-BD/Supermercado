@@ -2,7 +2,7 @@ body{
 
 font-family:Arial;
 margin:0;
-background:#f2f2f2;
+background:#f3f3f3;
 
 }
 
@@ -12,22 +12,21 @@ background:#0071ce;
 color:white;
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:15px 30px;
 
 }
 
 .logo{
 
-font-size:24px;
+font-size:22px;
 font-weight:bold;
 
 }
 
 .topbar input{
 
-width:300px;
 padding:8px;
+width:250px;
 border-radius:6px;
 border:none;
 
@@ -36,8 +35,8 @@ border:none;
 .menu{
 
 background:#ffc220;
-text-align:center;
 padding:10px;
+text-align:center;
 
 }
 
@@ -48,7 +47,6 @@ padding:8px 15px;
 border:none;
 border-radius:5px;
 cursor:pointer;
-font-weight:bold;
 
 }
 
@@ -68,22 +66,14 @@ padding:15px;
 border-radius:10px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
-transition:0.2s;
-
-}
-
-.producto:hover{
-
-transform:scale(1.05);
 
 }
 
 .producto img{
 
 width:100%;
-height:160px;
+height:150px;
 object-fit:cover;
-border-radius:8px;
 
 }
 
@@ -115,7 +105,6 @@ background:white;
 padding:20px;
 transition:0.3s;
 box-shadow:-4px 0 10px rgba(0,0,0,0.3);
-overflow:auto;
 
 }
 
@@ -129,13 +118,6 @@ right:0;
 
 display:flex;
 justify-content:space-between;
-
-}
-
-.itemCarrito{
-
-border-bottom:1px solid #ddd;
-padding:10px 0;
 
 }
 
@@ -161,27 +143,11 @@ height:100%;
 background:white;
 padding:20px;
 transition:0.3s;
-box-shadow:4px 0 10px rgba(0,0,0,0.3);
 
 }
 
 .panelCuenta.activo{
 
 left:0;
-
-}
-
-.productoVista{
-
-display:flex;
-gap:40px;
-padding:40px;
-
-}
-
-.productoVista img{
-
-width:350px;
-border-radius:10px;
 
 }
