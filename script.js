@@ -1,34 +1,78 @@
 let productos=[
-{nombre:"Manzanas",precio:40,categoria:"comida",desc:"Manzanas frescas",img:"https://source.unsplash.com/300x300/?apple"},
-{nombre:"Platanos",precio:30,categoria:"comida",desc:"Plátanos maduros",img:"https://source.unsplash.com/300x300/?banana"},
-{nombre:"Pan",precio:35,categoria:"comida",desc:"Pan recién horneado",img:"https://source.unsplash.com/300x300/?bread"},
-{nombre:"Arroz",precio:28,categoria:"comida",desc:"Arroz premium",img:"https://source.unsplash.com/300x300/?rice"},
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",desc:"Refresco",img:"https://source.unsplash.com/300x300/?cola"},
-{nombre:"Agua",precio:15,categoria:"bebidas",desc:"Agua purificada",img:"https://source.unsplash.com/300x300/?water"},
-{nombre:"Cafe",precio:80,categoria:"bebidas",desc:"Café premium",img:"https://source.unsplash.com/300x300/?coffee"},
-{nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate dulce",img:"https://source.unsplash.com/300x300/?chocolate"},
-{nombre:"Galletas",precio:28,categoria:"snacks",desc:"Galletas crujientes",img:"https://source.unsplash.com/300x300/?cookies"},
-{nombre:"Papas",precio:25,categoria:"snacks",desc:"Papas fritas",img:"https://source.unsplash.com/300x300/?chips"}
-{nombre:"Cloro",precio:25,categoria:"limpieza",desc:"Cloro desinfectante ideal para limpiar pisos, baños y superficies.",img:"https://source.unsplash.com/300x300/?bleach"},
 
-{nombre:"Detergente",precio:45,categoria:"limpieza",desc:"Detergente para ropa que elimina manchas difíciles y deja un aroma fresco.",img:"https://source.unsplash.com/300x300/?detergent"},
+// FRUTAS
 
-{nombre:"Jabón de trastes",precio:30,categoria:"limpieza",desc:"Jabón líquido para lavar platos y eliminar grasa fácilmente.",img:"https://source.unsplash.com/300x300/?dish-soap"},
+{nombre:"Manzanas",precio:40,categoria:"frutas",desc:"Manzanas frescas rojas y jugosas.",img:"https://source.unsplash.com/300x300/?apple"},
+{nombre:"Plátanos",precio:30,categoria:"frutas",desc:"Plátanos maduros ricos en potasio.",img:"https://source.unsplash.com/300x300/?banana"},
+{nombre:"Naranjas",precio:35,categoria:"frutas",desc:"Naranjas dulces ideales para jugo.",img:"https://source.unsplash.com/300x300/?orange"},
+{nombre:"Uvas",precio:60,categoria:"frutas",desc:"Uvas frescas perfectas para snack.",img:"https://source.unsplash.com/300x300/?grapes"},
 
-{nombre:"Esponjas",precio:18,categoria:"limpieza",desc:"Paquete de esponjas resistentes para limpieza de cocina.",img:"https://source.unsplash.com/300x300/?sponge"},
 
-{nombre:"Escoba",precio:85,categoria:"limpieza",desc:"Escoba resistente ideal para barrer pisos de casa o negocio.",img:"https://source.unsplash.com/300x300/?broom"},
+// VERDURAS
 
-{nombre:"Trapeador",precio:95,categoria:"limpieza",desc:"Trapeador absorbente perfecto para limpiar pisos.",img:"https://source.unsplash.com/300x300/?mop"},
+{nombre:"Tomate",precio:25,categoria:"verduras",desc:"Tomates frescos para ensaladas.",img:"https://source.unsplash.com/300x300/?tomato"},
+{nombre:"Lechuga",precio:18,categoria:"verduras",desc:"Lechuga verde fresca.",img:"https://source.unsplash.com/300x300/?lettuce"},
+{nombre:"Zanahoria",precio:20,categoria:"verduras",desc:"Zanahorias crujientes y saludables.",img:"https://source.unsplash.com/300x300/?carrot"},
+{nombre:"Papa",precio:22,categoria:"verduras",desc:"Papas frescas para diferentes platillos.",img:"https://source.unsplash.com/300x300/?potato"},
 
-{nombre:"Papel higiénico",precio:60,categoria:"hogar",desc:"Paquete de papel higiénico suave y resistente para uso diario.",img:"https://source.unsplash.com/300x300/?toilet-paper"},
 
-{nombre:"Servilletas",precio:22,categoria:"hogar",desc:"Servilletas absorbentes ideales para comidas y reuniones.",img:"https://source.unsplash.com/300x300/?napkins"},
+// CARNES
 
-{nombre:"Velas",precio:35,categoria:"hogar",desc:"Velas aromáticas que ayudan a crear un ambiente relajante.",img:"https://source.unsplash.com/300x300/?candle"},
+{nombre:"Pollo",precio:120,categoria:"carnes",desc:"Pechuga de pollo fresca.",img:"https://source.unsplash.com/300x300/?chicken"},
+{nombre:"Carne de res",precio:180,categoria:"carnes",desc:"Carne de res de alta calidad.",img:"https://source.unsplash.com/300x300/?beef"},
+{nombre:"Chuleta",precio:140,categoria:"carnes",desc:"Chuletas frescas para asar.",img:"https://source.unsplash.com/300x300/?pork"},
+{nombre:"Salchichas",precio:55,categoria:"carnes",desc:"Salchichas listas para cocinar.",img:"https://source.unsplash.com/300x300/?sausage"},
 
-{nombre:"Focos LED",precio:50,categoria:"hogar",desc:"Focos LED ahorradores de energía para iluminación del hogar.",img:"https://source.unsplash.com/300x300/?light-bulb"}
+
+// LACTEOS
+
+{nombre:"Leche",precio:26,categoria:"lacteos",desc:"Leche fresca rica en calcio.",img:"https://source.unsplash.com/300x300/?milk"},
+{nombre:"Queso",precio:70,categoria:"lacteos",desc:"Queso cremoso ideal para comidas.",img:"https://source.unsplash.com/300x300/?cheese"},
+{nombre:"Yogurt",precio:22,categoria:"lacteos",desc:"Yogurt natural saludable.",img:"https://source.unsplash.com/300x300/?yogurt"},
+{nombre:"Mantequilla",precio:38,categoria:"lacteos",desc:"Mantequilla cremosa para cocinar.",img:"https://source.unsplash.com/300x300/?butter"},
+
+
+// PANADERIA
+
+{nombre:"Pan blanco",precio:35,categoria:"panaderia",desc:"Pan suave recién horneado.",img:"https://source.unsplash.com/300x300/?bread"},
+{nombre:"Croissant",precio:28,categoria:"panaderia",desc:"Croissant crujiente estilo francés.",img:"https://source.unsplash.com/300x300/?croissant"},
+{nombre:"Donas",precio:20,categoria:"panaderia",desc:"Donas dulces con azúcar.",img:"https://source.unsplash.com/300x300/?donut"},
+{nombre:"Pan dulce",precio:18,categoria:"panaderia",desc:"Pan dulce tradicional.",img:"https://source.unsplash.com/300x300/?sweet-bread"},
+
+
+// BEBIDAS
+
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",desc:"Refresco clásico refrescante.",img:"https://source.unsplash.com/300x300/?cola"},
+{nombre:"Agua",precio:15,categoria:"bebidas",desc:"Agua purificada.",img:"https://source.unsplash.com/300x300/?water"},
+{nombre:"Jugo de naranja",precio:32,categoria:"bebidas",desc:"Jugo natural rico en vitamina C.",img:"https://source.unsplash.com/300x300/?orange-juice"},
+{nombre:"Café",precio:80,categoria:"bebidas",desc:"Café molido de aroma intenso.",img:"https://source.unsplash.com/300x300/?coffee"},
+
+
+// SNACKS
+
+{nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate dulce.",img:"https://source.unsplash.com/300x300/?chocolate"},
+{nombre:"Galletas",precio:28,categoria:"snacks",desc:"Galletas crujientes.",img:"https://source.unsplash.com/300x300/?cookies"},
+{nombre:"Papas fritas",precio:25,categoria:"snacks",desc:"Botana crujiente.",img:"https://source.unsplash.com/300x300/?chips"},
+{nombre:"Palomitas",precio:22,categoria:"snacks",desc:"Palomitas ligeras.",img:"https://source.unsplash.com/300x300/?popcorn"},
+
+
+// LIMPIEZA
+
+{nombre:"Cloro",precio:25,categoria:"limpieza",desc:"Desinfectante para superficies.",img:"https://source.unsplash.com/300x300/?bleach"},
+{nombre:"Detergente",precio:45,categoria:"limpieza",desc:"Detergente para ropa.",img:"https://source.unsplash.com/300x300/?detergent"},
+{nombre:"Esponjas",precio:18,categoria:"limpieza",desc:"Esponjas para cocina.",img:"https://source.unsplash.com/300x300/?sponge"},
+{nombre:"Trapeador",precio:95,categoria:"limpieza",desc:"Trapeador para limpiar pisos.",img:"https://source.unsplash.com/300x300/?mop"},
+
+
+// HOGAR
+
+{nombre:"Papel higiénico",precio:60,categoria:"hogar",desc:"Papel higiénico suave.",img:"https://source.unsplash.com/300x300/?toilet-paper"},
+{nombre:"Servilletas",precio:22,categoria:"hogar",desc:"Servilletas absorbentes.",img:"https://source.unsplash.com/300x300/?napkins"},
+{nombre:"Velas",precio:35,categoria:"hogar",desc:"Velas aromáticas.",img:"https://source.unsplash.com/300x300/?candle"},
+{nombre:"Focos LED",precio:50,categoria:"hogar",desc:"Focos ahorradores.",img:"https://source.unsplash.com/300x300/?light-bulb"}
+
 ]
+
 
 let productosMostrados=[...productos]
 let carrito=[]
@@ -38,7 +82,6 @@ let productoActual=null
 function mostrarProductos(lista){
 
 let cont=document.getElementById("productos")
-
 cont.innerHTML=""
 
 lista.forEach((p,i)=>{
@@ -210,8 +253,6 @@ function cerrarCheckout(){
 document.getElementById("checkout").style.display="none"
 }
 
-
-/* SLIDER */
 
 let slides=[
 "https://source.unsplash.com/1200x400/?supermarket",
