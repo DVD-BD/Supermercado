@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
 <meta charset="UTF-8">
-
 <title>Producto</title>
-
 <link rel="stylesheet" href="estilos.css">
 
 </head>
@@ -45,13 +42,9 @@ document.getElementById("nombreProducto").innerText = producto.nombre
 document.getElementById("descProducto").innerText = producto.desc
 document.getElementById("precioProducto").innerText = "$" + producto.precio
 
-
 function volver(){
-
-window.location.href = "index.html"
-
+window.location.href="index.html"
 }
-
 
 function agregarCarrito(){
 
@@ -60,14 +53,10 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 let item = carrito.find(p => p.nombre === producto.nombre)
 
 if(item){
-
 item.cantidad++
-
 }else{
-
-producto.cantidad = 1
+producto.cantidad=1
 carrito.push(producto)
-
 }
 
 localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -79,5 +68,4 @@ alert("Producto agregado al carrito")
 </script>
 
 </body>
-
 </html>
