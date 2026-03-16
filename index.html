@@ -5,7 +5,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SuperTienda</title>
@@ -25,7 +24,13 @@
 </div>
 
 <div class="icons">
-<span onclick="toggleCarrito()">🛒 Carrito (<span id="contador">0</span>)</span>
+
+<span class="menuUsuario">Cuenta</span>
+
+<span class="carritoBtn" onclick="toggleCarrito()">
+🛒 Carrito (<span id="contador">0</span>)
+</span>
+
 </div>
 
 </header>
@@ -35,13 +40,9 @@
 <ul>
 
 <li onclick="mostrarCategoria('todos')">Todos</li>
-
 <li onclick="mostrarCategoria('comida')">Comida</li>
-
 <li onclick="mostrarCategoria('bebidas')">Bebidas</li>
-
 <li onclick="mostrarCategoria('limpieza')">Limpieza</li>
-
 <li onclick="mostrarCategoria('hogar')">Hogar</li>
 
 </ul>
@@ -50,7 +51,7 @@
 
 <section class="banner">
 
-<img id="bannerImg" src="https://picsum.photos/1200/300?1">
+<img id="bannerImg" src="https://picsum.photos/1200/300?random=1">
 
 </section>
 
