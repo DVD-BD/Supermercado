@@ -1,7 +1,7 @@
 body{
 font-family:Arial;
 margin:0;
-background:#f2f2f2;
+background:#f4f4f4;
 }
 
 /* HEADER */
@@ -10,26 +10,31 @@ background:#f2f2f2;
 background:#0071ce;
 color:white;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 padding:15px 40px;
 }
 
 .logo{
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 }
 
 .search input{
 width:350px;
 padding:10px;
-border-radius:20px;
+border-radius:25px;
 border:none;
 }
 
-.icons span{
-cursor:pointer;
+.icons{
+display:flex;
+gap:20px;
 font-weight:bold;
+}
+
+.carritoBtn{
+cursor:pointer;
 }
 
 /* MENU */
@@ -42,7 +47,7 @@ background:#ffc220;
 display:flex;
 gap:30px;
 list-style:none;
-padding:10px 40px;
+padding:12px 40px;
 margin:0;
 font-weight:bold;
 }
@@ -74,11 +79,11 @@ padding:20px;
 border-radius:10px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
-transition:0.3s;
+transition:0.2s;
 }
 
 .producto:hover{
-transform:scale(1.05);
+transform:scale(1.04);
 }
 
 .producto img{
@@ -88,18 +93,19 @@ object-fit:cover;
 }
 
 .precio{
-color:#0071ce;
 font-size:20px;
+color:#0071ce;
 font-weight:bold;
 }
 
 .producto button{
 background:#ffc220;
 border:none;
-padding:10px;
-border-radius:5px;
+padding:10px 15px;
+border-radius:6px;
 cursor:pointer;
 margin-top:10px;
+font-weight:bold;
 }
 
 .producto button:hover{
@@ -110,13 +116,13 @@ background:#e6ac00;
 
 .panelCarrito{
 position:fixed;
-right:-400px;
 top:0;
+right:-350px;
 width:300px;
 height:100%;
 background:white;
-box-shadow:-5px 0 10px rgba(0,0,0,0.2);
 padding:20px;
+box-shadow:-5px 0 10px rgba(0,0,0,0.2);
 transition:0.3s;
 overflow:auto;
 }
@@ -126,10 +132,10 @@ right:0;
 }
 
 .itemCarrito{
-border-bottom:1px solid #ddd;
-padding:10px 0;
 display:flex;
 justify-content:space-between;
+border-bottom:1px solid #ddd;
+padding:10px 0;
 }
 
 .itemCarrito button{
@@ -140,31 +146,11 @@ padding:4px 8px;
 cursor:pointer;
 }
 
+/* FOOTER */
+
 footer{
 background:#222;
 color:white;
 text-align:center;
 padding:20px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-.productos{
-grid-template-columns:repeat(2,1fr);
-}
-
-.search input{
-width:200px;
-}
-
-}
-
-@media(max-width:500px){
-
-.productos{
-grid-template-columns:1fr;
-}
-
 }
