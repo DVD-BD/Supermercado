@@ -1,37 +1,35 @@
 const productos=[
 
-{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://picsum.photos/200?1"},
-{nombre:"Pan de caja",precio:35,categoria:"comida",img:"https://picsum.photos/200?2"},
-{nombre:"Arroz",precio:28,categoria:"comida",img:"https://picsum.photos/200?3"},
-{nombre:"Leche",precio:25,categoria:"bebidas",img:"https://picsum.photos/200?4"},
-{nombre:"Refresco",precio:22,categoria:"bebidas",img:"https://picsum.photos/200?5"},
-{nombre:"Jugo de naranja",precio:30,categoria:"bebidas",img:"https://picsum.photos/200?6"},
-{nombre:"Detergente",precio:80,categoria:"limpieza",img:"https://picsum.photos/200?7"},
-{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://picsum.photos/200?8"},
-{nombre:"Esponjas",precio:18,categoria:"limpieza",img:"https://picsum.photos/200?9"},
-{nombre:"Papel higiénico",precio:70,categoria:"hogar",img:"https://picsum.photos/200?10"},
-{nombre:"Servilletas",precio:25,categoria:"hogar",img:"https://picsum.photos/200?11"},
-{nombre:"Bolsa de basura",precio:45,categoria:"hogar",img:"https://picsum.photos/200?12"}
+{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://picsum.photos/200?food1"},
+{nombre:"Pan Bimbo",precio:35,categoria:"comida",img:"https://picsum.photos/200?food2"},
+{nombre:"Arroz",precio:28,categoria:"comida",img:"https://picsum.photos/200?food3"},
+{nombre:"Leche",precio:25,categoria:"bebidas",img:"https://picsum.photos/200?drink1"},
+{nombre:"Refresco Coca-Cola",precio:22,categoria:"bebidas",img:"https://picsum.photos/200?drink2"},
+{nombre:"Jugo",precio:30,categoria:"bebidas",img:"https://picsum.photos/200?drink3"},
+{nombre:"Detergente Ariel",precio:80,categoria:"limpieza",img:"https://picsum.photos/200?clean1"},
+{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://picsum.photos/200?clean2"},
+{nombre:"Esponjas",precio:18,categoria:"limpieza",img:"https://picsum.photos/200?clean3"},
+{nombre:"Papel higiénico",precio:70,categoria:"hogar",img:"https://picsum.photos/200?home1"},
+{nombre:"Servilletas",precio:25,categoria:"hogar",img:"https://picsum.photos/200?home2"},
+{nombre:"Bolsas de basura",precio:45,categoria:"hogar",img:"https://picsum.photos/200?home3"}
 
 ];
 
-let carrito=JSON.parse(localStorage.getItem("carrito"))||[];
+let carrito=JSON.parse(localStorage.getItem("carrito")) || [];
 
 function guardarCarrito(){
-
 localStorage.setItem("carrito",JSON.stringify(carrito));
-
 }
 
 function cargarProductos(lista){
 
-const contenedor=document.getElementById("productos");
+const cont=document.getElementById("productos");
 
-contenedor.innerHTML="";
+cont.innerHTML="";
 
 lista.forEach((p,index)=>{
 
-contenedor.innerHTML+=`
+cont.innerHTML+=`
 
 <div class="producto">
 
@@ -143,7 +141,7 @@ cargarProductos(filtrados);
 
 });
 
-/* SLIDER */
+/* BANNER */
 
 const banners=[
 
@@ -170,6 +168,10 @@ document.getElementById("bannerImg").src=banners[i];
 }
 
 setInterval(cambiarBanner,3000);
+
+cargarProductos(productos);
+
+actualizarCarrito();iarBanner,3000);
 
 cargarProductos(productos);
 
