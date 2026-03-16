@@ -1,28 +1,33 @@
 let productos=[
 
-{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
-{nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
-{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan fresco"},
+{nombre:"Manzana",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
+{nombre:"Plátano",precio:22,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
+{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan recién horneado"},
 {nombre:"Arroz",precio:28,categoria:"comida",img:"https://source.unsplash.com/300x300/?rice",desc:"Arroz premium"},
-{nombre:"Pasta",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta",desc:"Pasta italiana"},
+{nombre:"Pasta",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta",desc:"Pasta italiana"},
 
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco"},
-{nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi",desc:"Refresco"},
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco clásico"},
+{nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi",desc:"Refresco popular"},
 {nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water",desc:"Agua purificada"},
 {nombre:"Jugo",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?juice",desc:"Jugo natural"},
-{nombre:"Cafe",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Café premium"},
+{nombre:"Café",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Café premium"},
 
-{nombre:"Papas fritas",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chips",desc:"Snack"},
-{nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate"},
-{nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas"},
-{nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas"},
-{nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Nachos"}
+{nombre:"Doritos",precio:32,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Botana de maíz"},
+{nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate dulce"},
+{nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas crujientes"},
+{nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas de maíz"},
+{nombre:"Cacahuates",precio:25,categoria:"snacks",img:"https://source.unsplash.com/300x300/?peanuts",desc:"Cacahuates tostados"},
+
+{nombre:"Detergente",precio:75,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Detergente para ropa"},
+{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?bleach",desc:"Cloro desinfectante"},
+{nombre:"Jabón",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Jabón multiusos"},
+{nombre:"Esponjas",precio:18,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?sponge",desc:"Esponjas de cocina"},
+{nombre:"Desinfectante",precio:45,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?disinfectant",desc:"Desinfectante hogar"}
 
 ]
 
 let productosMostrados=[...productos]
 let carrito=[]
-let productoActual=null
 
 function mostrarProductos(lista){
 
@@ -36,9 +41,11 @@ cont.innerHTML+=`
 
 <div class="producto">
 
-<img src="${p.img}" onclick="verProducto(${i})">
+<img src="${p.img}" onclick="verProductoPagina(${i})">
 
 <h3>${p.nombre}</h3>
+
+<p>${p.desc}</p>
 
 <p>$${p.precio}</p>
 
@@ -80,6 +87,14 @@ mostrarProductos(productos.filter(p=>p.categoria===cat))
 
 }
 
+function verProductoPagina(i){
+
+localStorage.setItem("productoSeleccionado", JSON.stringify(productosMostrados[i]))
+
+window.location.href="producto.html"
+
+}
+
 function agregarCarrito(i){
 
 let prod=productosMostrados[i]
@@ -108,45 +123,16 @@ lista.innerHTML=""
 
 let total=0
 
-carrito.forEach((p,i)=>{
+carrito.forEach(p=>{
 
 total+=p.precio*p.cantidad
 
-lista.innerHTML+=`
-
-<div>
-
-${p.nombre} x${p.cantidad}
-
-<button onclick="sumar(${i})">+</button> <button onclick="restar(${i})">-</button>
-
-</div>
-
-`
+lista.innerHTML+=`<div>${p.nombre} x${p.cantidad}</div>`
 
 })
 
 document.getElementById("total").innerText=total
 document.getElementById("contadorCarrito").innerText=carrito.length
-
-}
-
-function sumar(i){
-carrito[i].cantidad++
-actualizarCarrito()
-}
-
-function restar(i){
-
-carrito[i].cantidad--
-
-if(carrito[i].cantidad<=0){
-
-carrito.splice(i,1)
-
-}
-
-actualizarCarrito()
 
 }
 
@@ -162,66 +148,12 @@ document.getElementById("carrito").classList.remove("abierto")
 
 }
 
-function verProducto(i){
-
-productoActual=productosMostrados[i]
-
-document.getElementById("productoImg").src=productoActual.img
-document.getElementById("productoNombre").innerText=productoActual.nombre
-document.getElementById("productoDesc").innerText=productoActual.desc
-document.getElementById("productoPrecio").innerText="$"+productoActual.precio
-
-document.getElementById("productoVista").style.display="block"
-
-}
-
-function cerrarProducto(){
-
-document.getElementById("productoVista").style.display="none"
-
-}
-
-function agregarDesdeVista(){
-
-let item=carrito.find(p=>p.nombre===productoActual.nombre)
-
-if(item){
-
-item.cantidad++
-
-}else{
-
-carrito.push({...productoActual,cantidad:1})
-
-}
-
-actualizarCarrito()
-
-}
-
-function irCheckout(){
-
-document.getElementById("checkout").style.display="block"
-
-}
-
-function finalizarCompra(){
-
-carrito=[]
-actualizarCarrito()
-
-document.getElementById("checkout").style.display="none"
-
-}
-
 /* SLIDER */
 
 const slides=[
-
-"https://source.unsplash.com/1200x400/?supermarket",
-"https://source.unsplash.com/1200x400/?groceries",
-"https://source.unsplash.com/1200x400/?shopping"
-
+"https://source.unsplash.com/1200x300/?supermarket",
+"https://source.unsplash.com/1200x300/?groceries",
+"https://source.unsplash.com/1200x300/?shopping"
 ]
 
 let slideIndex=0
@@ -245,87 +177,5 @@ if(slideIndex<0) slideIndex=slides.length-1
 document.getElementById("slideImg").src=slides[slideIndex]
 
 }
-
-function verProductoPagina(i){
-
-let producto = productosMostrados[i]
-
-localStorage.setItem("productoSeleccionado", JSON.stringify(producto))
-
-window.location.href = "producto.html"
-
-}
-
-let usuario = localStorage.getItem("usuario")
-
-if(usuario){
-
-document.getElementById("usuarioTexto").innerText = usuario
-
-}
-
-function iniciarSesion(){
-
-let nombre = prompt("Ingresa tu nombre")
-
-if(nombre){
-
-localStorage.setItem("usuario", nombre)
-
-document.getElementById("usuarioTexto").innerText = nombre
-
-}
-
-}
-
-function cerrarSesion(){
-
-localStorage.removeItem("usuario")
-
-document.getElementById("usuarioTexto").innerText = "Invitado"
-}
-
-let usuario = localStorage.getItem("usuario")
-
-if(usuario){
-
-document.getElementById("usuarioTexto").innerText = "Hola " + usuario
-
-}
-
-function abrirCuenta(){
-
-document.getElementById("panelCuenta").classList.add("abierto")
-
-}
-
-function cerrarCuenta(){
-
-document.getElementById("panelCuenta").classList.remove("abierto")
-
-}
-
-function iniciarSesion(){
-
-let nombre = prompt("Ingresa tu nombre")
-
-if(nombre){
-
-localStorage.setItem("usuario", nombre)
-
-document.getElementById("usuarioTexto").innerText = "Hola " + nombre
-
-}
-
-}
-
-function cerrarSesion(){
-
-localStorage.removeItem("usuario")
-
-document.getElementById("usuarioTexto").innerText = "No has iniciado sesión"
-
-}
-
 
 setInterval(nextSlide,4000)
