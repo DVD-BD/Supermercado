@@ -1,4 +1,5 @@
 let productos=[
+
 {nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
 {nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
 {nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan fresco"},
@@ -15,19 +16,8 @@ let productos=[
 {nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate"},
 {nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas"},
 {nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas"},
-{nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Nachos"},
+{nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Nachos"}
 
-{nombre:"Detergente",precio:90,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Detergente"},
-{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?bleach",desc:"Cloro"},
-{nombre:"Jabon",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Jabón"},
-{nombre:"Esponja",precio:15,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?sponge",desc:"Esponja"},
-{nombre:"Desinfectante",precio:45,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?disinfectant",desc:"Desinfectante"},
-
-{nombre:"Papel higienico",precio:70,categoria:"hogar",img:"https://source.unsplash.com/300x300/?toilet-paper",desc:"Papel higiénico"},
-{nombre:"Escoba",precio:60,categoria:"hogar",img:"https://source.unsplash.com/300x300/?broom",desc:"Escoba"},
-{nombre:"Trapeador",precio:65,categoria:"hogar",img:"https://source.unsplash.com/300x300/?mop",desc:"Trapeador"},
-{nombre:"Cubeta",precio:40,categoria:"hogar",img:"https://source.unsplash.com/300x300/?bucket",desc:"Cubeta"},
-{nombre:"Velas",precio:30,categoria:"hogar",img:"https://source.unsplash.com/300x300/?candle",desc:"Velas"}
 ]
 
 let productosMostrados=[...productos]
@@ -37,6 +27,7 @@ let productoActual=null
 function mostrarProductos(lista){
 
 let cont=document.getElementById("productos")
+
 cont.innerHTML=""
 
 lista.forEach((p,i)=>{
@@ -78,9 +69,13 @@ mostrarProductos(filtrados)
 function filtrar(cat){
 
 if(cat==="todos"){
+
 mostrarProductos(productos)
+
 }else{
+
 mostrarProductos(productos.filter(p=>p.categoria===cat))
+
 }
 
 }
@@ -92,9 +87,13 @@ let prod=productosMostrados[i]
 let item=carrito.find(p=>p.nombre===prod.nombre)
 
 if(item){
+
 item.cantidad++
+
 }else{
+
 carrito.push({...prod,cantidad:1})
+
 }
 
 actualizarCarrito()
@@ -104,6 +103,7 @@ actualizarCarrito()
 function actualizarCarrito(){
 
 let lista=document.getElementById("listaCarrito")
+
 lista.innerHTML=""
 
 let total=0
@@ -141,7 +141,9 @@ function restar(i){
 carrito[i].cantidad--
 
 if(carrito[i].cantidad<=0){
+
 carrito.splice(i,1)
+
 }
 
 actualizarCarrito()
@@ -149,11 +151,15 @@ actualizarCarrito()
 }
 
 function abrirCarrito(){
+
 document.getElementById("carrito").classList.add("abierto")
+
 }
 
 function cerrarCarrito(){
+
 document.getElementById("carrito").classList.remove("abierto")
+
 }
 
 function verProducto(i){
@@ -170,15 +176,33 @@ document.getElementById("productoVista").style.display="block"
 }
 
 function cerrarProducto(){
+
 document.getElementById("productoVista").style.display="none"
+
 }
 
 function agregarDesdeVista(){
-agregarCarrito(productosMostrados.indexOf(productoActual))
+
+let item=carrito.find(p=>p.nombre===productoActual.nombre)
+
+if(item){
+
+item.cantidad++
+
+}else{
+
+carrito.push({...productoActual,cantidad:1})
+
+}
+
+actualizarCarrito()
+
 }
 
 function irCheckout(){
+
 document.getElementById("checkout").style.display="block"
+
 }
 
 function finalizarCompra(){
@@ -188,16 +212,16 @@ actualizarCarrito()
 
 document.getElementById("checkout").style.display="none"
 
-alert("Compra realizada")
-
 }
 
 /* SLIDER */
 
 const slides=[
+
 "https://source.unsplash.com/1200x400/?supermarket",
 "https://source.unsplash.com/1200x400/?groceries",
 "https://source.unsplash.com/1200x400/?shopping"
+
 ]
 
 let slideIndex=0
