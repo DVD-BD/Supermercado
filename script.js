@@ -54,17 +54,10 @@ let texto=document.getElementById("buscador").value.toLowerCase()
 
 let filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto))
 
-mostrarProductos(filtrados)
+window.onload = function(){
 
-}
-
-function filtrar(cat){
-
-if(cat==="todos"){
 mostrarProductos(productos)
-}else{
-mostrarProductos(productos.filter(p=>p.categoria===cat))
-}
+actualizarCarrito()
 
 }
 
