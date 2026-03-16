@@ -246,4 +246,14 @@ document.getElementById("slideImg").src=slides[slideIndex]
 
 }
 
+function verProductoPagina(i){
+
+let producto = productosMostrados[i]
+
+localStorage.setItem("productoSeleccionado", JSON.stringify(producto))
+
+window.location.href = "producto.html"
+
+}
+
 setInterval(nextSlide,4000)
