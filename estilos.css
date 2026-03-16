@@ -1,101 +1,97 @@
 body{
-
 font-family:Arial;
 margin:0;
 background:#f3f3f3;
-
 }
 
 .topbar{
-
 background:#0071ce;
 color:white;
 display:flex;
 justify-content:space-between;
 padding:15px 30px;
-
+align-items:center;
 }
 
 .logo{
-
 font-size:22px;
 font-weight:bold;
-
 }
 
 .topbar input{
-
 padding:8px;
 width:250px;
 border-radius:6px;
 border:none;
+}
 
+.slider{
+width:100%;
+height:300px;
+overflow:hidden;
+}
+
+.slider img{
+width:100%;
+height:300px;
+object-fit:cover;
 }
 
 .menu{
-
 background:#ffc220;
 padding:10px;
 text-align:center;
-
 }
 
 .menu button{
-
 margin:5px;
 padding:8px 15px;
 border:none;
 border-radius:5px;
 cursor:pointer;
-
+font-weight:bold;
 }
 
 .productos{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 padding:30px;
-
 }
 
 .producto{
-
 background:white;
 padding:15px;
 border-radius:10px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
+transition:0.2s;
+}
 
+.producto:hover{
+transform:scale(1.05);
 }
 
 .producto img{
-
 width:100%;
 height:150px;
 object-fit:cover;
-
 }
 
 .precio{
-
 color:#0071ce;
 font-weight:bold;
-
 }
 
 .producto button{
-
 background:#ffc220;
 border:none;
 padding:8px;
 border-radius:5px;
 cursor:pointer;
-
 }
 
 .panelCarrito{
-
 position:fixed;
 top:0;
 right:-350px;
@@ -105,24 +101,18 @@ background:white;
 padding:20px;
 transition:0.3s;
 box-shadow:-4px 0 10px rgba(0,0,0,0.3);
-
 }
 
 .panelCarrito.activo{
-
 right:0;
-
 }
 
 .carritoHeader{
-
 display:flex;
 justify-content:space-between;
-
 }
 
 .checkoutBtn{
-
 width:100%;
 background:#0071ce;
 color:white;
@@ -130,11 +120,9 @@ padding:10px;
 border:none;
 border-radius:6px;
 cursor:pointer;
-
 }
 
 .panelCuenta{
-
 position:fixed;
 left:-300px;
 top:0;
@@ -143,11 +131,8 @@ height:100%;
 background:white;
 padding:20px;
 transition:0.3s;
-
 }
 
 .panelCuenta.activo{
-
 left:0;
-
 }
