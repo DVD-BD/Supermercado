@@ -20,38 +20,42 @@
 
 <div class="icons">
 <span>Cuenta</span>
-<span>Carrito (<span id="contador">0</span>)</span>
+<span onclick="toggleCarrito()">Carrito (<span id="contador">0</span>)</span>
 </div>
 
 </header>
 
 <nav class="menu">
-
 <ul>
-
 <li onclick="mostrarCategoria('todos')">Todos</li>
 <li onclick="mostrarCategoria('tenis')">Tenis</li>
 <li onclick="mostrarCategoria('ropa')">Ropa</li>
 <li onclick="mostrarCategoria('accesorios')">Accesorios</li>
-
 </ul>
-
 </nav>
 
 <section class="banner">
-
 <img id="bannerImg" src="https://picsum.photos/1200/300?1">
-
 </section>
 
-<section class="productos" id="productos">
+<section class="productos" id="productos"></section>
 
-</section>
+<!-- PANEL DEL CARRITO -->
+
+<div id="panelCarrito" class="panelCarrito">
+
+<h2>Carrito</h2>
+
+<div id="listaCarrito"></div>
+
+<p>Total: $<span id="total">0</span></p>
+
+<button onclick="cerrarCarrito()">Cerrar</button>
+
+</div>
 
 <footer>
-
 <p>© 2026 MiTienda</p>
-
 </footer>
 
 <script src="script.js"></script>
