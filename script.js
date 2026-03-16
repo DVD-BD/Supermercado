@@ -1,12 +1,12 @@
 let productos=[
     // FRUTAS Y VERDURAS
-    {nombre:"Manzanas",precio:40,categoria:"frutasVerduras",desc:"Manzanas frescas rojas y jugosas.",img:"https://source.unsplash.com/300x300/?apple"},
-    {nombre:"Plátanos",precio:30,categoria:"frutasVerduras",desc:"Plátanos maduros ricos en potasio.",img:"https://source.unsplash.com/300x300/?banana"},
-    {nombre:"Naranjas",precio:35,categoria:"frutasVerduras",desc:"Naranjas dulces ideales para jugo.",img:"https://source.unsplash.com/300x300/?orange"},
-    {nombre:"Tomate",precio:25,categoria:"frutasVerduras",desc:"Tomates frescos para ensaladas.",img:"https://source.unsplash.com/300x300/?tomato"},
-    {nombre:"Lechuga",precio:18,categoria:"frutasVerduras",desc:"Lechuga verde fresca.",img:"https://source.unsplash.com/300x300/?lettuce"},
-    {nombre:"Zanahoria",precio:20,categoria:"frutasVerduras",desc:"Zanahorias crujientes y saludables.",img:"https://source.unsplash.com/300x300/?carrot"},
-    {nombre:"Papa",precio:22,categoria:"frutasVerduras",desc:"Papas frescas para diferentes platillos.",img:"https://source.unsplash.com/300x300/?potato"},
+    {nombre:"Manzanas",precio:40,categoria:"frutas y Verduras",desc:"Manzanas frescas rojas y jugosas.",img:"https://source.unsplash.com/300x300/?apple"},
+    {nombre:"Plátanos",precio:30,categoria:"frutas y Verduras",desc:"Plátanos maduros ricos en potasio.",img:"https://source.unsplash.com/300x300/?banana"},
+    {nombre:"Naranjas",precio:35,categoria:"frutas y Verduras",desc:"Naranjas dulces ideales para jugo.",img:"https://source.unsplash.com/300x300/?orange"},
+    {nombre:"Tomate",precio:25,categoria:"frutas y Verduras",desc:"Tomates frescos para ensaladas.",img:"https://source.unsplash.com/300x300/?tomato"},
+    {nombre:"Lechuga",precio:18,categoria:"frutas y Verduras",desc:"Lechuga verde fresca.",img:"https://source.unsplash.com/300x300/?lettuce"},
+    {nombre:"Zanahoria",precio:20,categoria:"frutas y Verduras",desc:"Zanahorias crujientes y saludables.",img:"https://source.unsplash.com/300x300/?carrot"},
+    {nombre:"Papa",precio:22,categoria:"frutas y Verduras",desc:"Papas frescas para diferentes platillos.",img:"https://source.unsplash.com/300x300/?potato"},
     
     // CARNES
     {nombre:"Pollo",precio:120,categoria:"carnes",desc:"Pechuga de pollo fresca.",img:"https://source.unsplash.com/300x300/?chicken"},
