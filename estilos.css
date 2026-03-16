@@ -22,12 +22,12 @@ header input{
     border:none;
 }
 
-/* MENU / CATEGORIAS */
+/* CATEGORIAS DE BOTONES ABAJO DEL HEADER */
 .menu {
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    margin:15px 0 20px 0;
+    margin:10px 0 20px 0;
 }
 
 .menu button{
