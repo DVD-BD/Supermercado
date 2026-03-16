@@ -1,45 +1,92 @@
 const productos=[
 
-{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://picsum.photos/200?food1"},
-{nombre:"Pan Bimbo",precio:35,categoria:"comida",img:"https://picsum.photos/200?food2"},
-{nombre:"Arroz",precio:28,categoria:"comida",img:"https://picsum.photos/200?food3"},
-{nombre:"Leche",precio:25,categoria:"bebidas",img:"https://picsum.photos/200?drink1"},
-{nombre:"Refresco Coca-Cola",precio:22,categoria:"bebidas",img:"https://picsum.photos/200?drink2"},
-{nombre:"Jugo",precio:30,categoria:"bebidas",img:"https://picsum.photos/200?drink3"},
-{nombre:"Detergente Ariel",precio:80,categoria:"limpieza",img:"https://picsum.photos/200?clean1"},
-{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://picsum.photos/200?clean2"},
-{nombre:"Esponjas",precio:18,categoria:"limpieza",img:"https://picsum.photos/200?clean3"},
-{nombre:"Papel higiénico",precio:70,categoria:"hogar",img:"https://picsum.photos/200?home1"},
-{nombre:"Servilletas",precio:25,categoria:"hogar",img:"https://picsum.photos/200?home2"},
-{nombre:"Bolsas de basura",precio:45,categoria:"hogar",img:"https://picsum.photos/200?home3"}
+{nombre:"Manzanas",precio:40,img:"https://source.unsplash.com/300x300/?apples"},
+{nombre:"Plátanos",precio:30,img:"https://source.unsplash.com/300x300/?banana"},
+{nombre:"Pan Bimbo",precio:38,img:"https://source.unsplash.com/300x300/?bread"},
+{nombre:"Leche",precio:25,img:"https://source.unsplash.com/300x300/?milk"},
+{nombre:"Huevos",precio:45,img:"https://source.unsplash.com/300x300/?eggs"},
+{nombre:"Arroz",precio:28,img:"https://source.unsplash.com/300x300/?rice"},
+{nombre:"Frijoles",precio:32,img:"https://source.unsplash.com/300x300/?beans"},
+{nombre:"Pasta",precio:20,img:"https://source.unsplash.com/300x300/?pasta"},
+{nombre:"Cereal",precio:55,img:"https://source.unsplash.com/300x300/?cereal"},
+{nombre:"Yogurt",precio:18,img:"https://source.unsplash.com/300x300/?yogurt"},
+
+{nombre:"Coca-Cola",precio:22,img:"https://source.unsplash.com/300x300/?coca-cola"},
+{nombre:"Pepsi",precio:21,img:"https://source.unsplash.com/300x300/?soda"},
+{nombre:"Jugo de naranja",precio:30,img:"https://source.unsplash.com/300x300/?orange-juice"},
+{nombre:"Agua",precio:15,img:"https://source.unsplash.com/300x300/?water-bottle"},
+{nombre:"Café",precio:80,img:"https://source.unsplash.com/300x300/?coffee"},
+
+{nombre:"Azúcar",precio:24,img:"https://source.unsplash.com/300x300/?sugar"},
+{nombre:"Sal",precio:10,img:"https://source.unsplash.com/300x300/?salt"},
+{nombre:"Aceite",precio:65,img:"https://source.unsplash.com/300x300/?cooking-oil"},
+{nombre:"Mantequilla",precio:42,img:"https://source.unsplash.com/300x300/?butter"},
+{nombre:"Queso",precio:60,img:"https://source.unsplash.com/300x300/?cheese"},
+
+{nombre:"Jamón",precio:58,img:"https://source.unsplash.com/300x300/?ham"},
+{nombre:"Salchichas",precio:40,img:"https://source.unsplash.com/300x300/?sausages"},
+{nombre:"Pollo",precio:90,img:"https://source.unsplash.com/300x300/?chicken-meat"},
+{nombre:"Carne",precio:120,img:"https://source.unsplash.com/300x300/?beef"},
+{nombre:"Pescado",precio:110,img:"https://source.unsplash.com/300x300/?fish"},
+
+{nombre:"Detergente",precio:85,img:"https://source.unsplash.com/300x300/?detergent"},
+{nombre:"Cloro",precio:35,img:"https://source.unsplash.com/300x300/?bleach"},
+{nombre:"Suavizante",precio:70,img:"https://source.unsplash.com/300x300/?fabric-softener"},
+{nombre:"Esponjas",precio:20,img:"https://source.unsplash.com/300x300/?sponges"},
+{nombre:"Jabón",precio:18,img:"https://source.unsplash.com/300x300/?soap"},
+
+{nombre:"Shampoo",precio:75,img:"https://source.unsplash.com/300x300/?shampoo"},
+{nombre:"Pasta dental",precio:40,img:"https://source.unsplash.com/300x300/?toothpaste"},
+{nombre:"Cepillo dental",precio:25,img:"https://source.unsplash.com/300x300/?toothbrush"},
+{nombre:"Papel higiénico",precio:70,img:"https://source.unsplash.com/300x300/?toilet-paper"},
+{nombre:"Servilletas",precio:30,img:"https://source.unsplash.com/300x300/?napkins"},
+
+{nombre:"Bolsas de basura",precio:45,img:"https://source.unsplash.com/300x300/?trash-bag"},
+{nombre:"Velas",precio:20,img:"https://source.unsplash.com/300x300/?candles"},
+{nombre:"Foco",precio:35,img:"https://source.unsplash.com/300x300/?light-bulb"},
+{nombre:"Escoba",precio:60,img:"https://source.unsplash.com/300x300/?broom"},
+{nombre:"Trapeador",precio:75,img:"https://source.unsplash.com/300x300/?mop"},
+
+{nombre:"Galletas",precio:28,img:"https://source.unsplash.com/300x300/?cookies"},
+{nombre:"Chocolate",precio:32,img:"https://source.unsplash.com/300x300/?chocolate"},
+{nombre:"Papas fritas",precio:22,img:"https://source.unsplash.com/300x300/?chips"},
+{nombre:"Helado",precio:65,img:"https://source.unsplash.com/300x300/?ice-cream"},
+{nombre:"Miel",precio:55,img:"https://source.unsplash.com/300x300/?honey"},
+
+{nombre:"Avena",precio:34,img:"https://source.unsplash.com/300x300/?oatmeal"},
+{nombre:"Granola",precio:45,img:"https://source.unsplash.com/300x300/?granola"},
+{nombre:"Mayonesa",precio:38,img:"https://source.unsplash.com/300x300/?mayonnaise"},
+{nombre:"Ketchup",precio:32,img:"https://source.unsplash.com/300x300/?ketchup"},
+{nombre:"Mostaza",precio:30,img:"https://source.unsplash.com/300x300/?mustard"}
 
 ];
 
-let carrito=JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito=JSON.parse(localStorage.getItem("carrito"))||[];
 
-function guardarCarrito(){
+function guardar(){
 localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 
-function cargarProductos(lista){
+function cargarProductos(){
 
 const cont=document.getElementById("productos");
 
-cont.innerHTML="";
+if(!cont)return;
 
-lista.forEach((p,index)=>{
+productos.forEach((p,i)=>{
 
 cont.innerHTML+=`
 
 <div class="producto">
 
+<a href="producto.html?id=${i}">
 <img src="${p.img}">
-
 <h3>${p.nombre}</h3>
+</a>
 
-<p class="precio">$${p.precio}</p>
+<p>$${p.precio}</p>
 
-<button onclick="agregarCarrito(${index})">Agregar</button>
+<button onclick="agregar(${i})">Agregar</button>
 
 </div>
 
@@ -49,130 +96,54 @@ cont.innerHTML+=`
 
 }
 
-function agregarCarrito(i){
+function agregar(i){
 
 carrito.push(productos[i]);
 
-guardarCarrito();
+guardar();
 
-actualizarCarrito();
+alert("Producto agregado");
 
 }
 
-function actualizarCarrito(){
+function cargarProductoIndividual(){
 
-const lista=document.getElementById("listaCarrito");
+const cont=document.getElementById("productoIndividual");
 
-let total=0;
+if(!cont)return;
 
-lista.innerHTML="";
+const params=new URLSearchParams(location.search);
 
-carrito.forEach((p,index)=>{
+const id=params.get("id");
 
-lista.innerHTML+=`
+const p=productos[id];
 
-<div class="itemCarrito">
+cont.innerHTML=`
 
-${p.nombre} $${p.precio}
+<img src="${p.img}">
 
-<button onclick="eliminarProducto(${index})">X</button>
+<div>
+
+<h2>${p.nombre}</h2>
+
+<p>$${p.precio}</p>
+
+<button onclick="agregar(${id})">Agregar al carrito</button>
 
 </div>
 
 `;
 
-total+=p.precio;
+}
 
-});
+function comprar(){
 
-document.getElementById("total").innerText=total;
+alert("Compra realizada (simulación)");
 
-document.getElementById("contador").innerText=carrito.length;
+localStorage.removeItem("carrito");
 
 }
 
-function eliminarProducto(i){
+cargarProductos();
 
-carrito.splice(i,1);
-
-guardarCarrito();
-
-actualizarCarrito();
-
-}
-
-function toggleCarrito(){
-
-document.getElementById("panelCarrito").classList.toggle("activo");
-
-}
-
-function cerrarCarrito(){
-
-document.getElementById("panelCarrito").classList.remove("activo");
-
-}
-
-function mostrarCategoria(cat){
-
-if(cat==="todos"){
-
-cargarProductos(productos);
-
-return;
-
-}
-
-const filtrados=productos.filter(p=>p.categoria===cat);
-
-cargarProductos(filtrados);
-
-}
-
-/* BUSCADOR */
-
-document.getElementById("buscador").addEventListener("keyup",function(){
-
-const texto=this.value.toLowerCase();
-
-const filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto));
-
-cargarProductos(filtrados);
-
-});
-
-/* BANNER */
-
-const banners=[
-
-"https://picsum.photos/1200/300?1",
-"https://picsum.photos/1200/300?2",
-"https://picsum.photos/1200/300?3"
-
-];
-
-let i=0;
-
-function cambiarBanner(){
-
-i++;
-
-if(i>=banners.length){
-
-i=0;
-
-}
-
-document.getElementById("bannerImg").src=banners[i];
-
-}
-
-setInterval(cambiarBanner,3000);
-
-cargarProductos(productos);
-
-actualizarCarrito();iarBanner,3000);
-
-cargarProductos(productos);
-
-actualizarCarrito();
+cargarProductoIndividual();
