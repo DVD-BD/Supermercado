@@ -36,6 +36,27 @@ cont.innerHTML+=`
 
 <div class="producto">
 
+<img src="${p.img}" onclick="verProductoPagina(${i})">
+
+<h3>${p.nombre}</h3>
+
+<p>$${p.precio}</p>
+
+<button onclick="agregarCarrito(${i})">Agregar</button>
+
+</div>
+
+`
+
+})
+
+productosMostrados=lista
+
+}
+
+
+<div class="producto">
+
 <img src="${p.img}" onclick="verProducto(${i})">
 
 <h3>${p.nombre}</h3>
@@ -245,5 +266,16 @@ if(slideIndex<0) slideIndex=slides.length-1
 document.getElementById("slideImg").src=slides[slideIndex]
 
 }
+
+function verProductoPagina(i){
+
+let producto = productosMostrados[i]
+
+localStorage.setItem("productoSeleccionado", JSON.stringify(producto))
+
+window.location.href = "producto.html"
+
+}
+
 
 setInterval(nextSlide,4000)
