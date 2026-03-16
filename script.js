@@ -1,7 +1,7 @@
 // LISTA DE PRODUCTOS
 let productos = [
     // Frutas y Verduras
-    {nombre:"Manzanas", precio:40, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?apple", desc:"Manzanas frescas y jugosas"},
+    {nombre:"Manzanas", precio:40, categoria:"frutasverduras", img:"https://www.recetasnestle.com.co/sites/default/files/inline-images/tipos-de-manzana-royal-gala_0.jpg", desc:"Manzanas frescas y jugosas"},
     {nombre:"Plátanos", precio:30, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?banana", desc:"Plátanos maduros y dulces"},
     {nombre:"Lechuga", precio:15, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?lettuce", desc:"Lechuga fresca y crujiente"},
     {nombre:"Tomates", precio:20, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?tomato", desc:"Tomates rojos y jugosos"},
