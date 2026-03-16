@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>SuperMarket</title>
+<title>Supermercado</title>
 
 <link rel="stylesheet" href="estilos.css">
 
@@ -14,11 +14,13 @@
 
 <header>
 
-<h1>SuperMarket</h1>
+<h1>Supermercado</h1>
 
-<input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="buscarProducto()">
+<input type="text" id="buscador" placeholder="Buscar..." onkeyup="buscarProducto()">
 
-<button onclick="abrirCarrito()">🛒 <span id="contadorCarrito">0</span></button>
+<button onclick="abrirCarrito()">
+🛒 <span id="contadorCarrito">0</span>
+</button>
 
 </header>
 
@@ -33,21 +35,10 @@
 </nav>
 
 
-<section class="slider">
-
-<button onclick="prevSlide()">❮</button>
-
-<img id="slideImg" src="https://source.unsplash.com/1200x400/?supermarket">
-
-<button onclick="nextSlide()">❯</button>
-
-</section>
-
-
 <section id="productos"></section>
 
 
-<div id="carrito">
+<div id="carrito" class="carrito">
 
 <h2>Carrito</h2>
 
@@ -55,8 +46,7 @@
 
 <h3>Total: $<span id="total">0</span></h3>
 
-<button onclick="window.location.href='checkout.html'">Pagar</button>
-
+<button onclick="pagar()">Pagar</button>
 <button onclick="cerrarCarrito()">Cerrar</button>
 
 </div>
