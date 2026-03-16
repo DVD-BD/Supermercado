@@ -1,72 +1,34 @@
 let productos=[
-
-// COMIDA
-{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
-{nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
-{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan recién horneado"},
+{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Fruta fresca"},
+{nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Platanos maduros"},
+{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan fresco"},
 {nombre:"Arroz",precio:28,categoria:"comida",img:"https://source.unsplash.com/300x300/?rice",desc:"Arroz premium"},
 {nombre:"Pasta",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta",desc:"Pasta italiana"},
-{nombre:"Huevos",precio:45,categoria:"comida",img:"https://source.unsplash.com/300x300/?eggs",desc:"Huevos frescos"},
-{nombre:"Pollo",precio:120,categoria:"comida",img:"https://source.unsplash.com/300x300/?chicken",desc:"Pollo fresco"},
-{nombre:"Queso",precio:70,categoria:"comida",img:"https://source.unsplash.com/300x300/?cheese",desc:"Queso natural"},
-{nombre:"Tomate",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?tomato",desc:"Tomate fresco"},
-{nombre:"Lechuga",precio:20,categoria:"comida",img:"https://source.unsplash.com/300x300/?lettuce",desc:"Lechuga fresca"},
-{nombre:"Zanahoria",precio:18,categoria:"comida",img:"https://source.unsplash.com/300x300/?carrot",desc:"Zanahorias"},
-{nombre:"Papa",precio:22,categoria:"comida",img:"https://source.unsplash.com/300x300/?potato",desc:"Papas frescas"},
-{nombre:"Cebolla",precio:20,categoria:"comida",img:"https://source.unsplash.com/300x300/?onion",desc:"Cebolla"},
-{nombre:"Pepino",precio:19,categoria:"comida",img:"https://source.unsplash.com/300x300/?cucumber",desc:"Pepino"},
-{nombre:"Ajo",precio:15,categoria:"comida",img:"https://source.unsplash.com/300x300/?garlic",desc:"Ajo fresco"},
 
-// BEBIDAS
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco clásico"},
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco"},
 {nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi",desc:"Refresco"},
-{nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water",desc:"Agua purificada"},
-{nombre:"Jugo Naranja",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?orange-juice",desc:"Jugo natural"},
-{nombre:"Leche",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?milk",desc:"Leche entera"},
-{nombre:"Café",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Café premium"},
-{nombre:"Té",precio:40,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?tea",desc:"Té natural"},
-{nombre:"Chocolate caliente",precio:35,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?hot-chocolate",desc:"Bebida caliente"},
-{nombre:"Agua mineral",precio:18,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?sparkling-water",desc:"Agua mineral"},
-{nombre:"Smoothie",precio:30,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?smoothie",desc:"Bebida de fruta"},
+{nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water",desc:"Agua pura"},
+{nombre:"Jugo",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?juice",desc:"Jugo natural"},
+{nombre:"Cafe",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Cafe premium"},
 
-// SNACKS
-{nombre:"Papas fritas",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chips",desc:"Snack crujiente"},
+{nombre:"Papas fritas",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chips",desc:"Snack"},
 {nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate dulce"},
 {nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas"},
 {nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas"},
 {nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Nachos"},
-{nombre:"Barra cereal",precio:20,categoria:"snacks",img:"https://source.unsplash.com/300x300/?granola-bar",desc:"Barra energética"},
-{nombre:"Dulces",precio:18,categoria:"snacks",img:"https://source.unsplash.com/300x300/?candy",desc:"Dulces"},
-{nombre:"Pretzels",precio:25,categoria:"snacks",img:"https://source.unsplash.com/300x300/?pretzel",desc:"Pretzels"},
-{nombre:"Helado",precio:45,categoria:"snacks",img:"https://source.unsplash.com/300x300/?ice-cream",desc:"Helado"},
-{nombre:"Yogurt",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?yogurt",desc:"Yogurt"},
 
-// LIMPIEZA
-{nombre:"Detergente",precio:90,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Detergente"},
+{nombre:"Detergente",precio:90,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Limpieza"},
 {nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?bleach",desc:"Cloro"},
-{nombre:"Jabon",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Jabón"},
+{nombre:"Jabon",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Jabon"},
 {nombre:"Esponja",precio:15,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?sponge",desc:"Esponja"},
 {nombre:"Desinfectante",precio:45,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?disinfectant",desc:"Desinfectante"},
-{nombre:"Suavizante",precio:60,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?softener",desc:"Suavizante"},
-{nombre:"Limpiador",precio:40,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?cleaning",desc:"Limpiador multiusos"},
-{nombre:"Trapo",precio:10,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?cleaning-cloth",desc:"Trapo"},
-{nombre:"Guantes",precio:20,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?rubber-gloves",desc:"Guantes"},
-{nombre:"Cepillo",precio:18,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?cleaning-brush",desc:"Cepillo"},
 
-// HOGAR
-{nombre:"Papel higienico",precio:70,categoria:"hogar",img:"https://source.unsplash.com/300x300/?toilet-paper",desc:"Papel higiénico"},
+{nombre:"Papel higienico",precio:70,categoria:"hogar",img:"https://source.unsplash.com/300x300/?toilet-paper",desc:"Hogar"},
 {nombre:"Escoba",precio:60,categoria:"hogar",img:"https://source.unsplash.com/300x300/?broom",desc:"Escoba"},
 {nombre:"Trapeador",precio:65,categoria:"hogar",img:"https://source.unsplash.com/300x300/?mop",desc:"Trapeador"},
 {nombre:"Cubeta",precio:40,categoria:"hogar",img:"https://source.unsplash.com/300x300/?bucket",desc:"Cubeta"},
-{nombre:"Velas",precio:30,categoria:"hogar",img:"https://source.unsplash.com/300x300/?candle",desc:"Velas"},
-{nombre:"Servilletas",precio:20,categoria:"hogar",img:"https://source.unsplash.com/300x300/?napkins",desc:"Servilletas"},
-{nombre:"Bolsa basura",precio:25,categoria:"hogar",img:"https://source.unsplash.com/300x300/?trash-bag",desc:"Bolsas de basura"},
-{nombre:"Aluminio",precio:35,categoria:"hogar",img:"https://source.unsplash.com/300x300/?aluminum-foil",desc:"Papel aluminio"},
-{nombre:"Encendedor",precio:15,categoria:"hogar",img:"https://source.unsplash.com/300x300/?lighter",desc:"Encendedor"},
-{nombre:"Fosforos",precio:10,categoria:"hogar",img:"https://source.unsplash.com/300x300/?matches",desc:"Fósforos"}
-
+{nombre:"Velas",precio:30,categoria:"hogar",img:"https://source.unsplash.com/300x300/?candle",desc:"Velas"}
 ]
-
 
 let carrito=[]
 let productoActual=null
