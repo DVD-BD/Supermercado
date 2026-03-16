@@ -17,7 +17,7 @@ header{
     justify-content: space-between;
     background: #0071ce;
     color: white;
-    padding: 10px;
+    padding: 13px;
 }
 
 header input{
@@ -33,10 +33,12 @@ header input{
     flex-wrap:wrap;
     justify-content:center;
     margin:0 0 20px 0;
+    margin-top: 10px; /* agrega espacio entre header y categorías */
+    gap: 5px; /* espacio entre botones */
 }
 
 .menu button{
-    margin:6px;
+    margin:4px;
     padding:6px 12px;
     border:none;
     background:white;
