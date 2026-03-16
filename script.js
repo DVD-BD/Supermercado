@@ -1,121 +1,163 @@
-let productos = [
+/* PRODUCTOS */
+
+let productos=[
 {nombre:"Manzanas",precio:40,categoria:"comida",desc:"Manzanas frescas",img:"https://source.unsplash.com/300x300/?apple"},
 {nombre:"Platanos",precio:30,categoria:"comida",desc:"Plátanos maduros",img:"https://source.unsplash.com/300x300/?banana"},
-{nombre:"Pan",precio:35,categoria:"comida",desc:"Pan fresco",img:"https://source.unsplash.com/300x300/?bread"},
+{nombre:"Pan",precio:35,categoria:"comida",desc:"Pan recién horneado",img:"https://source.unsplash.com/300x300/?bread"},
+{nombre:"Arroz",precio:28,categoria:"comida",desc:"Arroz premium",img:"https://source.unsplash.com/300x300/?rice"},
 {nombre:"Coca Cola",precio:20,categoria:"bebidas",desc:"Refresco",img:"https://source.unsplash.com/300x300/?cola"},
 {nombre:"Agua",precio:15,categoria:"bebidas",desc:"Agua purificada",img:"https://source.unsplash.com/300x300/?water"},
-{nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate",img:"https://source.unsplash.com/300x300/?chocolate"}
-];
+{nombre:"Cafe",precio:80,categoria:"bebidas",desc:"Café premium",img:"https://source.unsplash.com/300x300/?coffee"},
+{nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate dulce",img:"https://source.unsplash.com/300x300/?chocolate"},
+{nombre:"Galletas",precio:28,categoria:"snacks",desc:"Galletas crujientes",img:"https://source.unsplash.com/300x300/?cookies"},
+{nombre:"Papas",precio:25,categoria:"snacks",desc:"Papas fritas",img:"https://source.unsplash.com/300x300/?chips"}
+]
 
-let productosMostrados = [...productos];
-let carrito = [];
+let productosMostrados=[...productos]
+let carrito=[]
+let productoActual=null
 
+
+/* MOSTRAR PRODUCTOS */
 
 function mostrarProductos(lista){
 
-let cont = document.getElementById("productos");
+let cont=document.getElementById("productos")
 
-if(!cont) return;
-
-cont.innerHTML = "";
+cont.innerHTML=""
 
 lista.forEach((p,i)=>{
 
-cont.innerHTML += `
+cont.innerHTML+=`
+
 <div class="producto">
 
-<img src="${p.img}">
+<img src="${p.img}" onclick="verProducto(${i})">
 
 <h3>${p.nombre}</h3>
 
 <p>$${p.precio}</p>
 
-<p>${p.desc}</p>
-
 <button onclick="agregarCarrito(${i})">Agregar</button>
 
 </div>
-`;
 
-});
+`
 
-productosMostrados = lista;
+})
+
+productosMostrados=lista
 
 }
 
-mostrarProductos(productos);
+mostrarProductos(productos)
 
+
+/* BUSCADOR */
 
 function buscarProducto(){
 
-let input = document.getElementById("buscador");
+let texto=document.getElementById("buscador").value.toLowerCase()
 
-if(!input) return;
-
-let texto = input.value.toLowerCase();
-
-let filtrados = productos.filter(p =>
+let filtrados=productos.filter(p=>
 p.nombre.toLowerCase().includes(texto)
-);
+)
 
-mostrarProductos(filtrados);
+mostrarProductos(filtrados)
 
 }
 
+
+/* FILTROS */
 
 function filtrar(cat){
 
 if(cat==="todos"){
 
-mostrarProductos(productos);
+mostrarProductos(productos)
 
 }else{
 
-let filtrados = productos.filter(p => p.categoria === cat);
+let filtrados=productos.filter(p=>p.categoria===cat)
 
-mostrarProductos(filtrados);
-
-}
+mostrarProductos(filtrados)
 
 }
 
+}
+
+
+/* VISTA PRODUCTO */
+
+function verProducto(i){
+
+let p=productosMostrados[i]
+
+productoActual=p
+
+document.getElementById("vistaImg").src=p.img
+document.getElementById("vistaNombre").innerText=p.nombre
+document.getElementById("vistaDesc").innerText=p.desc
+document.getElementById("vistaPrecio").innerText=p.precio
+
+document.getElementById("productoVista").style.display="block"
+
+}
+
+function cerrarVista(){
+
+document.getElementById("productoVista").style.display="none"
+
+}
+
+function agregarDesdeVista(){
+
+let index=productosMostrados.findIndex(p=>p.nombre===productoActual.nombre)
+
+agregarCarrito(index)
+
+cerrarVista()
+
+}
+
+
+/* CARRITO */
 
 function agregarCarrito(i){
 
-let prod = productosMostrados[i];
+let prod=productosMostrados[i]
 
-let item = carrito.find(p => p.nombre === prod.nombre);
+let item=carrito.find(p=>p.nombre===prod.nombre)
 
 if(item){
 
-item.cantidad++;
+item.cantidad++
 
 }else{
 
-carrito.push({...prod,cantidad:1});
+carrito.push({...prod,cantidad:1})
 
 }
 
-actualizarCarrito();
+actualizarCarrito()
 
 }
 
 
 function actualizarCarrito(){
 
-let lista = document.getElementById("listaCarrito");
+let lista=document.getElementById("listaCarrito")
 
-if(!lista) return;
+lista.innerHTML=""
 
-lista.innerHTML = "";
-
-let total = 0;
+let total=0
 
 carrito.forEach((p,i)=>{
 
-total += p.precio * p.cantidad;
+total+=p.precio*p.cantidad
 
-lista.innerHTML += `
+lista.innerHTML+=`
+
 <div>
 
 ${p.nombre} x${p.cantidad}
@@ -125,68 +167,107 @@ ${p.nombre} x${p.cantidad}
 <button onclick="restar(${i})">-</button>
 
 </div>
-`;
 
-});
+`
 
-let totalHTML = document.getElementById("total");
-let contador = document.getElementById("contadorCarrito");
+})
 
-if(totalHTML) totalHTML.innerText = total;
-
-if(contador) contador.innerText = carrito.length;
+document.getElementById("total").innerText=total
+document.getElementById("contadorCarrito").innerText=carrito.length
 
 }
 
 
 function sumar(i){
 
-carrito[i].cantidad++;
+carrito[i].cantidad++
 
-actualizarCarrito();
+actualizarCarrito()
 
 }
 
 
 function restar(i){
 
-carrito[i].cantidad--;
+carrito[i].cantidad--
 
-if(carrito[i].cantidad <= 0){
+if(carrito[i].cantidad<=0){
 
-carrito.splice(i,1);
-
-}
-
-actualizarCarrito();
+carrito.splice(i,1)
 
 }
 
+actualizarCarrito()
+
+}
+
+
+/* ABRIR / CERRAR CARRITO */
 
 function abrirCarrito(){
 
-let c = document.getElementById("carrito");
-
-if(c) c.style.display = "block";
+document.getElementById("carrito").classList.add("abierto")
 
 }
-
 
 function cerrarCarrito(){
 
-let c = document.getElementById("carrito");
-
-if(c) c.style.display = "none";
+document.getElementById("carrito").classList.remove("abierto")
 
 }
 
+
+/* PAGAR */
 
 function pagar(){
 
-alert("Compra realizada");
+document.getElementById("checkout").style.display="block"
 
-carrito = [];
+carrito=[]
 
-actualizarCarrito();
+actualizarCarrito()
 
 }
+
+function cerrarCheckout(){
+
+document.getElementById("checkout").style.display="none"
+
+}
+
+
+/* SLIDER */
+
+let slides=[
+"https://source.unsplash.com/1200x400/?supermarket",
+"https://source.unsplash.com/1200x400/?groceries",
+"https://source.unsplash.com/1200x400/?shopping"
+]
+
+let slideIndex=0
+
+function nextSlide(){
+
+slideIndex++
+
+if(slideIndex>=slides.length){
+slideIndex=0
+}
+
+document.getElementById("slideImg").src=slides[slideIndex]
+
+}
+
+function prevSlide(){
+
+slideIndex--
+
+if(slideIndex<0){
+slideIndex=slides.length-1
+}
+
+document.getElementById("slideImg").src=slides[slideIndex]
+
+}
+
+setInterval(nextSlide,4000)
