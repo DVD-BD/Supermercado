@@ -1,34 +1,42 @@
-const productos = [
+const productos=[
 
-{nombre:"Manzanas",precio:40,categoria:"comida",descripcion:"Manzanas rojas frescas ideales para snacks.",img:"https://source.unsplash.com/300x300/?apple"},
-{nombre:"Plátanos",precio:30,categoria:"comida",descripcion:"Plátanos maduros ricos en potasio.",img:"https://source.unsplash.com/300x300/?banana"},
-{nombre:"Pan",precio:35,categoria:"comida",descripcion:"Pan blanco suave perfecto para desayunos.",img:"https://source.unsplash.com/300x300/?bread"},
-{nombre:"Leche",precio:25,categoria:"bebidas",descripcion:"Leche entera nutritiva.",img:"https://source.unsplash.com/300x300/?milk"},
-{nombre:"Huevos",precio:50,categoria:"comida",descripcion:"Huevos frescos de granja.",img:"https://source.unsplash.com/300x300/?eggs"},
-{nombre:"Arroz",precio:28,categoria:"comida",descripcion:"Arroz blanco de alta calidad.",img:"https://source.unsplash.com/300x300/?rice"},
-{nombre:"Frijoles",precio:30,categoria:"comida",descripcion:"Frijoles negros nutritivos.",img:"https://source.unsplash.com/300x300/?beans"},
-{nombre:"Pasta",precio:22,categoria:"comida",descripcion:"Pasta italiana clásica.",img:"https://source.unsplash.com/300x300/?pasta"},
-{nombre:"Cereal",precio:60,categoria:"comida",descripcion:"Cereal crujiente para el desayuno.",img:"https://source.unsplash.com/300x300/?cereal"},
-{nombre:"Yogurt",precio:20,categoria:"bebidas",descripcion:"Yogurt natural saludable.",img:"https://source.unsplash.com/300x300/?yogurt"}
+{nombre:"Manzanas",precio:40,categoria:"comida",descripcion:"Manzanas frescas",img:"https://source.unsplash.com/300x300/?apple"},
+{nombre:"Pan",precio:30,categoria:"comida",descripcion:"Pan blanco",img:"https://source.unsplash.com/300x300/?bread"},
+{nombre:"Arroz",precio:28,categoria:"comida",descripcion:"Arroz blanco",img:"https://source.unsplash.com/300x300/?rice"},
+{nombre:"Frijoles",precio:25,categoria:"comida",descripcion:"Frijoles negros",img:"https://source.unsplash.com/300x300/?beans"},
+{nombre:"Cereal",precio:55,categoria:"comida",descripcion:"Cereal para desayuno",img:"https://source.unsplash.com/300x300/?cereal"},
 
-];
+{nombre:"Leche",precio:22,categoria:"bebidas",descripcion:"Leche entera",img:"https://source.unsplash.com/300x300/?milk"},
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",descripcion:"Refresco cola",img:"https://source.unsplash.com/300x300/?coca-cola"},
+{nombre:"Jugo",precio:25,categoria:"bebidas",descripcion:"Jugo natural",img:"https://source.unsplash.com/300x300/?juice"},
+{nombre:"Agua",precio:15,categoria:"bebidas",descripcion:"Agua purificada",img:"https://source.unsplash.com/300x300/?water"},
+{nombre:"Café",precio:80,categoria:"bebidas",descripcion:"Café molido",img:"https://source.unsplash.com/300x300/?coffee"},
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+{nombre:"Detergente",precio:90,categoria:"limpieza",descripcion:"Detergente ropa",img:"https://source.unsplash.com/300x300/?detergent"},
+{nombre:"Cloro",precio:35,categoria:"limpieza",descripcion:"Cloro para limpieza",img:"https://source.unsplash.com/300x300/?bleach"},
+{nombre:"Jabón",precio:18,categoria:"limpieza",descripcion:"Jabón de baño",img:"https://source.unsplash.com/300x300/?soap"},
+{nombre:"Shampoo",precio:75,categoria:"limpieza",descripcion:"Shampoo cabello",img:"https://source.unsplash.com/300x300/?shampoo"},
+{nombre:"Pasta dental",precio:40,categoria:"limpieza",descripcion:"Pasta dental",img:"https://source.unsplash.com/300x300/?toothpaste"},
 
-function guardarCarrito(){
-localStorage.setItem("carrito",JSON.stringify(carrito));
-}
+{nombre:"Papel higiénico",precio:70,categoria:"hogar",descripcion:"Papel higiénico",img:"https://source.unsplash.com/300x300/?toilet-paper"},
+{nombre:"Servilletas",precio:25,categoria:"hogar",descripcion:"Servilletas",img:"https://source.unsplash.com/300x300/?napkins"},
+{nombre:"Escoba",precio:60,categoria:"hogar",descripcion:"Escoba",img:"https://source.unsplash.com/300x300/?broom"},
+{nombre:"Trapeador",precio:75,categoria:"hogar",descripcion:"Trapeador",img:"https://source.unsplash.com/300x300/?mop"},
+{nombre:"Bolsas basura",precio:45,categoria:"hogar",descripcion:"Bolsas para basura",img:"https://source.unsplash.com/300x300/?trash-bag"}
 
-function cargarProductos(lista = productos){
+]
 
-const cont = document.getElementById("productos");
-if(!cont) return;
+let carrito=[]
 
-cont.innerHTML="";
+function cargarProductos(lista=productos){
+
+const cont=document.getElementById("productos")
+
+cont.innerHTML=""
 
 lista.forEach((p,i)=>{
 
-cont.innerHTML += `
+cont.innerHTML+=`
 
 <div class="producto">
 
@@ -40,136 +48,147 @@ cont.innerHTML += `
 
 <p class="precio">$${p.precio}</p>
 
-<button onclick="agregarCarrito(${i})">Agregar al carrito</button>
+<button onclick="agregarCarrito(${i})">Agregar</button>
 
 </div>
 
-`;
+`
 
-});
+})
 
 }
 
 function agregarCarrito(i){
 
-carrito.push(productos[i]);
+const producto=productos[i]
 
-guardarCarrito();
+const existe=carrito.find(p=>p.nombre===producto.nombre)
 
-actualizarCarrito();
+if(existe){
+
+existe.cantidad++
+
+}else{
+
+carrito.push({...producto,cantidad:1})
+
+}
+
+actualizarCarrito()
 
 }
 
 function actualizarCarrito(){
 
-const lista = document.getElementById("listaCarrito");
-const totalElemento = document.getElementById("total");
-const contador = document.getElementById("contador");
+const lista=document.getElementById("listaCarrito")
 
-if(!lista) return;
+lista.innerHTML=""
 
-lista.innerHTML="";
+let total=0
 
-let total = 0;
+carrito.forEach((p,i)=>{
 
-carrito.forEach((p,index)=>{
+total+=p.precio*p.cantidad
 
-lista.innerHTML += `
+lista.innerHTML+=`
 
 <div class="itemCarrito">
 
-<div>
 <strong>${p.nombre}</strong>
+
 <p>$${p.precio}</p>
+
+<p>Cantidad: ${p.cantidad}</p>
+
+<button onclick="sumar(${i})">+</button>
+
+<button onclick="restar(${i})">-</button>
+
+<button onclick="eliminar(${i})">x</button>
+
 </div>
 
-<button onclick="eliminarProducto(${index})">X</button>
+`
 
-</div>
+})
 
-`;
-
-total += p.precio;
-
-});
-
-if(totalElemento) totalElemento.innerText = total;
-if(contador) contador.innerText = carrito.length;
+document.getElementById("total").innerText=total
+document.getElementById("contador").innerText=carrito.length
 
 }
 
-function eliminarProducto(i){
+function sumar(i){
 
-carrito.splice(i,1);
+carrito[i].cantidad++
 
-guardarCarrito();
+actualizarCarrito()
 
-actualizarCarrito();
+}
+
+function restar(i){
+
+carrito[i].cantidad--
+
+if(carrito[i].cantidad<=0){
+
+carrito.splice(i,1)
+
+}
+
+actualizarCarrito()
+
+}
+
+function eliminar(i){
+
+carrito.splice(i,1)
+
+actualizarCarrito()
 
 }
 
 function toggleCarrito(){
 
-const panel = document.getElementById("panelCarrito");
-
-if(panel) panel.classList.toggle("activo");
+document.getElementById("panelCarrito").classList.toggle("activo")
 
 }
 
 function mostrarCategoria(cat){
 
-if(cat === "todos"){
+if(cat==="todos"){
 
-cargarProductos(productos);
+cargarProductos(productos)
 
-return;
-
-}
-
-const filtrados = productos.filter(p => p.categoria === cat);
-
-cargarProductos(filtrados);
+return
 
 }
 
-function iniciarBuscador(){
+const filtrados=productos.filter(p=>p.categoria===cat)
 
-const buscador = document.getElementById("buscador");
+cargarProductos(filtrados)
 
-if(!buscador) return;
+}
 
-buscador.addEventListener("keyup",function(){
+document.getElementById("buscador").addEventListener("keyup",function(){
 
-const texto = this.value.toLowerCase();
+const texto=this.value.toLowerCase()
 
-const filtrados = productos.filter(p =>
+const filtrados=productos.filter(p=>
 p.nombre.toLowerCase().includes(texto)
-);
+)
 
-cargarProductos(filtrados);
+cargarProductos(filtrados)
 
-});
-
-}
+})
 
 function comprar(){
 
-alert("Compra realizada (simulación)");
+alert("Compra realizada (simulación)")
 
-carrito=[];
+carrito=[]
 
-guardarCarrito();
-
-actualizarCarrito();
+actualizarCarrito()
 
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
-
-cargarProductos();
-
-actualizarCarrito();
-
-iniciarBuscador();
-
-});
+cargarProductos()
