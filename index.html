@@ -4,39 +4,47 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Mi Tienda</title>
-
-<!-- Conexión con el CSS -->
+<title>MiTienda</title>
 <link rel="stylesheet" href="estilos.css">
-
 </head>
 
 <body>
 
-<header>
+<header class="topbar">
 
-<h1>MiTienda</h1>
+<div class="logo">
+MiTienda
+</div>
 
-<input type="text" placeholder="Buscar productos...">
+<div class="search">
+<input type="text" placeholder="Buscar productos, marcas y más">
+</div>
+
+<div class="icons">
+<span>👤 Cuenta</span>
+<span>🛒 Carrito</span>
+</div>
 
 </header>
 
 
-<nav>
-<ul>
+<nav class="menu">
 
+<ul>
 <li>Inicio</li>
 <li>Electrónica</li>
-<li>Ropa</li>
+<li>Moda</li>
+<li>Hogar</li>
 <li>Ofertas</li>
-
 </ul>
+
 </nav>
 
 
 <section class="banner">
 
-<h2>Ofertas de la semana</h2>
+<h1>Ofertas Especiales</h1>
+<p>Hasta 50% de descuento</p>
 
 </section>
 
@@ -47,9 +55,9 @@
 
 <img src="https://via.placeholder.com/200">
 
-<h3>Tenis Nike</h3>
+<h3>Tenis Nike Air</h3>
 
-<p>$1200</p>
+<p class="precio">$1200</p>
 
 <button>Comprar</button>
 
@@ -62,7 +70,7 @@
 
 <h3>Sudadera Adidas</h3>
 
-<p>$850</p>
+<p class="precio">$850</p>
 
 <button>Comprar</button>
 
@@ -75,7 +83,7 @@
 
 <h3>Playera Puma</h3>
 
-<p>$400</p>
+<p class="precio">$400</p>
 
 <button>Comprar</button>
 
@@ -88,7 +96,33 @@
 
 <h3>Tenis Jordan</h3>
 
-<p>$2000</p>
+<p class="precio">$2000</p>
+
+<button>Comprar</button>
+
+</div>
+
+
+<div class="producto">
+
+<img src="https://via.placeholder.com/200">
+
+<h3>Gorra Nike</h3>
+
+<p class="precio">$350</p>
+
+<button>Comprar</button>
+
+</div>
+
+
+<div class="producto">
+
+<img src="https://via.placeholder.com/200">
+
+<h3>Mochila Adidas</h3>
+
+<p class="precio">$900</p>
 
 <button>Comprar</button>
 
@@ -102,7 +136,6 @@
 <p>© 2026 MiTienda</p>
 
 </footer>
-
 
 </body>
 </html>
