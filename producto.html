@@ -1,19 +1,83 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
+
 <title>Producto</title>
+
 <link rel="stylesheet" href="estilos.css">
+
 </head>
 
 <body>
 
-<a href="index.html">← Volver</a>
+<header>
 
-<div id="productoVista" class="productoVista"></div>
+<h1>Detalle del producto</h1>
 
-<script src="script.js"></script>
+<button onclick="volver()">← Volver</button>
+
+</header>
+
+<div class="productoDetalle">
+
+<img id="imgProducto">
+
+<h2 id="nombreProducto"></h2>
+
+<p id="descProducto"></p>
+
+<h3 id="precioProducto"></h3>
+
+<button onclick="agregarCarrito()">Agregar al carrito</button>
+
+</div>
+
+<script>
+
+let producto = JSON.parse(localStorage.getItem("productoSeleccionado"))
+
+document.getElementById("imgProducto").src = producto.img
+document.getElementById("nombreProducto").innerText = producto.nombre
+document.getElementById("descProducto").innerText = producto.desc
+document.getElementById("precioProducto").innerText = "$" + producto.precio
+
+
+function volver(){
+
+window.location.href = "index.html"
+
+}
+
+
+function agregarCarrito(){
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+
+let item = carrito.find(p => p.nombre === producto.nombre)
+
+if(item){
+
+item.cantidad++
+
+}else{
+
+producto.cantidad = 1
+carrito.push(producto)
+
+}
+
+localStorage.setItem("carrito", JSON.stringify(carrito))
+
+alert("Producto agregado al carrito")
+
+}
+
+</script>
 
 </body>
+
 </html>
