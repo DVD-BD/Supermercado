@@ -60,7 +60,7 @@ header input{
 .slider{
     position: relative;
     width: 100%;
-    height: 180px; /* altura reducida */
+    height: 100px; /* altura reducida */
     overflow: hidden;
 }
 
