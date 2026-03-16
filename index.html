@@ -16,7 +16,12 @@
 
 <h1>Supermercado</h1>
 
-<input type="text" id="buscador" placeholder="Buscar..." onkeyup="buscarProducto()">
+<input 
+type="text" 
+id="buscador" 
+placeholder="Buscar producto..."
+onkeyup="buscarProducto()"
+>
 
 <button onclick="abrirCarrito()">
 🛒 <span id="contadorCarrito">0</span>
@@ -38,6 +43,8 @@
 <section id="productos"></section>
 
 
+<!-- CARRITO -->
+
 <div id="carrito" class="carrito">
 
 <h2>Carrito</h2>
@@ -47,7 +54,23 @@
 <h3>Total: $<span id="total">0</span></h3>
 
 <button onclick="pagar()">Pagar</button>
+
 <button onclick="cerrarCarrito()">Cerrar</button>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="login" class="login">
+
+<h2>Cuenta</h2>
+
+<input type="text" placeholder="Usuario">
+
+<input type="password" placeholder="Contraseña">
+
+<button>Ingresar</button>
 
 </div>
 
