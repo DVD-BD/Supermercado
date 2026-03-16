@@ -1,32 +1,98 @@
 <!DOCTYPE html>
 
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
-<title>Producto</title>
+<title>SuperMarket</title>
+
 <link rel="stylesheet" href="estilos.css">
+
 </head>
 
 <body>
 
 <header>
 
-<h1>Detalle del producto</h1>
-<button onclick="window.location.href='index.html'">Volver</button>
+<h1>SuperMarket</h1>
+
+<input
+type="text"
+id="buscador"
+placeholder="Buscar productos..."
+onkeyup="buscarProducto()"
+
+>
+
+<div class="menu">
+
+<button onclick="filtrar('todos')">Todos</button> <button onclick="filtrar('comida')">Comida</button> <button onclick="filtrar('bebidas')">Bebidas</button> <button onclick="filtrar('snacks')">Snacks</button> <button onclick="filtrar('limpieza')">Limpieza</button> <button onclick="filtrar('hogar')">Hogar</button>
+
+</div>
+
+<div class="carritoIcono" onclick="abrirCarrito()">
+🛒 <span id="contadorCarrito">0</span>
+</div>
 
 </header>
 
-<div class="productoDetalle">
+<!-- SLIDER -->
 
-<img id="imgProducto">
+<div class="slider">
 
-<h2 id="nombreProducto"></h2>
+<img id="slideImg" src="https://source.unsplash.com/1200x400/?supermarket">
 
-<p id="descProducto"></p>
+<button class="sliderBtn prev" onclick="prevSlide()">❮</button> <button class="sliderBtn next" onclick="nextSlide()">❯</button>
 
-<h3 id="precioProducto"></h3>
+</div>
 
-<button onclick="agregarDesdeDetalle()">Agregar al carrito</button>
+<!-- PRODUCTOS -->
+
+<div id="productos" class="productos"></div>
+
+<!-- CARRITO -->
+
+<div id="carrito" class="carrito">
+
+<h2>Carrito</h2>
+
+<div id="listaCarrito"></div>
+
+<h3>Total: $<span id="total">0</span></h3>
+
+<button onclick="irCheckout()">Pagar</button>
+
+<button onclick="cerrarCarrito()">Cerrar</button>
+
+</div>
+
+<!-- VISTA PRODUCTO -->
+
+<div id="productoVista" class="productoVista">
+
+<button class="cerrar" onclick="cerrarProducto()">X</button>
+
+<img id="productoImg">
+
+<h2 id="productoNombre"></h2>
+
+<p id="productoDesc"></p>
+
+<h3 id="productoPrecio"></h3>
+
+<button onclick="agregarDesdeVista()">Agregar al carrito</button>
+
+</div>
+
+<!-- CHECKOUT -->
+
+<div id="checkout" class="checkout">
+
+<h2>Pago realizado</h2>
+
+<p>Gracias por tu compra</p>
+
+<button onclick="finalizarCompra()">Volver a la tienda</button>
 
 </div>
 
