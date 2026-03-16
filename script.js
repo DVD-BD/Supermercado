@@ -1,33 +1,28 @@
 let productos=[
 
-{nombre:"Manzana",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
-{nombre:"Plátano",precio:22,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
-{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan recién horneado"},
+{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
+{nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
+{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan fresco"},
 {nombre:"Arroz",precio:28,categoria:"comida",img:"https://source.unsplash.com/300x300/?rice",desc:"Arroz premium"},
-{nombre:"Pasta",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta",desc:"Pasta italiana"},
+{nombre:"Pasta",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta",desc:"Pasta italiana"},
 
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco clásico"},
-{nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi",desc:"Refresco popular"},
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco"},
+{nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi",desc:"Refresco"},
 {nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water",desc:"Agua purificada"},
 {nombre:"Jugo",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?juice",desc:"Jugo natural"},
-{nombre:"Café",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Café premium"},
+{nombre:"Cafe",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Café premium"},
 
-{nombre:"Doritos",precio:32,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Botana de maíz"},
-{nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate dulce"},
-{nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas crujientes"},
-{nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas de maíz"},
-{nombre:"Cacahuates",precio:25,categoria:"snacks",img:"https://source.unsplash.com/300x300/?peanuts",desc:"Cacahuates tostados"},
-
-{nombre:"Detergente",precio:75,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Detergente para ropa"},
-{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?bleach",desc:"Cloro desinfectante"},
-{nombre:"Jabón",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Jabón multiusos"},
-{nombre:"Esponjas",precio:18,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?sponge",desc:"Esponjas de cocina"},
-{nombre:"Desinfectante",precio:45,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?disinfectant",desc:"Desinfectante hogar"}
+{nombre:"Papas fritas",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chips",desc:"Snack"},
+{nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate"},
+{nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas"},
+{nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas"},
+{nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Nachos"}
 
 ]
 
 let productosMostrados=[...productos]
 let carrito=[]
+let productoActual=null
 
 function mostrarProductos(lista){
 
@@ -41,11 +36,9 @@ cont.innerHTML+=`
 
 <div class="producto">
 
-<img src="${p.img}" onclick="verProductoPagina(${i})">
+<img src="${p.img}" onclick="verProducto(${i})">
 
 <h3>${p.nombre}</h3>
-
-<p>${p.desc}</p>
 
 <p>$${p.precio}</p>
 
@@ -87,14 +80,6 @@ mostrarProductos(productos.filter(p=>p.categoria===cat))
 
 }
 
-function verProductoPagina(i){
-
-localStorage.setItem("productoSeleccionado", JSON.stringify(productosMostrados[i]))
-
-window.location.href="producto.html"
-
-}
-
 function agregarCarrito(i){
 
 let prod=productosMostrados[i]
@@ -123,16 +108,45 @@ lista.innerHTML=""
 
 let total=0
 
-carrito.forEach(p=>{
+carrito.forEach((p,i)=>{
 
 total+=p.precio*p.cantidad
 
-lista.innerHTML+=`<div>${p.nombre} x${p.cantidad}</div>`
+lista.innerHTML+=`
+
+<div>
+
+${p.nombre} x${p.cantidad}
+
+<button onclick="sumar(${i})">+</button> <button onclick="restar(${i})">-</button>
+
+</div>
+
+`
 
 })
 
 document.getElementById("total").innerText=total
 document.getElementById("contadorCarrito").innerText=carrito.length
+
+}
+
+function sumar(i){
+carrito[i].cantidad++
+actualizarCarrito()
+}
+
+function restar(i){
+
+carrito[i].cantidad--
+
+if(carrito[i].cantidad<=0){
+
+carrito.splice(i,1)
+
+}
+
+actualizarCarrito()
 
 }
 
@@ -148,12 +162,66 @@ document.getElementById("carrito").classList.remove("abierto")
 
 }
 
+function verProducto(i){
+
+productoActual=productosMostrados[i]
+
+document.getElementById("productoImg").src=productoActual.img
+document.getElementById("productoNombre").innerText=productoActual.nombre
+document.getElementById("productoDesc").innerText=productoActual.desc
+document.getElementById("productoPrecio").innerText="$"+productoActual.precio
+
+document.getElementById("productoVista").style.display="block"
+
+}
+
+function cerrarProducto(){
+
+document.getElementById("productoVista").style.display="none"
+
+}
+
+function agregarDesdeVista(){
+
+let item=carrito.find(p=>p.nombre===productoActual.nombre)
+
+if(item){
+
+item.cantidad++
+
+}else{
+
+carrito.push({...productoActual,cantidad:1})
+
+}
+
+actualizarCarrito()
+
+}
+
+function irCheckout(){
+
+document.getElementById("checkout").style.display="block"
+
+}
+
+function finalizarCompra(){
+
+carrito=[]
+actualizarCarrito()
+
+document.getElementById("checkout").style.display="none"
+
+}
+
 /* SLIDER */
 
 const slides=[
-"https://source.unsplash.com/1200x300/?supermarket",
-"https://source.unsplash.com/1200x300/?groceries",
-"https://source.unsplash.com/1200x300/?shopping"
+
+"https://source.unsplash.com/1200x400/?supermarket",
+"https://source.unsplash.com/1200x400/?groceries",
+"https://source.unsplash.com/1200x400/?shopping"
+
 ]
 
 let slideIndex=0
