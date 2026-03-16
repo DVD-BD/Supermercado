@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>MiTienda</title>
+<title>SuperTienda</title>
 <link rel="stylesheet" href="estilos.css">
 </head>
 
@@ -12,14 +12,13 @@
 
 <header class="topbar">
 
-<div class="logo">MiTienda</div>
+<div class="logo">SuperTienda</div>
 
 <div class="search">
 <input id="buscador" type="text" placeholder="Buscar productos...">
 </div>
 
 <div class="icons">
-<span>Cuenta</span>
 <span onclick="toggleCarrito()">Carrito (<span id="contador">0</span>)</span>
 </div>
 
@@ -28,19 +27,18 @@
 <nav class="menu">
 <ul>
 <li onclick="mostrarCategoria('todos')">Todos</li>
-<li onclick="mostrarCategoria('tenis')">Tenis</li>
-<li onclick="mostrarCategoria('ropa')">Ropa</li>
-<li onclick="mostrarCategoria('accesorios')">Accesorios</li>
+<li onclick="mostrarCategoria('comida')">Comida</li>
+<li onclick="mostrarCategoria('limpieza')">Limpieza</li>
+<li onclick="mostrarCategoria('bebidas')">Bebidas</li>
+<li onclick="mostrarCategoria('hogar')">Hogar</li>
 </ul>
 </nav>
 
 <section class="banner">
-<img id="bannerImg" src="https://picsum.photos/1200/300?1">
+<img id="bannerImg" src="https://picsum.photos/1200/300?random=1">
 </section>
 
 <section class="productos" id="productos"></section>
-
-<!-- PANEL DEL CARRITO -->
 
 <div id="panelCarrito" class="panelCarrito">
 
@@ -55,7 +53,7 @@
 </div>
 
 <footer>
-<p>© 2026 MiTienda</p>
+<p>© 2026 SuperTienda</p>
 </footer>
 
 <script src="script.js"></script>
