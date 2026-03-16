@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <title>Supermercado Online</title>
@@ -11,15 +10,17 @@
 
 <header class="topbar">
 
-<h1>Supermercado</h1>
+<div class="logo">SuperMarket</div>
 
 <input type="text" id="buscador" placeholder="Buscar productos...">
 
 <div class="headerBtns">
 
-<button onclick="toggleCuenta()">👤 Cuenta</button>
+<button onclick="toggleCuenta()">👤</button>
 
-<button onclick="toggleCarrito()">🛒 (<span id="contador">0</span>)</button>
+<button onclick="toggleCarrito()">
+🛒 <span id="contador">0</span>
+</button>
 
 </div>
 
@@ -44,22 +45,18 @@
 </main>
 
 
-
-<!-- CARRITO -->
-
 <div id="panelCarrito" class="panelCarrito">
 
 <div class="carritoHeader">
 
 <h2>Carrito</h2>
-
 <button onclick="toggleCarrito()">X</button>
 
 </div>
 
 <div id="listaCarrito"></div>
 
-<p>Total: $<span id="total">0</span></p>
+<p class="total">Total: $<span id="total">0</span></p>
 
 <a href="checkout.html">
 <button class="checkoutBtn">Ir a pagar</button>
@@ -68,18 +65,12 @@
 </div>
 
 
-
-<!-- CUENTA -->
-
 <div id="panelCuenta" class="panelCuenta">
 
-<h2>Mi cuenta</h2>
+<h2>Mi Cuenta</h2>
 
-<input type="text" placeholder="Nombre">
-
-<input type="email" placeholder="Correo">
-
-<input type="password" placeholder="Contraseña">
+<input placeholder="Correo">
+<input placeholder="Contraseña">
 
 <button>Iniciar sesión</button>
 
