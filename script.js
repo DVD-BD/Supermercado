@@ -1,5 +1,3 @@
-/* PRODUCTOS */
-
 let productos=[
 {nombre:"Manzanas",precio:40,categoria:"comida",desc:"Manzanas frescas",img:"https://source.unsplash.com/300x300/?apple"},
 {nombre:"Platanos",precio:30,categoria:"comida",desc:"Plátanos maduros",img:"https://source.unsplash.com/300x300/?banana"},
@@ -17,8 +15,6 @@ let productosMostrados=[...productos]
 let carrito=[]
 let productoActual=null
 
-
-/* MOSTRAR PRODUCTOS */
 
 function mostrarProductos(lista){
 
@@ -53,8 +49,6 @@ productosMostrados=lista
 mostrarProductos(productos)
 
 
-/* BUSCADOR */
-
 function buscarProducto(){
 
 let texto=document.getElementById("buscador").value.toLowerCase()
@@ -68,26 +62,17 @@ mostrarProductos(filtrados)
 }
 
 
-/* FILTROS */
-
 function filtrar(cat){
 
 if(cat==="todos"){
-
 mostrarProductos(productos)
-
 }else{
-
 let filtrados=productos.filter(p=>p.categoria===cat)
-
 mostrarProductos(filtrados)
-
 }
 
 }
 
-
-/* VISTA PRODUCTO */
 
 function verProducto(i){
 
@@ -105,9 +90,7 @@ document.getElementById("productoVista").style.display="block"
 }
 
 function cerrarVista(){
-
 document.getElementById("productoVista").style.display="none"
-
 }
 
 function agregarDesdeVista(){
@@ -121,8 +104,6 @@ cerrarVista()
 }
 
 
-/* CARRITO */
-
 function agregarCarrito(i){
 
 let prod=productosMostrados[i]
@@ -130,13 +111,9 @@ let prod=productosMostrados[i]
 let item=carrito.find(p=>p.nombre===prod.nombre)
 
 if(item){
-
 item.cantidad++
-
 }else{
-
 carrito.push({...prod,cantidad:1})
-
 }
 
 actualizarCarrito()
@@ -159,13 +136,9 @@ total+=p.precio*p.cantidad
 lista.innerHTML+=`
 
 <div>
-
 ${p.nombre} x${p.cantidad}
-
 <button onclick="sumar(${i})">+</button>
-
 <button onclick="restar(${i})">-</button>
-
 </div>
 
 `
@@ -179,22 +152,16 @@ document.getElementById("contadorCarrito").innerText=carrito.length
 
 
 function sumar(i){
-
 carrito[i].cantidad++
-
 actualizarCarrito()
-
 }
-
 
 function restar(i){
 
 carrito[i].cantidad--
 
 if(carrito[i].cantidad<=0){
-
 carrito.splice(i,1)
-
 }
 
 actualizarCarrito()
@@ -202,37 +169,26 @@ actualizarCarrito()
 }
 
 
-/* ABRIR / CERRAR CARRITO */
-
 function abrirCarrito(){
-
 document.getElementById("carrito").classList.add("abierto")
-
 }
 
 function cerrarCarrito(){
-
 document.getElementById("carrito").classList.remove("abierto")
-
 }
 
-
-/* PAGAR */
 
 function pagar(){
 
 document.getElementById("checkout").style.display="block"
 
 carrito=[]
-
 actualizarCarrito()
 
 }
 
 function cerrarCheckout(){
-
 document.getElementById("checkout").style.display="none"
-
 }
 
 
