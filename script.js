@@ -1,35 +1,41 @@
-const productos=[
+let productos=[
+{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Fruta fresca"},
+{nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Platanos maduros"},
+{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread",desc:"Pan fresco"},
+{nombre:"Arroz",precio:28,categoria:"comida",img:"https://source.unsplash.com/300x300/?rice",desc:"Arroz premium"},
+{nombre:"Pasta",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta",desc:"Pasta italiana"},
 
-{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple"},
-{nombre:"Plátanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana"},
-{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread"},
-{nombre:"Arroz",precio:28,categoria:"comida",img:"https://source.unsplash.com/300x300/?rice"},
-{nombre:"Pasta",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta"},
-{nombre:"Huevos",precio:45,categoria:"comida",img:"https://source.unsplash.com/300x300/?eggs"},
-{nombre:"Pollo",precio:120,categoria:"comida",img:"https://source.unsplash.com/300x300/?chicken"},
-{nombre:"Queso",precio:70,categoria:"comida",img:"https://source.unsplash.com/300x300/?cheese"},
-{nombre:"Tomates",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?tomato"},
-{nombre:"Lechuga",precio:20,categoria:"comida",img:"https://source.unsplash.com/300x300/?lettuce"},
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco"},
+{nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi",desc:"Refresco"},
+{nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water",desc:"Agua pura"},
+{nombre:"Jugo",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?juice",desc:"Jugo natural"},
+{nombre:"Cafe",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Cafe premium"},
 
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola"},
-{nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi"},
-{nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water"},
-{nombre:"Jugo naranja",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?orange-juice"},
-{nombre:"Café",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee"},
-{nombre:"Té",precio:40,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?tea"},
-{nombre:"Leche",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?milk"}
+{nombre:"Papas fritas",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chips",desc:"Snack"},
+{nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate dulce"},
+{nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas"},
+{nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas"},
+{nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Nachos"},
 
+{nombre:"Detergente",precio:90,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Limpieza"},
+{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?bleach",desc:"Cloro"},
+{nombre:"Jabon",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Jabon"},
+{nombre:"Esponja",precio:15,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?sponge",desc:"Esponja"},
+{nombre:"Desinfectante",precio:45,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?disinfectant",desc:"Desinfectante"},
+
+{nombre:"Papel higienico",precio:70,categoria:"hogar",img:"https://source.unsplash.com/300x300/?toilet-paper",desc:"Hogar"},
+{nombre:"Escoba",precio:60,categoria:"hogar",img:"https://source.unsplash.com/300x300/?broom",desc:"Escoba"},
+{nombre:"Trapeador",precio:65,categoria:"hogar",img:"https://source.unsplash.com/300x300/?mop",desc:"Trapeador"},
+{nombre:"Cubeta",precio:40,categoria:"hogar",img:"https://source.unsplash.com/300x300/?bucket",desc:"Cubeta"},
+{nombre:"Velas",precio:30,categoria:"hogar",img:"https://source.unsplash.com/300x300/?candle",desc:"Velas"}
 ]
 
 let carrito=[]
+let productoActual=null
 
+function mostrarProductos(lista){
 
-function cargarProductos(lista=productos){
-
-const cont=document.getElementById("productos")
-
-if(!cont) return
-
+let cont=document.getElementById("productos")
 cont.innerHTML=""
 
 lista.forEach((p,i)=>{
@@ -38,11 +44,11 @@ cont.innerHTML+=`
 
 <div class="producto">
 
-<img src="${p.img}">
+<img src="${p.img}" onclick="verProducto(${i})">
 
 <h3>${p.nombre}</h3>
 
-<p class="precio">$${p.precio}</p>
+<p>$${p.precio}</p>
 
 <button onclick="agregarCarrito(${i})">Agregar</button>
 
@@ -54,9 +60,33 @@ cont.innerHTML+=`
 
 }
 
+mostrarProductos(productos)
+
+function buscarProducto(){
+
+let texto=document.getElementById("buscador").value.toLowerCase()
+
+let filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto))
+
+mostrarProductos(filtrados)
+
+}
+
+function filtrar(cat){
+
+if(cat=="todos") mostrarProductos(productos)
+else mostrarProductos(productos.filter(p=>p.categoria==cat))
+
+}
+
 function agregarCarrito(i){
 
-carrito.push(productos[i])
+let prod=productos[i]
+
+let item=carrito.find(p=>p.nombre==prod.nombre)
+
+if(item)item.cantidad++
+else carrito.push({...prod,cantidad:1})
 
 actualizarCarrito()
 
@@ -64,102 +94,136 @@ actualizarCarrito()
 
 function actualizarCarrito(){
 
-const lista=document.getElementById("listaCarrito")
-
-if(!lista) return
-
+let lista=document.getElementById("listaCarrito")
 lista.innerHTML=""
 
 let total=0
 
 carrito.forEach((p,i)=>{
 
-total+=p.precio
+total+=p.precio*p.cantidad
 
 lista.innerHTML+=`
+
 <div>
-${p.nombre} - $${p.precio}
-<button onclick="eliminar(${i})">x</button>
+
+${p.nombre} x${p.cantidad}
+
+<button onclick="sumar(${i})">+</button>
+
+<button onclick="restar(${i})">-</button>
+
 </div>
+
 `
 
 })
 
 document.getElementById("total").innerText=total
-document.getElementById("contador").innerText=carrito.length
+
+document.getElementById("contadorCarrito").innerText=carrito.length
 
 }
 
-function eliminar(i){
+function sumar(i){
 
-carrito.splice(i,1)
+carrito[i].cantidad++
+actualizarCarrito()
+
+}
+
+function restar(i){
+
+carrito[i].cantidad--
+
+if(carrito[i].cantidad<=0) carrito.splice(i,1)
 
 actualizarCarrito()
 
 }
 
-function toggleCarrito(){
-document.getElementById("panelCarrito").classList.toggle("activo")
-}
+function abrirCarrito(){
 
-function toggleCuenta(){
-document.getElementById("panelCuenta").classList.toggle("activo")
-}
-
-function mostrarCategoria(cat){
-
-if(cat==="todos"){
-cargarProductos()
-return
-}
-
-const filtrados=productos.filter(p=>p.categoria===cat)
-
-cargarProductos(filtrados)
+document.getElementById("carrito").classList.add("abierto")
 
 }
 
-const buscador=document.getElementById("buscador")
+function cerrarCarrito(){
 
-if(buscador){
-
-buscador.addEventListener("keyup",function(){
-
-const texto=this.value.toLowerCase()
-
-const filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto))
-
-cargarProductos(filtrados)
-
-})
+document.getElementById("carrito").classList.remove("abierto")
 
 }
 
-/* SLIDER */
+function verProducto(i){
+
+productoActual=productos[i]
+
+document.getElementById("productoImg").src=productoActual.img
+document.getElementById("productoNombre").innerText=productoActual.nombre
+document.getElementById("productoDesc").innerText=productoActual.desc
+document.getElementById("productoPrecio").innerText="$"+productoActual.precio
+
+document.getElementById("productoVista").style.display="block"
+
+}
+
+function cerrarProducto(){
+
+document.getElementById("productoVista").style.display="none"
+
+}
+
+function agregarDesdeVista(){
+
+agregarCarrito(productos.indexOf(productoActual))
+
+}
+
+function irCheckout(){
+
+document.getElementById("checkout").style.display="block"
+
+}
+
+function finalizarCompra(){
+
+carrito=[]
+actualizarCarrito()
+
+document.getElementById("checkout").style.display="none"
+
+alert("Compra realizada")
+
+}
 
 const slides=[
 
 "https://source.unsplash.com/1200x400/?supermarket",
 "https://source.unsplash.com/1200x400/?groceries",
-"https://source.unsplash.com/1200x400/?shopping-cart",
-"https://source.unsplash.com/1200x400/?food-store"
+"https://source.unsplash.com/1200x400/?shopping"
 
 ]
 
 let slideIndex=0
 
-setInterval(()=>{
+function nextSlide(){
 
 slideIndex++
 
 if(slideIndex>=slides.length) slideIndex=0
 
-const img=document.getElementById("slideImg")
+document.getElementById("slideImg").src=slides[slideIndex]
 
-if(img){
-img.src=slides[slideIndex]
 }
 
-},3000)
+function prevSlide(){
 
-cargarProductos()
+slideIndex--
+
+if(slideIndex<0) slideIndex=slides.length-1
+
+document.getElementById("slideImg").src=slides[slideIndex]
+
+}
+
+setInterval(nextSlide,4000)
