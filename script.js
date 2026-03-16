@@ -1,29 +1,21 @@
 let productos=[
-{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple"},
-{nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana"},
-{nombre:"Pan",precio:35,categoria:"comida",img:"https://source.unsplash.com/300x300/?bread"},
-{nombre:"Arroz",precio:28,categoria:"comida",img:"https://source.unsplash.com/300x300/?rice"},
-{nombre:"Pasta",precio:25,categoria:"comida",img:"https://source.unsplash.com/300x300/?pasta"},
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola"},
-{nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi"},
-{nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water"},
-{nombre:"Jugo",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?juice"},
-{nombre:"Cafe",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee"},
-{nombre:"Papas fritas",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chips"},
-{nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate"},
-{nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies"},
-{nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn"},
-{nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos"}
+
+{nombre:"Manzanas",precio:40,categoria:"comida",desc:"Manzanas frescas",img:"https://source.unsplash.com/300x300/?apple"},
+{nombre:"Platanos",precio:30,categoria:"comida",desc:"Plátanos maduros",img:"https://source.unsplash.com/300x300/?banana"},
+{nombre:"Pan",precio:35,categoria:"comida",desc:"Pan recién horneado",img:"https://source.unsplash.com/300x300/?bread"},
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",desc:"Refresco",img:"https://source.unsplash.com/300x300/?cola"},
+{nombre:"Agua",precio:15,categoria:"bebidas",desc:"Agua purificada",img:"https://source.unsplash.com/300x300/?water"},
+{nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate dulce",img:"https://source.unsplash.com/300x300/?chocolate"}
+
 ]
 
 let productosMostrados=[...productos]
 let carrito=[]
 
+
 function mostrarProductos(lista){
 
 let cont=document.getElementById("productos")
-if(!cont) return
-
 cont.innerHTML=""
 
 lista.forEach((p,i)=>{
@@ -32,13 +24,13 @@ cont.innerHTML+=`
 
 <div class="producto">
 
-<img src="${p.img}" onclick="verProductoPagina(${i})">
+<img src="${p.img}">
 
 <h3>${p.nombre}</h3>
 
 <p>$${p.precio}</p>
 
-<button onclick="agregarCarrito(${i})">Agregar</button>
+<button onclick="verDetalle(${i})">Ver</button>
 
 </div>
 
@@ -52,15 +44,37 @@ productosMostrados=lista
 
 mostrarProductos(productos)
 
+
+
+function verDetalle(i){
+
+let p=productosMostrados[i]
+
+alert(
+p.nombre+
+"\n\n"+p.desc+
+"\n\nPrecio: $"+p.precio
+)
+
+agregarCarrito(i)
+
+}
+
+
+
 function buscarProducto(){
 
 let texto=document.getElementById("buscador").value.toLowerCase()
 
-let filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto))
+let filtrados=productos.filter(p=>
+p.nombre.toLowerCase().includes(texto)
+)
 
 mostrarProductos(filtrados)
 
 }
+
+
 
 function filtrar(cat){
 
@@ -71,6 +85,8 @@ mostrarProductos(productos.filter(p=>p.categoria===cat))
 }
 
 }
+
+
 
 function agregarCarrito(i){
 
@@ -88,10 +104,11 @@ actualizarCarrito()
 
 }
 
+
+
 function actualizarCarrito(){
 
 let lista=document.getElementById("listaCarrito")
-if(!lista) return
 
 lista.innerHTML=""
 
@@ -121,10 +138,16 @@ document.getElementById("contadorCarrito").innerText=carrito.length
 
 }
 
+
+
 function sumar(i){
+
 carrito[i].cantidad++
 actualizarCarrito()
+
 }
+
+
 
 function restar(i){
 
@@ -138,20 +161,26 @@ actualizarCarrito()
 
 }
 
+
+
 function abrirCarrito(){
-document.getElementById("carrito").classList.add("abierto")
+document.getElementById("carrito").style.display="block"
 }
+
+
 
 function cerrarCarrito(){
-document.getElementById("carrito").classList.remove("abierto")
+document.getElementById("carrito").style.display="none"
 }
 
-function verProductoPagina(i){
 
-let producto=productosMostrados[i]
 
-localStorage.setItem("productoSeleccionado",JSON.stringify(producto))
+function pagar(){
 
-window.location.href="producto.html"
+alert("Compra realizada")
+
+carrito=[]
+
+actualizarCarrito()
 
 }
