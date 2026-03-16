@@ -11,121 +11,28 @@
 
 <header class="topbar">
 
-<div class="logo">
-MiTienda
-</div>
+<div class="logo">MiTienda</div>
 
 <div class="search">
-<input type="text" placeholder="Buscar productos, marcas y más">
+<input id="buscador" type="text" placeholder="Buscar productos...">
 </div>
 
 <div class="icons">
 <span>👤 Cuenta</span>
-<span>🛒 Carrito</span>
+<span>🛒 Carrito (<span id="contador">0</span>)</span>
 </div>
 
 </header>
 
 
-<nav class="menu">
-
-<ul>
-<li>Inicio</li>
-<li>Electrónica</li>
-<li>Moda</li>
-<li>Hogar</li>
-<li>Ofertas</li>
-</ul>
-
-</nav>
-
-
 <section class="banner">
 
-<h1>Ofertas Especiales</h1>
-<p>Hasta 50% de descuento</p>
+<img id="bannerImg" src="https://picsum.photos/1200/300?1">
 
 </section>
 
 
-<section class="productos">
-
-<div class="producto">
-
-<img src="https://via.placeholder.com/200">
-
-<h3>Tenis Nike Air</h3>
-
-<p class="precio">$1200</p>
-
-<button>Comprar</button>
-
-</div>
-
-
-<div class="producto">
-
-<img src="https://via.placeholder.com/200">
-
-<h3>Sudadera Adidas</h3>
-
-<p class="precio">$850</p>
-
-<button>Comprar</button>
-
-</div>
-
-
-<div class="producto">
-
-<img src="https://via.placeholder.com/200">
-
-<h3>Playera Puma</h3>
-
-<p class="precio">$400</p>
-
-<button>Comprar</button>
-
-</div>
-
-
-<div class="producto">
-
-<img src="https://via.placeholder.com/200">
-
-<h3>Tenis Jordan</h3>
-
-<p class="precio">$2000</p>
-
-<button>Comprar</button>
-
-</div>
-
-
-<div class="producto">
-
-<img src="https://via.placeholder.com/200">
-
-<h3>Gorra Nike</h3>
-
-<p class="precio">$350</p>
-
-<button>Comprar</button>
-
-</div>
-
-
-<div class="producto">
-
-<img src="https://via.placeholder.com/200">
-
-<h3>Mochila Adidas</h3>
-
-<p class="precio">$900</p>
-
-<button>Comprar</button>
-
-</div>
+<section class="productos" id="productos">
 
 </section>
 
@@ -135,6 +42,8 @@ MiTienda
 <p>© 2026 MiTienda</p>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
