@@ -3,9 +3,15 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SuperTienda</title>
+
 <link rel="stylesheet" href="estilos.css">
+
 </head>
 
 <body>
@@ -19,7 +25,7 @@
 </div>
 
 <div class="icons">
-<span onclick="toggleCarrito()">Carrito (<span id="contador">0</span>)</span>
+<span onclick="toggleCarrito()">🛒 Carrito (<span id="contador">0</span>)</span>
 </div>
 
 </header>
@@ -29,9 +35,13 @@
 <ul>
 
 <li onclick="mostrarCategoria('todos')">Todos</li>
+
 <li onclick="mostrarCategoria('comida')">Comida</li>
+
 <li onclick="mostrarCategoria('bebidas')">Bebidas</li>
+
 <li onclick="mostrarCategoria('limpieza')">Limpieza</li>
+
 <li onclick="mostrarCategoria('hogar')">Hogar</li>
 
 </ul>
@@ -39,10 +49,14 @@
 </nav>
 
 <section class="banner">
+
 <img id="bannerImg" src="https://picsum.photos/1200/300?1">
+
 </section>
 
-<section class="productos" id="productos"></section>
+<section id="productos" class="productos">
+
+</section>
 
 <div id="panelCarrito" class="panelCarrito">
 
@@ -57,10 +71,13 @@
 </div>
 
 <footer>
+
 <p>© 2026 SuperTienda</p>
+
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
