@@ -1,31 +1,37 @@
-let productos=[
+const productos=[
 
-{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://picsum.photos/200?food1"},
-{nombre:"Pan de caja",precio:35,categoria:"comida",img:"https://picsum.photos/200?food2"},
-{nombre:"Leche",precio:25,categoria:"bebidas",img:"https://picsum.photos/200?milk"},
-{nombre:"Refresco",precio:20,categoria:"bebidas",img:"https://picsum.photos/200?soda"},
-{nombre:"Detergente",precio:80,categoria:"limpieza",img:"https://picsum.photos/200?clean1"},
-{nombre:"Cloro",precio:30,categoria:"limpieza",img:"https://picsum.photos/200?clean2"},
-{nombre:"Papel higiénico",precio:70,categoria:"hogar",img:"https://picsum.photos/200?home1"},
-{nombre:"Servilletas",precio:25,categoria:"hogar",img:"https://picsum.photos/200?home2"}
+{nombre:"Manzanas",precio:40,categoria:"comida",img:"https://picsum.photos/200?1"},
+{nombre:"Pan de caja",precio:35,categoria:"comida",img:"https://picsum.photos/200?2"},
+{nombre:"Arroz",precio:28,categoria:"comida",img:"https://picsum.photos/200?3"},
+{nombre:"Leche",precio:25,categoria:"bebidas",img:"https://picsum.photos/200?4"},
+{nombre:"Refresco",precio:22,categoria:"bebidas",img:"https://picsum.photos/200?5"},
+{nombre:"Jugo de naranja",precio:30,categoria:"bebidas",img:"https://picsum.photos/200?6"},
+{nombre:"Detergente",precio:80,categoria:"limpieza",img:"https://picsum.photos/200?7"},
+{nombre:"Cloro",precio:35,categoria:"limpieza",img:"https://picsum.photos/200?8"},
+{nombre:"Esponjas",precio:18,categoria:"limpieza",img:"https://picsum.photos/200?9"},
+{nombre:"Papel higiénico",precio:70,categoria:"hogar",img:"https://picsum.photos/200?10"},
+{nombre:"Servilletas",precio:25,categoria:"hogar",img:"https://picsum.photos/200?11"},
+{nombre:"Bolsa de basura",precio:45,categoria:"hogar",img:"https://picsum.photos/200?12"}
 
 ];
 
-let carrito=JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito=JSON.parse(localStorage.getItem("carrito"))||[];
 
 function guardarCarrito(){
+
 localStorage.setItem("carrito",JSON.stringify(carrito));
+
 }
 
 function cargarProductos(lista){
 
-let cont=document.getElementById("productos");
+const contenedor=document.getElementById("productos");
 
-cont.innerHTML="";
+contenedor.innerHTML="";
 
-lista.forEach((p,i)=>{
+lista.forEach((p,index)=>{
 
-cont.innerHTML+=`
+contenedor.innerHTML+=`
 
 <div class="producto">
 
@@ -35,7 +41,7 @@ cont.innerHTML+=`
 
 <p class="precio">$${p.precio}</p>
 
-<button onclick="agregarCarrito(${i})">Agregar</button>
+<button onclick="agregarCarrito(${index})">Agregar</button>
 
 </div>
 
@@ -57,7 +63,7 @@ actualizarCarrito();
 
 function actualizarCarrito(){
 
-let lista=document.getElementById("listaCarrito");
+const lista=document.getElementById("listaCarrito");
 
 let total=0;
 
@@ -111,12 +117,15 @@ document.getElementById("panelCarrito").classList.remove("activo");
 
 function mostrarCategoria(cat){
 
-if(cat=="todos"){
+if(cat==="todos"){
+
 cargarProductos(productos);
+
 return;
+
 }
 
-let filtrados=productos.filter(p=>p.categoria==cat);
+const filtrados=productos.filter(p=>p.categoria===cat);
 
 cargarProductos(filtrados);
 
@@ -126,9 +135,9 @@ cargarProductos(filtrados);
 
 document.getElementById("buscador").addEventListener("keyup",function(){
 
-let texto=this.value.toLowerCase();
+const texto=this.value.toLowerCase();
 
-let filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto));
+const filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto));
 
 cargarProductos(filtrados);
 
@@ -136,10 +145,12 @@ cargarProductos(filtrados);
 
 /* SLIDER */
 
-let banners=[
-"https://picsum.photos/1200/300?random=1",
-"https://picsum.photos/1200/300?random=2",
-"https://picsum.photos/1200/300?random=3"
+const banners=[
+
+"https://picsum.photos/1200/300?1",
+"https://picsum.photos/1200/300?2",
+"https://picsum.photos/1200/300?3"
+
 ];
 
 let i=0;
@@ -149,7 +160,9 @@ function cambiarBanner(){
 i++;
 
 if(i>=banners.length){
+
 i=0;
+
 }
 
 document.getElementById("bannerImg").src=banners[i];
