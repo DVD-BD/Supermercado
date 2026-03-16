@@ -1,15 +1,15 @@
 body{
-font-family:Arial;
+font-family: Arial;
 margin:0;
-background:#f1f1f1;
+background:#f2f2f2;
 }
 
 .topbar{
 background:#0071ce;
 color:white;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 padding:15px 40px;
 }
 
@@ -48,11 +48,6 @@ padding:20px;
 border-radius:10px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.producto:hover{
-transform:scale(1.05);
 }
 
 .producto img{
@@ -73,6 +68,11 @@ border:none;
 padding:10px 15px;
 border-radius:5px;
 cursor:pointer;
+margin-top:10px;
+}
+
+.producto button:hover{
+background:#e6ac00;
 }
 
 footer{
