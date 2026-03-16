@@ -53,8 +53,9 @@ header input{
 
 /* SLIDER */
 .slider{
-    width:200%;
-    height:300px; /* slider más corto */
+    width:100vw;      
+    max-width:100%;   
+    height:300px;     
     overflow:hidden;
     position:relative;
 }
