@@ -1,25 +1,30 @@
 /* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    font-family:Arial;
-    margin:0;
-    background:#f5f5f5;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
 }
 
 /* HEADER */
 header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:#0071ce;
-    color:white;
-    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0071ce;
+    color: white;
+    padding: 10px;
 }
 
 header input{
-    width:250px;
-    padding:6px;
-    border-radius:4px;
-    border:none;
+    width: 250px;
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
 }
 
 /* CATEGORÍAS */
@@ -51,21 +56,13 @@ header input{
     font-size:20px;
 }
 
-/* GENERAL - reset de márgenes para todo */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* SLIDER */
 .slider{
     position: relative;
-    width: 100vw;       /* ancho total de la ventana */
-    height: 300px;      /* altura reducida */
+    width: calc(100% + 40px); /* ancho total pantalla */
+    margin-left: -20px;       /* ajusta para padding del body */
+    height: 300px;             /* altura reducida */
     overflow: hidden;
-    left: 0;
-    margin: 0;
 }
 
 .slider img{
@@ -75,15 +72,15 @@ header input{
 }
 
 .sliderBtn{
-    position:absolute;
+    position: absolute;
     top:50%;
     transform:translateY(-50%);
-    background:rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5);
     color:white;
     border:none;
     padding:10px;
     cursor:pointer;
-    font-size:24px;
+    font-size: 24px;
 }
 
 .prev{left:10px}
@@ -128,20 +125,20 @@ header input{
     border-radius:4px;
 }
 
-/* CARRITO INTERFAZ BONITA */
+/* CARRITO BONITO */
 .carrito{
-    position:fixed;
-    right:-400px;
-    top:0;
-    width:350px;
-    height:100%;
-    background:#fdfdfd;
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: #fdfdfd;
     box-shadow: -4px 0 15px rgba(0,0,0,0.25);
-    padding:20px;
-    transition:0.3s;
-    border-left:4px solid #0071ce;
-    z-index:1000;
-    border-radius:0 10px 10px 0;
+    padding: 20px;
+    transition: 0.3s;
+    border-left: 4px solid #0071ce;
+    z-index: 1000;
+    border-radius: 0 10px 10px 0;
 }
 
 .carrito.abierto{
@@ -177,19 +174,19 @@ header input{
     background:#005bb5;
 }
 
-/* PRODUCTO VISTA */
+/* VISTA PRODUCTO */
 .productoVista{
     display:none;
-    position:fixed;
+    position: fixed;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
-    background:white;
-    padding:20px;
-    width:320px;
-    box-shadow:0 0 15px rgba(0,0,0,0.4);
+    transform: translate(-50%,-50%);
+    background: white;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
     text-align:center;
-    z-index:1001;
+    z-index: 1001;
     border-radius:10px;
 }
 
@@ -224,10 +221,10 @@ header input{
 /* CHECKOUT BONITO */
 .checkout{
     display:none;
-    position:fixed;
+    position: fixed;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
+    transform: translate(-50%,-50%);
     background:white;
     padding:30px;
     box-shadow:0 0 15px rgba(0,0,0,0.4);
