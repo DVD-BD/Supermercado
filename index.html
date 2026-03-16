@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SuperTienda</title>
+<title>Supermercado Online</title>
 
 <link rel="stylesheet" href="estilos.css">
 
@@ -17,7 +14,9 @@
 
 <header class="topbar">
 
-<div class="logo">SuperTienda</div>
+<div class="logo">
+SuperMercado
+</div>
 
 <div class="search">
 <input type="text" id="buscador" placeholder="Buscar productos...">
@@ -25,63 +24,68 @@
 
 <div class="icons">
 
-<span class="menuUsuario">Cuenta</span>
-
-<span class="carritoBtn" onclick="toggleCarrito()">
+<div class="carritoBtn" onclick="toggleCarrito()">
 🛒 Carrito (<span id="contador">0</span>)
-</span>
+</div>
 
 </div>
 
 </header>
+
 
 <nav class="menu">
 
 <ul>
 
 <li onclick="mostrarCategoria('todos')">Todos</li>
+
 <li onclick="mostrarCategoria('comida')">Comida</li>
+
 <li onclick="mostrarCategoria('bebidas')">Bebidas</li>
+
 <li onclick="mostrarCategoria('limpieza')">Limpieza</li>
+
 <li onclick="mostrarCategoria('hogar')">Hogar</li>
 
 </ul>
 
 </nav>
 
+
 <section class="banner">
 
-<img id="bannerImg" src="https://picsum.photos/1200/300?random=1">
+<img src="https://source.unsplash.com/1600x400/?supermarket">
 
 </section>
 
-<section id="productos" class="productos">
 
-<!-- Los productos se cargan con JavaScript -->
+<main>
 
-</section>
+<div id="productos" class="productos"></div>
+
+</main>
+
+
 
 <div id="panelCarrito" class="panelCarrito">
 
-<h2>Carrito</h2>
+<h2>Tu carrito</h2>
 
 <div id="listaCarrito"></div>
 
-<p>Total: $<span id="total">0</span></p>
+<p><strong>Total: $<span id="total">0</span></strong></p>
 
-<a href="checkout.html">
-<button>Ir a pagar</button>
-</a>
-
-<button onclick="cerrarCarrito()">Cerrar</button>
+<button onclick="comprar()">Finalizar compra</button>
 
 </div>
 
+
 <footer>
 
-<p>© 2026 SuperTienda</p>
+<p>Supermercado Online © 2026</p>
 
 </footer>
+
 
 <script src="script.js"></script>
 
