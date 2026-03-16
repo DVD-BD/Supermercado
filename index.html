@@ -10,7 +10,7 @@
 
 <header>
 
-<h2>Supermercado</h2>
+<h1>Supermercado</h1>
 
 <input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="buscarProducto()">
 
@@ -34,7 +34,7 @@
 
 <button class="sliderBtn prev" onclick="prevSlide()">❮</button>
 
-<img id="slideImg" src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+<img id="slideImg" src="https://source.unsplash.com/1200x400/?supermarket">
 
 <button class="sliderBtn next" onclick="nextSlide()">❯</button>
 
@@ -43,51 +43,48 @@
 
 <!-- PRODUCTOS -->
 
-<div class="productos" id="productos"></div>
-
+<div id="productos" class="productos"></div>
 
 
 <!-- CARRITO -->
 
-<div class="carrito" id="carrito">
+<div id="carrito" class="carrito">
+
+<button onclick="cerrarCarrito()">Cerrar</button>
 
 <h2>Carrito</h2>
 
 <div id="listaCarrito"></div>
 
-<p>Total: $<span id="total">0</span></p>
+<h3>Total: $<span id="total">0</span></h3>
 
 <button onclick="pagar()">Pagar</button>
-
-<button onclick="cerrarCarrito()">Cerrar</button>
 
 </div>
 
 
-
 <!-- VISTA PRODUCTO -->
 
-<div class="productoVista" id="productoVista">
+<div id="productoVista" class="productoVista">
 
 <button class="cerrar" onclick="cerrarVista()">X</button>
 
 <img id="vistaImg">
 
-<h3 id="vistaNombre"></h3>
+<h2 id="vistaNombre"></h2>
 
 <p id="vistaDesc"></p>
 
-<p>$<span id="vistaPrecio"></span></p>
+<h3>$<span id="vistaPrecio"></span></h3>
 
 <button onclick="agregarDesdeVista()">Agregar al carrito</button>
 
 </div>
 
 
-
 <!-- CHECKOUT -->
 
-<div class="checkout" id="checkout">
+<div id="checkout" class="checkout">
 
 <h2>Compra realizada</h2>
 
@@ -96,7 +93,6 @@
 <button onclick="cerrarCheckout()">Cerrar</button>
 
 </div>
-
 
 
 <script src="script.js"></script>
