@@ -1,23 +1,46 @@
 // PRODUCTOS
 let productos = [
-    {nombre:"Manzanas",precio:40,categoria:"frutasverduras",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas y jugosas"},
+    // Frutas y Verduras
+    {nombre:"Manzanas",precio:40,categoria:"frutasverduras",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
     {nombre:"Platanos",precio:30,categoria:"frutasverduras",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
     {nombre:"Lechuga",precio:15,categoria:"frutasverduras",img:"https://source.unsplash.com/300x300/?lettuce",desc:"Lechuga fresca"},
+    {nombre:"Tomate",precio:20,categoria:"frutasverduras",img:"https://source.unsplash.com/300x300/?tomato",desc:"Tomate rojo"},
+    {nombre:"Zanahoria",precio:18,categoria:"frutasverduras",img:"https://source.unsplash.com/300x300/?carrot",desc:"Zanahoria fresca"},
+
+    // Bebidas
     {nombre:"Coca Cola",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?cola",desc:"Refresco"},
+    {nombre:"Pepsi",precio:20,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?pepsi",desc:"Refresco"},
     {nombre:"Agua",precio:15,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?water",desc:"Agua purificada"},
+    {nombre:"Jugo de naranja",precio:25,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?orangejuice",desc:"Jugo natural"},
+    {nombre:"Cafe",precio:80,categoria:"bebidas",img:"https://source.unsplash.com/300x300/?coffee",desc:"Café premium"},
+
+    // Snacks
     {nombre:"Papas fritas",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chips",desc:"Snack crujiente"},
     {nombre:"Chocolate",precio:35,categoria:"snacks",img:"https://source.unsplash.com/300x300/?chocolate",desc:"Chocolate dulce"},
-    {nombre:"Detergente",precio:50,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Para lavar la ropa"},
-    {nombre:"Jabón",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Jabón para limpieza"},
-    {nombre:"Escoba",precio:60,categoria:"hogar",img:"https://source.unsplash.com/300x300/?broom",desc:"Escoba de barrer"},
-    {nombre:"Trapeador",precio:70,categoria:"hogar",img:"https://source.unsplash.com/300x300/?mop",desc:"Trapeador limpio"}
+    {nombre:"Galletas",precio:28,categoria:"snacks",img:"https://source.unsplash.com/300x300/?cookies",desc:"Galletas"},
+    {nombre:"Palomitas",precio:22,categoria:"snacks",img:"https://source.unsplash.com/300x300/?popcorn",desc:"Palomitas"},
+    {nombre:"Nachos",precio:30,categoria:"snacks",img:"https://source.unsplash.com/300x300/?nachos",desc:"Nachos"},
+
+    // Limpieza
+    {nombre:"Detergente",precio:50,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?detergent",desc:"Para lavar ropa"},
+    {nombre:"Jabon",precio:25,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?soap",desc:"Para limpieza general"},
+    {nombre:"Escoba",precio:60,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?broom",desc:"Escoba resistente"},
+    {nombre:"Trapeador",precio:70,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?mop",desc:"Trapeador limpio"},
+    {nombre:"Limpiador multiusos",precio:55,categoria:"limpieza",img:"https://source.unsplash.com/300x300/?cleaner",desc:"Limpieza general"},
+
+    // Hogar
+    {nombre:"Cojín",precio:35,categoria:"hogar",img:"https://source.unsplash.com/300x300/?cushion",desc:"Cojín cómodo"},
+    {nombre:"Sábanas",precio:80,categoria:"hogar",img:"https://source.unsplash.com/300x300/?bedsheets",desc:"Sábanas suaves"},
+    {nombre:"Manta",precio:60,categoria:"hogar",img:"https://source.unsplash.com/300x300/?blanket",desc:"Manta cálida"},
+    {nombre:"Lampara",precio:120,categoria:"hogar",img:"https://source.unsplash.com/300x300/?lamp",desc:"Lámpara de escritorio"},
+    {nombre:"Reloj de pared",precio:50,categoria:"hogar",img:"https://source.unsplash.com/300x300/?clock",desc:"Reloj moderno"}
 ];
 
+// resto del script igual que antes (mostrarProductos, filtros, carrito, slider)
 let productosMostrados = [...productos];
 let carrito = [];
 let productoActual = null;
 
-// MOSTRAR PRODUCTOS
 function mostrarProductos(lista){
     let cont = document.getElementById("productos");
     cont.innerHTML = "";
@@ -34,31 +57,23 @@ function mostrarProductos(lista){
     productosMostrados = lista;
 }
 
-// BUSCADOR
 function buscarProducto(){
     let texto = document.getElementById("buscador").value.toLowerCase();
-    let filtrados = productos.filter(p => p.nombre.toLowerCase().includes(texto));
-    mostrarProductos(filtrados);
+    mostrarProductos(productos.filter(p => p.nombre.toLowerCase().includes(texto)));
 }
 
-// FILTRAR
 function filtrar(cat){
     if(cat==="todos"){
         mostrarProductos(productos);
     }else{
-        mostrarProductos(productos.filter(p=>p.categoria===cat));
+        mostrarProductos(productos.filter(p => p.categoria===cat));
     }
 }
 
-// CARRITO
 function agregarCarrito(i){
     let prod = productosMostrados[i];
     let item = carrito.find(p=>p.nombre===prod.nombre);
-    if(item){
-        item.cantidad++;
-    }else{
-        carrito.push({...prod,cantidad:1});
-    }
+    if(item){ item.cantidad++; } else { carrito.push({...prod,cantidad:1}); }
     actualizarCarrito();
 }
 
@@ -68,92 +83,35 @@ function actualizarCarrito(){
     let total=0;
     carrito.forEach((p,i)=>{
         total += p.precio*p.cantidad;
-        lista.innerHTML += `
-        <div>
-            ${p.nombre} x${p.cantidad}
-            <button onclick="sumar(${i})">+</button>
-            <button onclick="restar(${i})">-</button>
-        </div>
-        `;
+        lista.innerHTML += `<div>${p.nombre} x${p.cantidad} <button onclick="sumar(${i})">+</button> <button onclick="restar(${i})">-</button></div>`;
     });
     document.getElementById("total").innerText=total;
     document.getElementById("contadorCarrito").innerText=carrito.length;
 }
 
-function sumar(i){
-    carrito[i].cantidad++;
-    actualizarCarrito();
-}
-
-function restar(i){
-    carrito[i].cantidad--;
-    if(carrito[i].cantidad<=0){
-        carrito.splice(i,1);
-    }
-    actualizarCarrito();
-}
-
-function abrirCarrito(){
-    document.getElementById("carrito").classList.add("abierto");
-}
-
-function cerrarCarrito(){
-    document.getElementById("carrito").classList.remove("abierto");
-}
-
-// VISTA PRODUCTO
+function sumar(i){ carrito[i].cantidad++; actualizarCarrito(); }
+function restar(i){ carrito[i].cantidad--; if(carrito[i].cantidad<=0){ carrito.splice(i,1);} actualizarCarrito(); }
+function abrirCarrito(){ document.getElementById("carrito").classList.add("abierto"); }
+function cerrarCarrito(){ document.getElementById("carrito").classList.remove("abierto"); }
 function verProducto(i){
     productoActual = productosMostrados[i];
-    document.getElementById("productoImg").src = productoActual.img;
-    document.getElementById("productoNombre").innerText = productoActual.nombre;
-    document.getElementById("productoDesc").innerText = productoActual.desc;
-    document.getElementById("productoPrecio").innerText = "$"+productoActual.precio;
+    document.getElementById("productoImg").src=productoActual.img;
+    document.getElementById("productoNombre").innerText=productoActual.nombre;
+    document.getElementById("productoDesc").innerText=productoActual.desc;
+    document.getElementById("productoPrecio").innerText="$"+productoActual.precio;
     document.getElementById("productoVista").style.display="block";
 }
-
-function cerrarProducto(){
-    document.getElementById("productoVista").style.display="none";
-}
-
-function agregarDesdeVista(){
-    let item = carrito.find(p => p.nombre === productoActual.nombre);
-    if(item){
-        item.cantidad++;
-    }else{
-        carrito.push({...productoActual,cantidad:1});
-    }
-    actualizarCarrito();
-}
-
-// CHECKOUT
-function irCheckout(){
-    document.getElementById("checkout").style.display="block";
-}
-
-function finalizarCompra(){
-    carrito=[];
-    actualizarCarrito();
-    document.getElementById("checkout").style.display="none";
-}
+function cerrarProducto(){ document.getElementById("productoVista").style.display="none"; }
+function agregarDesdeVista(){ let item = carrito.find(p=>p.nombre===productoActual.nombre); if(item){item.cantidad++;}else{carrito.push({...productoActual,cantidad:1});} actualizarCarrito(); }
+function irCheckout(){ document.getElementById("checkout").style.display="block"; }
+function finalizarCompra(){ carrito=[]; actualizarCarrito(); document.getElementById("checkout").style.display="none"; }
 
 // SLIDER
-const slides=[
-    "https://source.unsplash.com/1200x400/?supermarket",
-    "https://source.unsplash.com/1200x400/?groceries",
-    "https://source.unsplash.com/1200x400/?shopping"
-];
+const slides=["https://source.unsplash.com/1200x400/?supermarket","https://source.unsplash.com/1200x400/?groceries","https://source.unsplash.com/1200x400/?shopping"];
 let slideIndex=0;
-
-function nextSlide(){
-    slideIndex++;
-    if(slideIndex>=slides.length) slideIndex=0;
-    document.getElementById("slideImg").src=slides[slideIndex];
-}
-
-function prevSlide(){
-    slideIndex--;
-    if(slideIndex<0) slideIndex=slides.length-1;
-    document.getElementById("slideImg").src=slides[slideIndex];
-}
-
+function nextSlide(){ slideIndex++; if(slideIndex>=slides.length) slideIndex=0; document.getElementById("slideImg").src=slides[slideIndex]; }
+function prevSlide(){ slideIndex--; if(slideIndex<0) slideIndex=slides.length-1; document.getElementById("slideImg").src=slides[slideIndex]; }
 setInterval(nextSlide,4000);
+
+// Mostrar todos al cargar
+mostrarProductos(productos);
