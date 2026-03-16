@@ -1,4 +1,4 @@
-let productos=[
+let productos = [
 
 {nombre:"Manzanas",precio:40,categoria:"comida",img:"https://source.unsplash.com/300x300/?apple",desc:"Manzanas frescas"},
 {nombre:"Platanos",precio:30,categoria:"comida",img:"https://source.unsplash.com/300x300/?banana",desc:"Plátanos maduros"},
@@ -20,14 +20,14 @@ let productos=[
 
 ]
 
-let productosMostrados=[...productos]
-
+let productosMostrados = [...productos]
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+
+/* CARGAR PAGINA */
 
 window.onload = function(){
 
 mostrarProductos(productos)
-
 actualizarCarrito()
 
 }
@@ -36,15 +36,15 @@ actualizarCarrito()
 
 function mostrarProductos(lista){
 
-let cont=document.getElementById("productos")
+let cont = document.getElementById("productos")
 
 if(!cont) return
 
-cont.innerHTML=""
+cont.innerHTML = ""
 
 lista.forEach((p,i)=>{
 
-cont.innerHTML+=`
+cont.innerHTML += `
 
 <div class="producto">
 
@@ -62,7 +62,7 @@ cont.innerHTML+=`
 
 })
 
-productosMostrados=lista
+productosMostrados = lista
 
 }
 
@@ -70,9 +70,11 @@ productosMostrados=lista
 
 function buscarProducto(){
 
-let texto=document.getElementById("buscador").value.toLowerCase()
+let texto = document.getElementById("buscador").value.toLowerCase()
 
-let filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto))
+let filtrados = productos.filter(p =>
+p.nombre.toLowerCase().includes(texto)
+)
 
 mostrarProductos(filtrados)
 
@@ -82,13 +84,15 @@ mostrarProductos(filtrados)
 
 function filtrar(cat){
 
-if(cat==="todos"){
+if(cat === "todos"){
 
 mostrarProductos(productos)
 
 }else{
 
-mostrarProductos(productos.filter(p=>p.categoria===cat))
+let filtrados = productos.filter(p => p.categoria === cat)
+
+mostrarProductos(filtrados)
 
 }
 
@@ -98,9 +102,9 @@ mostrarProductos(productos.filter(p=>p.categoria===cat))
 
 function agregarCarrito(i){
 
-let prod=productosMostrados[i]
+let prod = productosMostrados[i]
 
-let item=carrito.find(p=>p.nombre===prod.nombre)
+let item = carrito.find(p => p.nombre === prod.nombre)
 
 if(item){
 
@@ -120,19 +124,19 @@ actualizarCarrito()
 
 function actualizarCarrito(){
 
-let lista=document.getElementById("listaCarrito")
+let lista = document.getElementById("listaCarrito")
 
 if(!lista) return
 
-lista.innerHTML=""
+lista.innerHTML = ""
 
-let total=0
+let total = 0
 
 carrito.forEach((p,i)=>{
 
-total+=p.precio*p.cantidad
+total += p.precio * p.cantidad
 
-lista.innerHTML+=`
+lista.innerHTML += `
 
 <div>
 
@@ -147,9 +151,11 @@ ${p.nombre} x${p.cantidad}
 
 })
 
-document.getElementById("total").innerText=total
+document.getElementById("total").innerText = total
 
-document.getElementById("contadorCarrito").innerText=carrito.length
+let contador = document.getElementById("contadorCarrito")
+
+if(contador) contador.innerText = carrito.length
 
 }
 
@@ -167,7 +173,7 @@ function restar(i){
 
 carrito[i].cantidad--
 
-if(carrito[i].cantidad<=0){
+if(carrito[i].cantidad <= 0){
 
 carrito.splice(i,1)
 
@@ -193,7 +199,7 @@ document.getElementById("carrito").classList.remove("abierto")
 
 }
 
-/* PAGINA PRODUCTO */
+/* PRODUCTO PAGINA */
 
 function verProductoPagina(i){
 
@@ -207,7 +213,7 @@ window.location.href = "producto.html"
 
 /* SLIDER */
 
-const slides=[
+const slides = [
 
 "https://source.unsplash.com/1200x400/?supermarket",
 "https://source.unsplash.com/1200x400/?groceries",
@@ -215,17 +221,17 @@ const slides=[
 
 ]
 
-let slideIndex=0
+let slideIndex = 0
 
 function nextSlide(){
 
 slideIndex++
 
-if(slideIndex>=slides.length) slideIndex=0
+if(slideIndex >= slides.length) slideIndex = 0
 
-let img=document.getElementById("slideImg")
+let img = document.getElementById("slideImg")
 
-if(img) img.src=slides[slideIndex]
+if(img) img.src = slides[slideIndex]
 
 }
 
@@ -233,11 +239,11 @@ function prevSlide(){
 
 slideIndex--
 
-if(slideIndex<0) slideIndex=slides.length-1
+if(slideIndex < 0) slideIndex = slides.length - 1
 
-let img=document.getElementById("slideImg")
+let img = document.getElementById("slideImg")
 
-if(img) img.src=slides[slideIndex]
+if(img) img.src = slides[slideIndex]
 
 }
 
