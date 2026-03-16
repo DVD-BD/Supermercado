@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <title>Supermercado</title>
-
 <link rel="stylesheet" href="estilos.css">
-
 </head>
 
 <body>
@@ -15,7 +12,7 @@
 
 <h2>Supermercado</h2>
 
-<input type="text" id="buscador" placeholder="Buscar..." onkeyup="buscarProducto()">
+<input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="buscarProducto()">
 
 <div class="menu">
 <button onclick="filtrar('todos')">Todos</button>
@@ -37,7 +34,7 @@
 
 <button class="sliderBtn prev" onclick="prevSlide()">❮</button>
 
-<img id="slideImg" src="https://source.unsplash.com/1200x400/?supermarket">
+<img id="slideImg" src="https://images.unsplash.com/photo-1542838132-92c53300491e">
 
 <button class="sliderBtn next" onclick="nextSlide()">❯</button>
 
@@ -46,28 +43,31 @@
 
 <!-- PRODUCTOS -->
 
-<div id="productos" class="productos"></div>
+<div class="productos" id="productos"></div>
+
 
 
 <!-- CARRITO -->
 
-<div id="carrito" class="carrito">
+<div class="carrito" id="carrito">
 
 <h2>Carrito</h2>
 
 <div id="listaCarrito"></div>
 
-<h3>Total: $<span id="total">0</span></h3>
+<p>Total: $<span id="total">0</span></p>
 
 <button onclick="pagar()">Pagar</button>
+
 <button onclick="cerrarCarrito()">Cerrar</button>
 
 </div>
 
 
+
 <!-- VISTA PRODUCTO -->
 
-<div id="productoVista" class="productoVista">
+<div class="productoVista" id="productoVista">
 
 <button class="cerrar" onclick="cerrarVista()">X</button>
 
@@ -84,9 +84,10 @@
 </div>
 
 
+
 <!-- CHECKOUT -->
 
-<div id="checkout" class="checkout">
+<div class="checkout" id="checkout">
 
 <h2>Compra realizada</h2>
 
@@ -95,6 +96,7 @@
 <button onclick="cerrarCheckout()">Cerrar</button>
 
 </div>
+
 
 
 <script src="script.js"></script>
