@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -18,12 +19,24 @@
 </div>
 
 <div class="icons">
-<span>👤 Cuenta</span>
-<span>🛒 Carrito (<span id="contador">0</span>)</span>
+<span>Cuenta</span>
+<span>Carrito (<span id="contador">0</span>)</span>
 </div>
 
 </header>
 
+<nav class="menu">
+
+<ul>
+
+<li onclick="mostrarCategoria('todos')">Todos</li>
+<li onclick="mostrarCategoria('tenis')">Tenis</li>
+<li onclick="mostrarCategoria('ropa')">Ropa</li>
+<li onclick="mostrarCategoria('accesorios')">Accesorios</li>
+
+</ul>
+
+</nav>
 
 <section class="banner">
 
@@ -31,11 +44,9 @@
 
 </section>
 
-
 <section class="productos" id="productos">
 
 </section>
-
 
 <footer>
 
