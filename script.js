@@ -9,6 +9,25 @@ let productos=[
 {nombre:"Chocolate",precio:30,categoria:"snacks",desc:"Chocolate dulce",img:"https://source.unsplash.com/300x300/?chocolate"},
 {nombre:"Galletas",precio:28,categoria:"snacks",desc:"Galletas crujientes",img:"https://source.unsplash.com/300x300/?cookies"},
 {nombre:"Papas",precio:25,categoria:"snacks",desc:"Papas fritas",img:"https://source.unsplash.com/300x300/?chips"}
+{nombre:"Cloro",precio:25,categoria:"limpieza",desc:"Cloro desinfectante ideal para limpiar pisos, baños y superficies.",img:"https://source.unsplash.com/300x300/?bleach"},
+
+{nombre:"Detergente",precio:45,categoria:"limpieza",desc:"Detergente para ropa que elimina manchas difíciles y deja un aroma fresco.",img:"https://source.unsplash.com/300x300/?detergent"},
+
+{nombre:"Jabón de trastes",precio:30,categoria:"limpieza",desc:"Jabón líquido para lavar platos y eliminar grasa fácilmente.",img:"https://source.unsplash.com/300x300/?dish-soap"},
+
+{nombre:"Esponjas",precio:18,categoria:"limpieza",desc:"Paquete de esponjas resistentes para limpieza de cocina.",img:"https://source.unsplash.com/300x300/?sponge"},
+
+{nombre:"Escoba",precio:85,categoria:"limpieza",desc:"Escoba resistente ideal para barrer pisos de casa o negocio.",img:"https://source.unsplash.com/300x300/?broom"},
+
+{nombre:"Trapeador",precio:95,categoria:"limpieza",desc:"Trapeador absorbente perfecto para limpiar pisos.",img:"https://source.unsplash.com/300x300/?mop"},
+
+{nombre:"Papel higiénico",precio:60,categoria:"hogar",desc:"Paquete de papel higiénico suave y resistente para uso diario.",img:"https://source.unsplash.com/300x300/?toilet-paper"},
+
+{nombre:"Servilletas",precio:22,categoria:"hogar",desc:"Servilletas absorbentes ideales para comidas y reuniones.",img:"https://source.unsplash.com/300x300/?napkins"},
+
+{nombre:"Velas",precio:35,categoria:"hogar",desc:"Velas aromáticas que ayudan a crear un ambiente relajante.",img:"https://source.unsplash.com/300x300/?candle"},
+
+{nombre:"Focos LED",precio:50,categoria:"hogar",desc:"Focos LED ahorradores de energía para iluminación del hogar.",img:"https://source.unsplash.com/300x300/?light-bulb"}
 ]
 
 let productosMostrados=[...productos]
