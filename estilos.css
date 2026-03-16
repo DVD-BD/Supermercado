@@ -1,5 +1,5 @@
 body{
-font-family: Arial;
+font-family:Arial;
 margin:0;
 background:#f2f2f2;
 }
@@ -29,6 +29,23 @@ border:none;
 margin-left:20px;
 }
 
+.menu{
+background:#ffc220;
+}
+
+.menu ul{
+display:flex;
+gap:30px;
+list-style:none;
+padding:10px 40px;
+margin:0;
+font-weight:bold;
+}
+
+.menu li{
+cursor:pointer;
+}
+
 .banner img{
 width:100%;
 height:300px;
@@ -48,6 +65,18 @@ padding:20px;
 border-radius:10px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
+position:relative;
+}
+
+.oferta{
+position:absolute;
+top:10px;
+left:10px;
+background:red;
+color:white;
+padding:5px 10px;
+font-size:12px;
+border-radius:5px;
 }
 
 .producto img{
@@ -62,6 +91,11 @@ font-weight:bold;
 font-size:20px;
 }
 
+.estrellas{
+color:gold;
+font-size:18px;
+}
+
 .producto button{
 background:#ffc220;
 border:none;
@@ -71,13 +105,31 @@ cursor:pointer;
 margin-top:10px;
 }
 
-.producto button:hover{
-background:#e6ac00;
-}
-
 footer{
 background:#222;
 color:white;
 text-align:center;
 padding:20px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.productos{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:500px){
+
+.productos{
+grid-template-columns:1fr;
+}
+
+.search input{
+width:200px;
+}
+
 }
