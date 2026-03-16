@@ -256,4 +256,35 @@ window.location.href = "producto.html"
 
 }
 
+let usuario = localStorage.getItem("usuario")
+
+if(usuario){
+
+document.getElementById("usuarioTexto").innerText = usuario
+
+}
+
+function iniciarSesion(){
+
+let nombre = prompt("Ingresa tu nombre")
+
+if(nombre){
+
+localStorage.setItem("usuario", nombre)
+
+document.getElementById("usuarioTexto").innerText = nombre
+
+}
+
+}
+
+function cerrarSesion(){
+
+localStorage.removeItem("usuario")
+
+document.getElementById("usuarioTexto").innerText = "Invitado"
+
+}
+
+
 setInterval(nextSlide,4000)
