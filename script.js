@@ -1,16 +1,15 @@
 const productos=[
 
-{nombre:"Manzanas",precio:40,categoria:"comida",descripcion:"Manzanas frescas",img:"https://source.unsplash.com/300x300/?apple"},
-{nombre:"Pan",precio:30,categoria:"comida",descripcion:"Pan blanco",img:"https://source.unsplash.com/300x300/?bread"},
-{nombre:"Arroz",precio:28,categoria:"comida",descripcion:"Arroz blanco",img:"https://source.unsplash.com/300x300/?rice"},
-{nombre:"Frijoles",precio:25,categoria:"comida",descripcion:"Frijoles negros",img:"https://source.unsplash.com/300x300/?beans"},
-{nombre:"Cereal",precio:55,categoria:"comida",descripcion:"Cereal desayuno",img:"https://source.unsplash.com/300x300/?cereal"},
-
+{nombre:"Manzanas",precio:40,categoria:"comida",descripcion:"Manzanas frescas y crujientes",img:"https://source.unsplash.com/300x300/?apple"},
+{nombre:"Pan",precio:30,categoria:"comida",descripcion:"Pan blanco suave",img:"https://source.unsplash.com/300x300/?bread"},
+{nombre:"Arroz",precio:28,categoria:"comida",descripcion:"Arroz premium",img:"https://source.unsplash.com/300x300/?rice"},
 {nombre:"Leche",precio:22,categoria:"bebidas",descripcion:"Leche entera",img:"https://source.unsplash.com/300x300/?milk"},
-{nombre:"Coca Cola",precio:20,categoria:"bebidas",descripcion:"Refresco cola",img:"https://source.unsplash.com/300x300/?coca-cola"},
+{nombre:"Coca Cola",precio:20,categoria:"bebidas",descripcion:"Refresco clásico",img:"https://source.unsplash.com/300x300/?cola"},
 {nombre:"Jugo",precio:25,categoria:"bebidas",descripcion:"Jugo natural",img:"https://source.unsplash.com/300x300/?juice"},
-{nombre:"Agua",precio:15,categoria:"bebidas",descripcion:"Agua purificada",img:"https://source.unsplash.com/300x300/?water"},
-{nombre:"Café",precio:80,categoria:"bebidas",descripcion:"Café molido",img:"https://source.unsplash.com/300x300/?coffee"}
+{nombre:"Detergente",precio:90,categoria:"limpieza",descripcion:"Detergente para ropa",img:"https://source.unsplash.com/300x300/?detergent"},
+{nombre:"Cloro",precio:35,categoria:"limpieza",descripcion:"Cloro multiusos",img:"https://source.unsplash.com/300x300/?bleach"},
+{nombre:"Papel higienico",precio:70,categoria:"hogar",descripcion:"Papel suave",img:"https://source.unsplash.com/300x300/?toilet-paper"},
+{nombre:"Escoba",precio:60,categoria:"hogar",descripcion:"Escoba resistente",img:"https://source.unsplash.com/300x300/?broom"}
 
 ]
 
@@ -19,6 +18,7 @@ let carrito=[]
 function cargarProductos(lista=productos){
 
 const cont=document.getElementById("productos")
+if(!cont)return
 
 cont.innerHTML=""
 
@@ -28,7 +28,9 @@ cont.innerHTML+=`
 
 <div class="producto">
 
+<a href="producto.html?id=${i}">
 <img src="${p.img}">
+</a>
 
 <h3>${p.nombre}</h3>
 
@@ -48,14 +50,18 @@ cont.innerHTML+=`
 
 function agregarCarrito(i){
 
-const producto=productos[i]
+const prod=productos[i]
 
-const existe=carrito.find(p=>p.nombre===producto.nombre)
+const existe=carrito.find(p=>p.nombre===prod.nombre)
 
 if(existe){
+
 existe.cantidad++
+
 }else{
-carrito.push({...producto,cantidad:1})
+
+carrito.push({...prod,cantidad:1})
+
 }
 
 actualizarCarrito()
@@ -65,6 +71,7 @@ actualizarCarrito()
 function actualizarCarrito(){
 
 const lista=document.getElementById("listaCarrito")
+if(!lista)return
 
 lista.innerHTML=""
 
@@ -82,7 +89,7 @@ lista.innerHTML+=`
 
 <p>$${p.precio}</p>
 
-<p>Cantidad: ${p.cantidad}</p>
+<p>Cantidad ${p.cantidad}</p>
 
 <button onclick="sumar(${i})">+</button>
 <button onclick="restar(${i})">-</button>
@@ -105,15 +112,9 @@ actualizarCarrito()
 }
 
 function restar(i){
-
 carrito[i].cantidad--
-
-if(carrito[i].cantidad<=0){
-carrito.splice(i,1)
-}
-
+if(carrito[i].cantidad<=0)carrito.splice(i,1)
 actualizarCarrito()
-
 }
 
 function eliminar(i){
@@ -132,7 +133,7 @@ document.getElementById("panelCuenta").classList.toggle("activo")
 function mostrarCategoria(cat){
 
 if(cat==="todos"){
-cargarProductos(productos)
+cargarProductos()
 return
 }
 
@@ -142,7 +143,11 @@ cargarProductos(filtrados)
 
 }
 
-document.getElementById("buscador").addEventListener("keyup",function(){
+const buscador=document.getElementById("buscador")
+
+if(buscador){
+
+buscador.addEventListener("keyup",function(){
 
 const texto=this.value.toLowerCase()
 
@@ -154,4 +159,37 @@ cargarProductos(filtrados)
 
 })
 
+}
+
+function cargarProductoVista(){
+
+const cont=document.getElementById("productoVista")
+if(!cont)return
+
+const params=new URLSearchParams(location.search)
+const id=params.get("id")
+
+const p=productos[id]
+
+cont.innerHTML=`
+
+<img src="${p.img}">
+
+<div>
+
+<h1>${p.nombre}</h1>
+
+<p>${p.descripcion}</p>
+
+<h2>$${p.precio}</h2>
+
+<button onclick="agregarCarrito(${id})">Agregar al carrito</button>
+
+</div>
+
+`
+
+}
+
 cargarProductos()
+cargarProductoVista()
