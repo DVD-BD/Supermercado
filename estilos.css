@@ -1,136 +1,158 @@
 body{
+
 font-family:Arial;
 margin:0;
 background:#f2f2f2;
+
 }
 
 .topbar{
+
 background:#0071ce;
 color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 30px;
+
 }
 
 .logo{
-font-size:22px;
+
+font-size:24px;
 font-weight:bold;
+
 }
 
 .topbar input{
+
 width:300px;
 padding:8px;
+border-radius:6px;
 border:none;
-border-radius:5px;
-}
 
-.headerBtns button{
-margin-left:10px;
-padding:8px;
-cursor:pointer;
-border:none;
-border-radius:5px;
 }
 
 .menu{
+
 background:#ffc220;
-padding:10px;
 text-align:center;
+padding:10px;
+
 }
 
 .menu button{
+
 margin:5px;
 padding:8px 15px;
 border:none;
-cursor:pointer;
 border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+
 }
 
 .productos{
+
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 padding:30px;
+
 }
 
 .producto{
+
 background:white;
 padding:15px;
 border-radius:10px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
 transition:0.2s;
+
 }
 
 .producto:hover{
+
 transform:scale(1.05);
+
 }
 
 .producto img{
+
 width:100%;
 height:160px;
 object-fit:cover;
 border-radius:8px;
+
 }
 
 .precio{
-font-weight:bold;
+
 color:#0071ce;
+font-weight:bold;
+
 }
 
 .producto button{
+
 background:#ffc220;
 border:none;
-padding:8px 10px;
-cursor:pointer;
-margin-top:5px;
+padding:8px;
 border-radius:5px;
+cursor:pointer;
+
 }
 
 .panelCarrito{
+
 position:fixed;
 top:0;
 right:-350px;
-width:300px;
+width:320px;
 height:100%;
 background:white;
 padding:20px;
-box-shadow:-4px 0 10px rgba(0,0,0,0.3);
 transition:0.3s;
+box-shadow:-4px 0 10px rgba(0,0,0,0.3);
 overflow:auto;
+
 }
 
 .panelCarrito.activo{
+
 right:0;
+
 }
 
 .carritoHeader{
+
 display:flex;
 justify-content:space-between;
+
 }
 
 .itemCarrito{
+
 border-bottom:1px solid #ddd;
 padding:10px 0;
-}
 
-.total{
-font-size:18px;
-font-weight:bold;
 }
 
 .checkoutBtn{
+
+width:100%;
 background:#0071ce;
 color:white;
 padding:10px;
-width:100%;
-cursor:pointer;
 border:none;
-border-radius:5px;
+border-radius:6px;
+cursor:pointer;
+
 }
 
 .panelCuenta{
+
 position:fixed;
 left:-300px;
 top:0;
@@ -140,19 +162,26 @@ background:white;
 padding:20px;
 transition:0.3s;
 box-shadow:4px 0 10px rgba(0,0,0,0.3);
+
 }
 
 .panelCuenta.activo{
+
 left:0;
+
 }
 
 .productoVista{
+
 display:flex;
 gap:40px;
 padding:40px;
+
 }
 
 .productoVista img{
-width:300px;
+
+width:350px;
 border-radius:10px;
+
 }
