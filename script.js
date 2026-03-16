@@ -15,21 +15,14 @@ function cargarProductos(){
 
 let contenedor = document.getElementById("productos");
 
-contenedor.innerHTML="";
-
-productos.forEach(p=>{
+productos.forEach(p => {
 
 contenedor.innerHTML += `
 <div class="producto">
-
 <img src="${p.img}">
-
 <h3>${p.nombre}</h3>
-
 <p class="precio">$${p.precio}</p>
-
 <button onclick="agregarCarrito()">Agregar</button>
-
 </div>
 `;
 
@@ -41,7 +34,7 @@ function agregarCarrito(){
 
 carrito++;
 
-document.getElementById("contador").innerText=carrito;
+document.getElementById("contador").innerText = carrito;
 
 }
 
@@ -69,36 +62,3 @@ document.getElementById("bannerImg").src=banners[indice];
 }
 
 setInterval(cambiarBanner,3000);
-
-
-let buscador=document.getElementById("buscador");
-
-buscador.addEventListener("keyup",function(){
-
-let texto=buscador.value.toLowerCase();
-
-let filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto));
-
-let contenedor=document.getElementById("productos");
-
-contenedor.innerHTML="";
-
-filtrados.forEach(p=>{
-
-contenedor.innerHTML += `
-<div class="producto">
-
-<img src="${p.img}">
-
-<h3>${p.nombre}</h3>
-
-<p class="precio">$${p.precio}</p>
-
-<button onclick="agregarCarrito()">Agregar</button>
-
-</div>
-`;
-
-});
-
-});
