@@ -32,7 +32,7 @@ header input{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    margin:0 0 30px 0;
+    margin:0 0 10px 0;
     margin-top: 10px; /* agrega espacio entre header y categorías */
     gap: 5px; /* espacio entre botones */
 }
