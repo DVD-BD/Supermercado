@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <title>Supermercado</title>
 
@@ -14,33 +13,40 @@
 
 <header>
 
-<h1>Supermercado</h1>
+<h2>Supermercado</h2>
 
-<input 
-type="text" 
-id="buscador" 
-placeholder="Buscar producto..."
-onkeyup="buscarProducto()"
->
+<input type="text" id="buscador" placeholder="Buscar..." onkeyup="buscarProducto()">
 
-<button onclick="abrirCarrito()">
-🛒 <span id="contadorCarrito">0</span>
-</button>
-
-</header>
-
-
-<nav>
-
+<div class="menu">
 <button onclick="filtrar('todos')">Todos</button>
 <button onclick="filtrar('comida')">Comida</button>
 <button onclick="filtrar('bebidas')">Bebidas</button>
 <button onclick="filtrar('snacks')">Snacks</button>
+</div>
 
-</nav>
+<div class="carritoIcono" onclick="abrirCarrito()">
+🛒 <span id="contadorCarrito">0</span>
+</div>
+
+</header>
 
 
-<section id="productos"></section>
+<!-- SLIDER -->
+
+<div class="slider">
+
+<button class="sliderBtn prev" onclick="prevSlide()">❮</button>
+
+<img id="slideImg" src="https://source.unsplash.com/1200x400/?supermarket">
+
+<button class="sliderBtn next" onclick="nextSlide()">❯</button>
+
+</div>
+
+
+<!-- PRODUCTOS -->
+
+<div id="productos" class="productos"></div>
 
 
 <!-- CARRITO -->
@@ -54,23 +60,39 @@ onkeyup="buscarProducto()"
 <h3>Total: $<span id="total">0</span></h3>
 
 <button onclick="pagar()">Pagar</button>
-
 <button onclick="cerrarCarrito()">Cerrar</button>
 
 </div>
 
 
-<!-- LOGIN -->
+<!-- VISTA PRODUCTO -->
 
-<div id="login" class="login">
+<div id="productoVista" class="productoVista">
 
-<h2>Cuenta</h2>
+<button class="cerrar" onclick="cerrarVista()">X</button>
 
-<input type="text" placeholder="Usuario">
+<img id="vistaImg">
 
-<input type="password" placeholder="Contraseña">
+<h3 id="vistaNombre"></h3>
 
-<button>Ingresar</button>
+<p id="vistaDesc"></p>
+
+<p>$<span id="vistaPrecio"></span></p>
+
+<button onclick="agregarDesdeVista()">Agregar al carrito</button>
+
+</div>
+
+
+<!-- CHECKOUT -->
+
+<div id="checkout" class="checkout">
+
+<h2>Compra realizada</h2>
+
+<p>Gracias por tu compra</p>
+
+<button onclick="cerrarCheckout()">Cerrar</button>
 
 </div>
 
