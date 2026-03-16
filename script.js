@@ -22,11 +22,13 @@ let productos=[
 
 let productosMostrados=[...productos]
 let carrito=[]
-let productoActual=null
+
+/* MOSTRAR PRODUCTOS */
 
 function mostrarProductos(lista){
 
 let cont=document.getElementById("productos")
+if(!cont) return
 
 cont.innerHTML=""
 
@@ -56,6 +58,8 @@ productosMostrados=lista
 
 mostrarProductos(productos)
 
+/* BUSCADOR */
+
 function buscarProducto(){
 
 let texto=document.getElementById("buscador").value.toLowerCase()
@@ -66,6 +70,8 @@ mostrarProductos(filtrados)
 
 }
 
+/* FILTROS */
+
 function filtrar(cat){
 
 if(cat==="todos"){
@@ -74,11 +80,15 @@ mostrarProductos(productos)
 
 }else{
 
-mostrarProductos(productos.filter(p=>p.categoria===cat))
+let filtrados=productos.filter(p=>p.categoria===cat)
+
+mostrarProductos(filtrados)
 
 }
 
 }
+
+/* CARRITO */
 
 function agregarCarrito(i){
 
@@ -103,6 +113,7 @@ actualizarCarrito()
 function actualizarCarrito(){
 
 let lista=document.getElementById("listaCarrito")
+if(!lista) return
 
 lista.innerHTML=""
 
@@ -115,12 +126,9 @@ total+=p.precio*p.cantidad
 lista.innerHTML+=`
 
 <div>
-
 ${p.nombre} x${p.cantidad}
-
 <button onclick="sumar(${i})">+</button>
 <button onclick="restar(${i})">-</button>
-
 </div>
 
 `
@@ -149,6 +157,8 @@ actualizarCarrito()
 
 }
 
+/* ABRIR Y CERRAR CARRITO */
+
 function abrirCarrito(){
 document.getElementById("carrito").classList.add("abierto")
 }
@@ -157,12 +167,52 @@ function cerrarCarrito(){
 document.getElementById("carrito").classList.remove("abierto")
 }
 
+/* PRODUCTO DETALLE */
+
 function verProductoPagina(i){
 
-let producto = productosMostrados[i]
+let producto=productosMostrados[i]
 
-localStorage.setItem("productoSeleccionado", JSON.stringify(producto))
+localStorage.setItem("productoSeleccionado",JSON.stringify(producto))
 
-window.location.href = "producto.html"
+window.location.href="producto.html"
 
 }
+
+/* SLIDER */
+
+const slides=[
+
+"https://source.unsplash.com/1200x400/?supermarket",
+"https://source.unsplash.com/1200x400/?groceries",
+"https://source.unsplash.com/1200x400/?shopping"
+
+]
+
+let slideIndex=0
+
+function nextSlide(){
+
+slideIndex++
+
+if(slideIndex>=slides.length){
+slideIndex=0
+}
+
+document.getElementById("slideImg").src=slides[slideIndex]
+
+}
+
+function prevSlide(){
+
+slideIndex--
+
+if(slideIndex<0){
+slideIndex=slides.length-1
+}
+
+document.getElementById("slideImg").src=slides[slideIndex]
+
+}
+
+setInterval(nextSlide,4000)
