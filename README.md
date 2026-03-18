@@ -11,8 +11,6 @@
    - **script.js** → funcionalidades de JavaScript (slider, carrito, búsqueda, filtrado de categorías, vista de productos).  
    - **imagenes/** → carpeta con imágenes locales de productos (opcional si se usan URLs externas).  
 
----
-
 ## 2. Creación del proyecto en la computadora
 
 1. Se creó una carpeta local llamada **Supermercado**.  
