@@ -1,39 +1,39 @@
 // LISTA DE PRODUCTOS
 let productos = [
-     // Frutas y Verduras
-    {nombre:"Manzanas", precio:40, categoria:"frutasverduras", img:"./imagenes/manzana.jpg", desc:"Manzanas frescas y jugosas"},
-    {nombre:"Plátanos", precio:30, categoria:"frutasverduras", img:"./imagenes/platanos.jpg", desc:"Plátanos maduros y dulces"},
-    {nombre:"Lechuga", precio:15, categoria:"frutasverduras", img:"./imagenes/lechuga.jpg", desc:"Lechuga fresca y crujiente"},
-    {nombre:"Tomates", precio:20, categoria:"frutasverduras", img:"./imagenes/tomate.jpg", desc:"Tomates rojos y jugosos"},
-    {nombre:"Zanahorias", precio:18, categoria:"frutasverduras", img:"./imagenes/zanahoria.jpg", desc:"Zanahorias frescas para tus recetas"},
+  // Frutas y Verduras
+  {nombre:"Manzanas", precio:40, categoria:"frutasverduras", img:"./imagenes/manzana.jpg", desc:"Manzanas frescas y jugosas"},
+  {nombre:"Plátanos", precio:30, categoria:"frutasverduras", img:"./imagenes/platanos.jpg", desc:"Plátanos maduros y dulces"},
+  {nombre:"Lechuga", precio:15, categoria:"frutasverduras", img:"./imagenes/lechuga.jpg", desc:"Lechuga fresca y crujiente"},
+  {nombre:"Tomates", precio:20, categoria:"frutasverduras", img:"./imagenes/tomate.jpg", desc:"Tomates rojos y jugosos"},
+  {nombre:"Zanahorias", precio:18, categoria:"frutasverduras", img:"./imagenes/zanahoria.jpg", desc:"Zanahorias frescas para tus recetas"},
 
-    // Bebidas
-    {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"./imagenes/cocacola.jpg", desc:"Refresco clásico"},
-    {nombre:"Pepsi", precio:20, categoria:"bebidas", img:"./imagenes/pepsi.jpg", desc:"Refresco dulce"},
-    {nombre:"Agua", precio:15, categoria:"bebidas", img:"./imagenes/agua.jpg", desc:"Agua purificada"},
-    {nombre:"Jugo de Naranja", precio:25, categoria:"bebidas", img:"./imagenes/jugodenaranja.jpg", desc:"Jugo natural"},
-    {nombre:"Café", precio:80, categoria:"bebidas", img:"./imagenes/cafe.jpg", desc:"Café premium para despertar"},
+  // Bebidas
+  {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"./imagenes/cocacola.jpg", desc:"Refresco clásico"},
+  {nombre:"Pepsi", precio:20, categoria:"bebidas", img:"./imagenes/pepsi.jpg", desc:"Refresco dulce"},
+  {nombre:"Agua", precio:15, categoria:"bebidas", img:"./imagenes/agua.jpg", desc:"Agua purificada"},
+  {nombre:"Jugo de Naranja", precio:25, categoria:"bebidas", img:"./imagenes/jugodenaranja.jpg", desc:"Jugo natural"},
+  {nombre:"Café", precio:80, categoria:"bebidas", img:"./imagenes/cafe.jpg", desc:"Café premium para despertar"},
 
-    // Snacks
-    {nombre:"Papas Fritas", precio:30, categoria:"snacks", img:"./imagenes/papasfritas.jpg", desc:"Snack crujiente"},
-    {nombre:"Chocolate", precio:35, categoria:"snacks", img:"./imagenes/chocolate.jpg", desc:"Chocolate delicioso"},
-    {nombre:"Galletas", precio:28, categoria:"snacks", img:"./imagenes/galletas.jpg", desc:"Galletas dulces"},
-    {nombre:"Palomitas", precio:22, categoria:"snacks", img:"./imagenes/palomitas.jpg", desc:"Palomitas saladas"},
-    {nombre:"Nachos", precio:30, categoria:"snacks", img:"./imagenes/nachos.jpg", desc:"Nachos para compartir"},
+  // Snacks
+  {nombre:"Papas Fritas", precio:30, categoria:"snacks", img:"./imagenes/papasfritas.jpg", desc:"Crujientes y deliciosas"},
+  {nombre:"Chocolates", precio:35, categoria:"snacks", img:"./imagenes/chocolates.jpg", desc:"Variedad de chocolates"},
+  {nombre:"Galletas", precio:28, categoria:"snacks", img:"./imagenes/galletas.jpg", desc:"Galletas dulces y crujientes"},
+  {nombre:"Nueces", precio:50, categoria:"snacks", img:"./imagenes/nueces.jpg", desc:"Nueces naturales"},
+  {nombre:"Palomitas", precio:22, categoria:"snacks", img:"./imagenes/palomitas.jpg", desc:"Palomitas de maíz saladas"},
 
-    // Limpieza
-    {nombre:"Detergente", precio:50, categoria:"limpieza", img:"./imagenes/detergente.jpg", desc:"Detergente para ropa"},
-    {nombre:"Jabón", precio:25, categoria:"limpieza", img:"./imagenes/jabon.jpg", desc:"Jabón de limpieza"},
-    {nombre:"Escoba", precio:60, categoria:"limpieza", img:"./imagenes/escoba.jpg", desc:"Escoba resistente"},
-    {nombre:"Trapeador", precio:70, categoria:"limpieza", img:"./imagenes/trapeador.jpg", desc:"Trapeador limpio"},
-    {nombre:"Limpiador Multiusos", precio:55, categoria:"limpieza", img:"./imagenes/limpiadormultiusos.jpg", desc:"Para limpiar toda la casa"},
+  // Lácteos
+  {nombre:"Leche", precio:22, categoria:"lacteos", img:"./imagenes/leche.jpg", desc:"Leche fresca pasteurizada"},
+  {nombre:"Queso", precio:45, categoria:"lacteos", img:"./imagenes/queso.jpg", desc:"Queso tipo manchego"},
+  {nombre:"Yogurt", precio:18, categoria:"lacteos", img:"./imagenes/yogurt.jpg", desc:"Yogurt natural sin azúcar"},
+  {nombre:"Mantequilla", precio:38, categoria:"lacteos", img:"./imagenes/mantequilla.jpg", desc:"Mantequilla cremosa"},
+  {nombre:"Crema", precio:32, categoria:"lacteos", img:"./imagenes/crema.jpg", desc:"Crema para cocinar"},
 
-    // Hogar
-    {nombre:"Cojín", precio:35, categoria:"hogar", img:"./imagenes/cojin.jpg", desc:"Cojín cómodo"},
-    {nombre:"Sábanas", precio:80, categoria:"hogar", img:"./imagenes/sabanas.jpg", desc:"Sábanas suaves"},
-    {nombre:"Manta", precio:60, categoria:"hogar", img:"./imagenes/mantacobija.jpg", desc:"Manta cálida"},
-    {nombre:"Lámpara", precio:120, categoria:"hogar", img:"./imagenes/lampara.jpg", desc:"Lámpara de escritorio"},
-    {nombre:"Reloj de Pared", precio:50, categoria:"hogar", img:"./imagenes/relojdepared.jpg", desc:"Reloj moderno"}
+  // Panadería
+  {nombre:"Pan", precio:20, categoria:"panaderia", img:"./imagenes/pan.jpg", desc:"Pan recién horneado"},
+  {nombre:"Baguette", precio:25, categoria:"panaderia", img:"./imagenes/baguette.jpg", desc:"Baguette crujiente"},
+  {nombre:"Croissant", precio:28, categoria:"panaderia", img:"./imagenes/croissant.jpg", desc:"Croissant mantecoso"},
+  {nombre:"Pan Integral", precio:30, categoria:"panaderia", img:"./imagenes/panintegral.jpg", desc:"Pan integral saludable"},
+  {nombre:"Pan de Chocolate", precio:35, categoria:"panaderia", img:"./imagenes/pandechocolate.jpg", desc:"Pan dulce con chocolate"}
 ];
 
 // VARIABLES GLOBALES
