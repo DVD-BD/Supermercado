@@ -9,7 +9,7 @@ const productos = [
     {nombre:"Zanahorias", precio:18, categoria:"frutasverduras", img:"./imagenes/zanahoria.jpg", desc:"Zanahorias frescas para tus recetas"},
 
     // Bebidas
-    {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"./imagenes/coc acola.jpg", desc:"Refresco clásico"},
+    {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"./imagenes/cocacola.jpg", desc:"Refresco clásico"},
     {nombre:"Pepsi", precio:20, categoria:"bebidas", img:"./imagenes/pepsi.jpg", desc:"Refresco dulce"},
     {nombre:"Agua", precio:15, categoria:"bebidas", img:"./imagenes/agua.jpg", desc:"Agua purificada"},
     {nombre:"Jugo de Naranja", precio:25, categoria:"bebidas", img:"./imagenes/jugodenaranja.jpg", desc:"Jugo natural"},
