@@ -1,39 +1,39 @@
 // LISTA DE PRODUCTOS
 let productos = [
-    // Frutas y Verduras
-    {nombre:"Manzanas", precio:40, categoria:"frutasverduras", img:"https://www.recetasnestle.com.co/sites/default/files/inline-images/tipos-de-manzana-royal-gala_0.jpg", desc:"Manzanas frescas y jugosas"},
-    {nombre:"Plátanos", precio:30, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?banana", desc:"Plátanos maduros y dulces"},
-    {nombre:"Lechuga", precio:15, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?lettuce", desc:"Lechuga fresca y crujiente"},
-    {nombre:"Tomates", precio:20, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?tomato", desc:"Tomates rojos y jugosos"},
-    {nombre:"Zanahorias", precio:18, categoria:"frutasverduras", img:"https://source.unsplash.com/300x300/?carrot", desc:"Zanahorias frescas para tus recetas"},
+     // Frutas y Verduras
+    {nombre:"Manzanas", precio:40, categoria:"frutasverduras", img:"IMAGENES/manzana.jpg", desc:"Manzanas frescas y jugosas"},
+    {nombre:"Plátanos", precio:30, categoria:"frutasverduras", img:"IMAGENES/platanos.jpg", desc:"Plátanos maduros y dulces"},
+    {nombre:"Lechuga", precio:15, categoria:"frutasverduras", img:"IMAGENES/lechuga.jpg", desc:"Lechuga fresca y crujiente"},
+    {nombre:"Tomates", precio:20, categoria:"frutasverduras", img:"IMAGENES/tomate.jpg", desc:"Tomates rojos y jugosos"},
+    {nombre:"Zanahorias", precio:18, categoria:"frutasverduras", img:"IMAGENES/zanahoria.jpg", desc:"Zanahorias frescas para tus recetas"},
 
     // Bebidas
-    {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"https://source.unsplash.com/300x300/?cola", desc:"Refresco clásico"},
-    {nombre:"Pepsi", precio:20, categoria:"bebidas", img:"https://source.unsplash.com/300x300/?pepsi", desc:"Refresco dulce"},
-    {nombre:"Agua", precio:15, categoria:"bebidas", img:"https://source.unsplash.com/300x300/?water", desc:"Agua purificada"},
-    {nombre:"Jugo de Naranja", precio:25, categoria:"bebidas", img:"https://source.unsplash.com/300x300/?orangejuice", desc:"Jugo natural"},
-    {nombre:"Café", precio:80, categoria:"bebidas", img:"https://source.unsplash.com/300x300/?coffee", desc:"Café premium para despertar"},
+    {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"IMAGENES/coca cola.jpg", desc:"Refresco clásico"},
+    {nombre:"Pepsi", precio:20, categoria:"bebidas", img:"IMAGENES/pepsi.jpg", desc:"Refresco dulce"},
+    {nombre:"Agua", precio:15, categoria:"bebidas", img:"IMAGENES/agua.jpg", desc:"Agua purificada"},
+    {nombre:"Jugo de Naranja", precio:25, categoria:"bebidas", img:"IMAGENES/jugo de naranja.jpg", desc:"Jugo natural"},
+    {nombre:"Café", precio:80, categoria:"bebidas", img:"IMAGENES/cafe.jpg", desc:"Café premium para despertar"},
 
     // Snacks
-    {nombre:"Papas Fritas", precio:30, categoria:"snacks", img:"https://source.unsplash.com/300x300/?chips", desc:"Snack crujiente"},
-    {nombre:"Chocolate", precio:35, categoria:"snacks", img:"https://source.unsplash.com/300x300/?chocolate", desc:"Chocolate delicioso"},
-    {nombre:"Galletas", precio:28, categoria:"snacks", img:"https://source.unsplash.com/300x300/?cookies", desc:"Galletas dulces"},
-    {nombre:"Palomitas", precio:22, categoria:"snacks", img:"https://source.unsplash.com/300x300/?popcorn", desc:"Palomitas saladas"},
-    {nombre:"Nachos", precio:30, categoria:"snacks", img:"https://source.unsplash.com/300x300/?nachos", desc:"Nachos para compartir"},
+    {nombre:"Papas Fritas", precio:30, categoria:"snacks", img:"IMAGENES/papas fritas.jpg", desc:"Snack crujiente"},
+    {nombre:"Chocolate", precio:35, categoria:"snacks", img:"IMAGENES/chocolate.jpg", desc:"Chocolate delicioso"},
+    {nombre:"Galletas", precio:28, categoria:"snacks", img:"IMAGENES/galletas.jpg", desc:"Galletas dulces"},
+    {nombre:"Palomitas", precio:22, categoria:"snacks", img:"IMAGENES/palomitas.jpg", desc:"Palomitas saladas"},
+    {nombre:"Nachos", precio:30, categoria:"snacks", img:"IMAGENES/nachos.jpg", desc:"Nachos para compartir"},
 
     // Limpieza
-    {nombre:"Detergente", precio:50, categoria:"limpieza", img:"https://source.unsplash.com/300x300/?detergent", desc:"Detergente para ropa"},
-    {nombre:"Jabón", precio:25, categoria:"limpieza", img:"https://source.unsplash.com/300x300/?soap", desc:"Jabón de limpieza"},
-    {nombre:"Escoba", precio:60, categoria:"limpieza", img:"https://source.unsplash.com/300x300/?broom", desc:"Escoba resistente"},
-    {nombre:"Trapeador", precio:70, categoria:"limpieza", img:"https://source.unsplash.com/300x300/?mop", desc:"Trapeador limpio"},
-    {nombre:"Limpiador Multiusos", precio:55, categoria:"limpieza", img:"https://source.unsplash.com/300x300/?cleaner", desc:"Para limpiar toda la casa"},
+    {nombre:"Detergente", precio:50, categoria:"limpieza", img:"IMAGENES/detergente.jpg", desc:"Detergente para ropa"},
+    {nombre:"Jabón", precio:25, categoria:"limpieza", img:"IMAGENES/jabon.jpg", desc:"Jabón de limpieza"},
+    {nombre:"Escoba", precio:60, categoria:"limpieza", img:"IMAGENES/escoba.jpg", desc:"Escoba resistente"},
+    {nombre:"Trapeador", precio:70, categoria:"limpieza", img:"IMAGENES/trapeador.jpg", desc:"Trapeador limpio"},
+    {nombre:"Limpiador Multiusos", precio:55, categoria:"limpieza", img:"IMAGENES/limpiador multiusos.jpg", desc:"Para limpiar toda la casa"},
 
     // Hogar
-    {nombre:"Cojín", precio:35, categoria:"hogar", img:"https://source.unsplash.com/300x300/?cushion", desc:"Cojín cómodo"},
-    {nombre:"Sábanas", precio:80, categoria:"hogar", img:"https://source.unsplash.com/300x300/?bedsheets", desc:"Sábanas suaves"},
-    {nombre:"Manta", precio:60, categoria:"hogar", img:"https://source.unsplash.com/300x300/?blanket", desc:"Manta cálida"},
-    {nombre:"Lámpara", precio:120, categoria:"hogar", img:"https://source.unsplash.com/300x300/?lamp", desc:"Lámpara de escritorio"},
-    {nombre:"Reloj de Pared", precio:50, categoria:"hogar", img:"https://source.unsplash.com/300x300/?clock", desc:"Reloj moderno"}
+    {nombre:"Cojín", precio:35, categoria:"hogar", img:"IMAGENES/cojin.jpg", desc:"Cojín cómodo"},
+    {nombre:"Sábanas", precio:80, categoria:"hogar", img:"IMAGENES/sabanas.jpg", desc:"Sábanas suaves"},
+    {nombre:"Manta", precio:60, categoria:"hogar", img:"IMAGENES/manta - cobija.jpg", desc:"Manta cálida"},
+    {nombre:"Lámpara", precio:120, categoria:"hogar", img:"IMAGENES/lampara.jpg", desc:"Lámpara de escritorio"},
+    {nombre:"Reloj de Pared", precio:50, categoria:"hogar", img:"IMAGENES/reloj de pared.jpg", desc:"Reloj moderno"}
 ];
 
 // VARIABLES GLOBALES
