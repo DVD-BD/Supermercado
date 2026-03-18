@@ -8,14 +8,14 @@ let productos = [
     {nombre:"Zanahorias", precio:18, categoria:"frutasverduras", img:"IMAGENES/zanahoria.jpg", desc:"Zanahorias frescas para tus recetas"},
 
     // Bebidas
-    {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"IMAGENES/coca cola.jpg", desc:"Refresco clásico"},
+    {nombre:"Coca Cola", precio:20, categoria:"bebidas", img:"IMAGENES/cocacola.jpg", desc:"Refresco clásico"},
     {nombre:"Pepsi", precio:20, categoria:"bebidas", img:"IMAGENES/pepsi.jpg", desc:"Refresco dulce"},
     {nombre:"Agua", precio:15, categoria:"bebidas", img:"IMAGENES/agua.jpg", desc:"Agua purificada"},
-    {nombre:"Jugo de Naranja", precio:25, categoria:"bebidas", img:"IMAGENES/jugo de naranja.jpg", desc:"Jugo natural"},
+    {nombre:"Jugo de Naranja", precio:25, categoria:"bebidas", img:"IMAGENES/jugodenaranja.jpg", desc:"Jugo natural"},
     {nombre:"Café", precio:80, categoria:"bebidas", img:"IMAGENES/cafe.jpg", desc:"Café premium para despertar"},
 
     // Snacks
-    {nombre:"Papas Fritas", precio:30, categoria:"snacks", img:"IMAGENES/papas fritas.jpg", desc:"Snack crujiente"},
+    {nombre:"Papas Fritas", precio:30, categoria:"snacks", img:"IMAGENES/papasfritas.jpg", desc:"Snack crujiente"},
     {nombre:"Chocolate", precio:35, categoria:"snacks", img:"IMAGENES/chocolate.jpg", desc:"Chocolate delicioso"},
     {nombre:"Galletas", precio:28, categoria:"snacks", img:"IMAGENES/galletas.jpg", desc:"Galletas dulces"},
     {nombre:"Palomitas", precio:22, categoria:"snacks", img:"IMAGENES/palomitas.jpg", desc:"Palomitas saladas"},
@@ -26,14 +26,14 @@ let productos = [
     {nombre:"Jabón", precio:25, categoria:"limpieza", img:"IMAGENES/jabon.jpg", desc:"Jabón de limpieza"},
     {nombre:"Escoba", precio:60, categoria:"limpieza", img:"IMAGENES/escoba.jpg", desc:"Escoba resistente"},
     {nombre:"Trapeador", precio:70, categoria:"limpieza", img:"IMAGENES/trapeador.jpg", desc:"Trapeador limpio"},
-    {nombre:"Limpiador Multiusos", precio:55, categoria:"limpieza", img:"IMAGENES/limpiador multiusos.jpg", desc:"Para limpiar toda la casa"},
+    {nombre:"Limpiador Multiusos", precio:55, categoria:"limpieza", img:"IMAGENES/limpiadormultiusos.jpg", desc:"Para limpiar toda la casa"},
 
     // Hogar
     {nombre:"Cojín", precio:35, categoria:"hogar", img:"IMAGENES/cojin.jpg", desc:"Cojín cómodo"},
     {nombre:"Sábanas", precio:80, categoria:"hogar", img:"IMAGENES/sabanas.jpg", desc:"Sábanas suaves"},
-    {nombre:"Manta", precio:60, categoria:"hogar", img:"IMAGENES/manta - cobija.jpg", desc:"Manta cálida"},
+    {nombre:"Manta", precio:60, categoria:"hogar", img:"IMAGENES/mantacobija.jpg", desc:"Manta cálida"},
     {nombre:"Lámpara", precio:120, categoria:"hogar", img:"IMAGENES/lampara.jpg", desc:"Lámpara de escritorio"},
-    {nombre:"Reloj de Pared", precio:50, categoria:"hogar", img:"IMAGENES/reloj de pared.jpg", desc:"Reloj moderno"}
+    {nombre:"Reloj de Pared", precio:50, categoria:"hogar", img:"IMAGENES/relojdepared.jpg", desc:"Reloj moderno"}
 ];
 
 // VARIABLES GLOBALES
