@@ -1,4 +1,3 @@
-// LISTA DE PRODUCTOS
 const productos = [
 
     // Frutas y Verduras
@@ -38,12 +37,10 @@ const productos = [
 
 ];
 
-// VARIABLES GLOBALES
 let productosMostrados = [...productos];
 let carrito = [];
 let productoActual = null;
 
-// MOSTRAR PRODUCTOS
 function mostrarProductos(lista){
     let cont = document.getElementById("productos");
     cont.innerHTML = "";
@@ -60,19 +57,16 @@ function mostrarProductos(lista){
     productosMostrados = lista;
 }
 
-// BUSCAR PRODUCTO
 function buscarProducto(){
     let texto = document.getElementById("buscador").value.toLowerCase();
     mostrarProductos(productos.filter(p=>p.nombre.toLowerCase().includes(texto)));
 }
 
-// FILTRAR CATEGORÍA
 function filtrar(cat){
     if(cat==="todos"){ mostrarProductos(productos); }
     else{ mostrarProductos(productos.filter(p=>p.categoria===cat)); }
 }
 
-// CARRITO
 function agregarCarrito(i){
     let prod = productosMostrados[i];
     let item = carrito.find(p=>p.nombre===prod.nombre);
@@ -97,7 +91,6 @@ function restar(i){ carrito[i].cantidad--; if(carrito[i].cantidad<=0){ carrito.s
 function abrirCarrito(){ document.getElementById("carrito").classList.add("abierto"); }
 function cerrarCarrito(){ document.getElementById("carrito").classList.remove("abierto"); }
 
-// VISTA PRODUCTO
 function verProducto(i){
     productoActual = productosMostrados[i];
     document.getElementById("productoImg").src = productoActual.img;
@@ -114,11 +107,9 @@ function agregarDesdeVista(){
     actualizarCarrito();
 }
 
-// CHECKOUT
 function irCheckout(){ document.getElementById("checkout").style.display="block"; }
 function finalizarCompra(){ carrito=[]; actualizarCarrito(); document.getElementById("checkout").style.display="none"; }
 
-// SLIDER
 const slides = [
     "https://source.unsplash.com/1200x400/?supermarket",
     "https://source.unsplash.com/1200x400/?groceries",
@@ -129,5 +120,4 @@ function nextSlide(){ slideIndex++; if(slideIndex>=slides.length) slideIndex=0; 
 function prevSlide(){ slideIndex--; if(slideIndex<0) slideIndex=slides.length-1; document.getElementById("slideImg").src=slides[slideIndex]; }
 setInterval(nextSlide,4000);
 
-// MOSTRAR TODOS AL INICIO
 mostrarProductos(productos);
