@@ -20,16 +20,6 @@
    - `script.js`
    - Carpeta de imágenes (si se requería).  
 
-Se organizo de la siguiente manera:
-              Supermercado/
-                  -│─ index.html
-                  -│─ estilos.css
-                  -│─ script.js
-                  -│─ img/
-                      --├─ manzana.jpg
-                      --├─ platano.jpg
-                      --└─ ...
-
 ## 3. Instalación y configuración de Git
 Se descargó e instaló Git en la computadora mediante su instalador oficial. Se configuraron los datos de usuario
 
