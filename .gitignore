@@ -1,0 +1,14 @@
+LaCasita/vendor/
+LaCasita/node_modules/
+LaCasita/.env
+LaCasita/public/build/
+LaCasita/public/hot
+LaCasita/storage/*.key
+LaCasita/storage/logs/*.log
+LaCasita/storage/framework/cache/data/*
+LaCasita/storage/framework/sessions/*
+LaCasita/storage/framework/views/*.php
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
